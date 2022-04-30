@@ -5,7 +5,9 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          'volkert-blue':'#35718C',
+          'volkert-blue':'#0E3083',
+          'test-color':'#3E599C',
+          'cement-color':'#806d59'
         }
       },
     },

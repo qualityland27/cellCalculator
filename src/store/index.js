@@ -6,16 +6,42 @@ export default createStore({
   state: {
     counter: 0,
     schweißArt: "",
-    wig: 0,
-    mig: 5000,
-    mag: 8000,
+    withoutSchweißart: 0,
+    wig: 8900,
+    mig_mag: 18500,
     aufpreisSchweißArt: 0,
 
     nahtSuchSystem: "",
     without: 0,
-    gas: 5000,
-    camera: 20000,
+    gas: 1800,
+    camera: 18900,
     aufpreisSuchSystem: 0,
+
+    absaugung: "",
+    withoutAbsaugung: 0,
+    einmalFilter: 3900,
+    selbstreinigenderFilter: 6900,
+    aufpreisAbsaugung: 0,
+
+    logging: "",
+    withoutdatenLogging: 0,
+    withDatenLogging: 4450,
+    aufpreisLogging: 0,
+
+    montage: "",
+    withoutMontage: 0,
+    withMontage: 3900,
+    aufpreisMontage: 0,
+
+    produktionsbegleitung: "",
+    withoutProduktionsbegleitung: 0,
+    withProduktionsbegleitung: 680,
+    aufpreisProduktionsbegleitung: 0,
+
+    schulung: "",
+    withoutSchulung: 0,
+    withSchulung: 4890,
+    aufpreisSchulung: 0,
 
     startPrice: 60000,
     calculatedPrice: 60000, 
@@ -41,12 +67,27 @@ export default createStore({
       state.nahtSuchSystem = document.getElementById("dropDownSchweißNahtSuchSystem");
       console.log(state.nahtSuchSystem.value);
 
-      if ( state.schweißArt.value == "mag" ) {
-        state.aufpreisSchweißArt = state.mag;
-      } else if (state.schweißArt.value == "mig") {
-        state.aufpreisSchweißArt = state.mig;
+      state.absaugung = document.getElementById("dropDownAbsaugung");
+      console.log(state.absaugung.value);
+
+      state.logging = document.getElementById("dropDownDatenLogging");
+      console.log(state.logging.value);
+
+      state.montage = document.getElementById("dropDownMontage");
+      console.log(state.montage.value);
+
+      state.produktionsbegleitung = document.getElementById("dropDownProduktionsbegleitung");
+      console.log(state.produktionsbegleitung.value);
+
+      state.schulung = document.getElementById("dropDownSchulung");
+      console.log(state.schulung.value);
+
+      if ( state.schweißArt.value == "withoutSchweißart" ) {
+        state.aufpreisSchweißArt = state.withoutSchweißart;
       } else if (state.schweißArt.value == "wig") {
         state.aufpreisSchweißArt = state.wig;
+      } else if (state.schweißArt.value == "mig_mag") {
+        state.aufpreisSchweißArt = state.mig_mag;
       }
       console.log(state.aufpreisSchweißArt);
 
@@ -57,10 +98,48 @@ export default createStore({
       } else if (state.nahtSuchSystem.value == "camera") {
         state.aufpreisSuchSystem = state.camera;
       }
-
       console.log(state.aufpreisSuchSystem);
 
-      state.calculatedPrice = state.startPrice + state.aufpreisSchweißArt + state.aufpreisSuchSystem;
+      if ( state.absaugung.value == "withoutAbsaugung" ) {
+        state.aufpreisAbsaugung = state.withoutAbsaugung;
+      } else if (state.absaugung.value == "einmalFilter") {
+        state.aufpreisAbsaugung = state.einmalFilter;
+      } else if (state.absaugung.value == "selbstreinigenderFilter") {
+        state.aufpreisAbsaugung = state.selbstreinigenderFilter;
+      }
+      console.log(state.aufpreisAbsaugung);
+
+      if ( state.logging.value == "withoutDatenLogging" ) {
+        state.aufpreisLogging = state.withoutdatenLogging;
+      } else if (state.logging.value == "withDatenLogging") {
+        state.aufpreisLogging = state.withDatenLogging;
+      }
+      console.log(state.aufpreisLogging);
+
+      if ( state.montage.value == "withoutMontage" ) {
+        state.aufpreisMontage = state.withoutMontage;
+      } else if (state.montage.value == "withMontage") {
+        state.aufpreisMontage = state.withMontage;
+      }
+      console.log(state.aufpreisMontage);
+
+      if ( state.produktionsbegleitung.value == "withoutProduktionsbegleitung" ) {
+        state.aufpreisProduktionsbegleitung = state.withoutProduktionsbegleitung;
+      } else if (state.produktionsbegleitung.value == "withProduktionsbegleitung") {
+        state.aufpreisProduktionsbegleitung = state.withProduktionsbegleitung;
+      }
+      console.log(state.aufpreisProduktionsbegleitung);
+
+      if ( state.schulung.value == "withoutSchulung" ) {
+        state.aufpreisSchulung = state.withoutSchulung;
+      } else if (state.schulung.value == "withSchulung") {
+        state.aufpreisSchulung = state.withSchulung;
+      }
+      console.log(state.aufpreisSchulung);
+
+
+
+      state.calculatedPrice = state.startPrice + state.aufpreisSchweißArt + state.aufpreisSuchSystem + state.aufpreisAbsaugung + state.aufpreisLogging + state.aufpreisMontage + state.aufpreisProduktionsbegleitung + state.aufpreisSchulung;
 
     },
     sendEmail(state)
@@ -83,6 +162,23 @@ export default createStore({
 
       var dropDownSchweißNahtSuchSystem = document.getElementById("dropDownSchweißNahtSuchSystem");
       dropDownSchweißNahtSuchSystem.selectedIndex = 0;
+
+
+
+      var dropDownAbsaugung = document.getElementById("dropDownAbsaugung");
+      dropDownAbsaugung.selectedIndex = 0;
+
+      var dropDownDatenLogging = document.getElementById("dropDownDatenLogging");
+      dropDownDatenLogging.selectedIndex = 0;
+
+      var dropDownMontage = document.getElementById("dropDownMontage");
+      dropDownMontage.selectedIndex = 0;
+
+      var dropDownProduktionsbegleitung = document.getElementById("dropDownProduktionsbegleitung");
+      dropDownProduktionsbegleitung.selectedIndex = 0;
+
+      var dropDownSchulung = document.getElementById("dropDownSchulung");
+      dropDownSchulung.selectedIndex = 0;
     }
   },
   actions: {
@@ -104,17 +200,35 @@ export default createStore({
     counterSquared (state) {
       return state.counter * state.counter
     },
-    magAufpreis (state) {
-      return state.mag
+    wigAufpreis (state) {
+      return state.wig
     },
-    migAufpreis (state) {
-      return state.mig
+    mig_magAufpreis (state) {
+      return state.mig_mag
     },
     gasAufpreis (state) {
       return state.gas
     },    
     cameraAufpreis (state) {
       return state.camera
+    },
+    einmalFilterAufpreis (state) {
+      return state.einmalFilter
+    },    
+    selbstreinigenderFilterAufpreis (state) {
+      return state.selbstreinigenderFilter
+    },
+    loggingAufpreis (state) {
+      return state.withDatenLogging
+    },
+    montageAufpreis (state) {
+      return state.withMontage
+    },
+    produktionsbegleitungAufpreis (state) {
+      return state.withProduktionsbegleitung
+    },
+    schulungAufpreis (state) {
+      return state.withSchulung
     }
     // hier könne Daten nochmal bearbeitete werden bevor sie überall zur Verfügung getellt werden
   },
