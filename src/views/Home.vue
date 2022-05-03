@@ -3,9 +3,17 @@
     <div class="title w-5/6 mx-auto flex justify-center">
       Ein Produkt. Deine Anforderungen.
     </div>
-    <div class="flex justify-center">
-      <img src="../assets/separator.jpg" width="1200" />
+
+
+    <!-- Volkert Separator  -->
+    <div class="relative flex py-5 items-center w-3/5 mx-auto flex justify-center">
+      <div class="flex-grow border-t border-gray-900"></div>
+        <img src="../assets/volkert_logo.png" width="100" class="flex-shrink mx-4 "/>
+      <div class="flex-grow border-t border-gray-900"></div>
     </div>
+
+
+    <!-- Text -->
     <div class="sub-title w-5/6 mx-auto flex text-justify text-center">
       Die V-Cell ist ein kompaktes Automatisierungsmodul. Die Robotereinheit
       kann für verschiedene Zwecke eingesetzt werden. So zählen Schweißen,
@@ -17,6 +25,11 @@
       an nahezu jeden Kundenwunsch anpassen. Zögern sie also nicht, Kontakt
       aufzunehmen.
     </div>
+
+
+    <!-- <h1 v-show="$store.getters.elementVisible" class="bg-gray-100"> HELLO </h1> -->
+
+
     <div class="w-5/6 mx-auto flex justify-center content-center mt-40 ">
       <div class="w-1/2 items-center justify-center mx-4">
         <img alt="Vue" class="logo bg-white" src="../assets/vCell3.png" />
@@ -28,7 +41,7 @@
       <div class="w-1/2">
         <!--    Gesamtpreis   -->
         <!-- <div class="font-bold">Gesamtpreis:</div> -->
-        <div class="price m-0">ab {{ $store.state.calculatedPrice }} €</div>
+        <div class="price m-0">ab {{ $store.getters.price }} €</div>
         <div class="kleingedrucktes">zzgl. MwSt.</div>
 
         <!-- <counter />
@@ -46,7 +59,7 @@
         <div class="font-bold bottom-4 mt-4">Schweißpaket:</div>
 
         <select
-          class="border-solid border-2 border-light-blue-500 w-80"
+          class="bg-gray-100 rounded-md w-80 h-10"
           @change="$store.commit('calculatePrice')"
           id="dropDownSchweißArt"
         >
@@ -65,7 +78,7 @@
             {{ $store.state.schweißNaht }}
         </div> -->
         <select
-          class="border-solid border-2 border-light-blue-500 w-80"
+          class="bg-gray-100 rounded-md w-80 h-10"
           @change="$store.commit('calculatePrice')"
           id="dropDownSchweißNahtSuchSystem"
         >
@@ -81,7 +94,7 @@
         <div class="font-bold bottom-4 mt-4">Absaugung:</div>
 
         <select
-          class="border-solid border-2 border-light-blue-500 w-80"
+          class="bg-gray-100 rounded-md w-80 h-10"
           @change="$store.commit('calculatePrice')"
           id="dropDownAbsaugung">
 
@@ -97,7 +110,7 @@
         <div class="font-bold bottom-4 mt-4">Daten Logging:</div>
 
         <select
-          class="border-solid border-2 border-light-blue-500 w-80"
+          class="bg-gray-100 rounded-md w-80 h-10"
           @change="$store.commit('calculatePrice')"
           id="dropDownDatenLogging">
 
@@ -112,7 +125,7 @@
         <div class="font-bold bottom-4 mt-4">Montage und Inbetriebnahme:</div>
 
         <select
-          class="border-solid border-2 border-light-blue-500 w-80"
+          class="bg-gray-100 rounded-md w-80 h-10"
           @change="$store.commit('calculatePrice')"
           id="dropDownMontage">
 
@@ -127,7 +140,7 @@
         <div class="font-bold bottom-4 mt-4">Produktionsbegleitung:</div>
 
         <select
-          class="border-solid border-2 border-light-blue-500 w-80"
+          class="bg-gray-100 rounded-md w-80 h-10"
           @change="$store.commit('calculatePrice')"
           id="dropDownProduktionsbegleitung">
 
@@ -142,7 +155,7 @@
         <div class="font-bold bottom-4 mt-4">Schulung:</div>
 
         <select
-          class="border-solid border-2 border-light-blue-500 w-80"
+          class="bg-gray-100 rounded-md w-80 h-10" 
           @change="$store.commit('calculatePrice')"
           id="dropDownSchulung">
 
@@ -151,9 +164,6 @@
             Mit Schulung (+{{ $store.getters.schulungAufpreis }} Euro)
           </option>
         </select>
-
-
-
 
 
 
@@ -168,7 +178,7 @@
               rounded-md
               border-solid border-2 border-light-blue-500
               text-black
-              h-16
+              h-16 hover:bg-gray-100 hover:border-transparent 
             "
             @click="$store.dispatch('reset')"
           >
@@ -178,12 +188,12 @@
 
         <div class="angebotButton flex flex-row">
           <button
-            class="flex-auto font-bold bg-test-color rounded-md text-white h-16"
+            class="flex-auto font-bold bg-volkert-blue rounded-md text-white h-16 hover:bg-volkert-dark-blue hover:border-transparent "
             @click="$store.commit('sendEmail')"          >
             Angebot anfordern
           </button>
           <button
-            class="flex-auto bg-gray-400 rounded-md h-16 w-24 mx-2"
+            class="flex-auto bg-gray-400 rounded-md h-16 w-24 mx-2 hover:bg-gray-500 hover:border-transparent "
             @click="$store.commit('printPage')"          >
             Drucken
           </button>
@@ -197,7 +207,25 @@
 
 
 
-    <figure class="md:flex bg-cement-color text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40 h-96">
+
+
+
+    <!-- Text -->
+    <div class="sub-title w-5/6 mx-auto flex text-justify text-center mt-40">
+      Die V-Cell wird in ihrer Basisausführung mit dem Cobot Panda vom Hersteller Franka Emika geliefert. Der Cobot zeichnet sich durch eine einfache grafische 
+      Bedienoberfläche aus und lässt sich somit auch ohne Programmierkenntnisse programmieren. Der Standard-Greifer des Pandas ist ein Zwei-Backen-Greifer. 
+      Darüber hinaus sind im Lieferumfang ein Schubladenfach zum Verstauen unterschiedlicher Werkzeuge sowie ein Montagetisch zum Spannen von Werkstücken enthalten. 
+    </div>
+
+
+
+
+
+
+
+    <!--    Informationszellen    -->
+    <!--    Sonderwünsche    -->
+    <figure class="md:flex bg-red-800 hover:bg-red-900 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40 h-96" onclick="window.location.href = 'https://www.volkert.net/Kontakt/'">
       <div class="md:p-8 text-center md:text-left ">
         <div class="bigText mx-auto flex justify-center text-center">Sonderwünsche - kein Problem!</div>
         <div class="text mx-auto flex justify-center text-center">Bauform, Roboter, Programmierung, Greifer, Spannvorrichtungen, Schweißparamter, Schweißnahtverfolgung etc.</div>
@@ -206,6 +234,7 @@
     </figure>
 
 
+  <!--    Warum VCell    -->
     <div class="w-5/6 mx-auto flex justify-center content-center mt-10 h-96">
     <figure class="md:flex bg-gray-400 mx-auto justify-center rounded-xl p-8 md:p-0 dark:bg-slate-800 w-1/2 mr-5">
       <div class="md:p-8 text-center md:text-left ">
@@ -218,6 +247,8 @@
         </ul>
       </div>
     </figure>
+
+    <!--    Warum Volkert    -->
     <figure class="md:flex bg-gray-400 mx-auto justify-center rounded-xl p-8 md:p-0 dark:bg-slate-800 w-1/2 ml-5">
       <div class="md:p-8 text-center md:text-left ">
         <div class="bigText mx-auto flex justify-center text-center">Warum Volkert?</div>
@@ -233,8 +264,8 @@
     </div>
 
     
-
-    <figure class="md:flex bg-white mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40 h-96">
+   <!--    Technische Daten    -->
+    <figure class="md:flex bg-gray-100 mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40 h-96">
       <div class="md:p-8 text-center md:text-left ">
         <div class="text font-bold mx-auto flex justify-center text-center">Technische Daten</div>
 
@@ -258,8 +289,15 @@
           </ul>
         </div>
       </div>
-      </div>
-    </figure>
+
+      <!--    Downloadbutton (nur Klick auf den Text funktioniert)   -->
+      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded items-center mt-8 mx-auto flex justify-center text-center" @click="$store.dispatch('downloadItem')">
+        <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+        <a >DOWNLOAD FLYER</a>
+      </button>
+
+    </div>
+  </figure>
 
 
     <!--    Logos der Roboterhersteller    -->
@@ -280,7 +318,6 @@
 
 
 
-
     <!--    Links zu anderen Seiten unserer Homepage    -->
     <div class="text font-bold mx-auto flex justify-center text-center mt-40">
       Wissen Sie schon, was wir neben der VCELL anbieten? Oder wissen Sie, wie wir unsere Qualität garantieren?
@@ -288,12 +325,12 @@
 
     <div class="angebotButton w-2/6 mx-auto flex flex-row mb-40">
       <button
-        class="flex-auto bg-transparent hover:bg-gray-400 border border-gray-400 hover:border-transparent rounded-md h-16"
+        class="flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-16"
         onclick="window.location.href = 'https://www.volkert.net/Leistungen/'">
         Leistungen
       </button>
       <button
-        class="flex-auto bg-transparent hover:bg-gray-400 border border-gray-400 hover:border-transparent rounded-md h-16 w-24 mx-2"
+        class="flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-16 w-24 mx-2"
         onclick="window.location.href = 'https://www.volkert.net/Leistungen/360-Grad-Made-in-Germany/'">
         360 Grad - Made in Germany
       </button>
@@ -331,7 +368,7 @@ export default {
   components: {
     counter: require("@/components/Counter.vue").default,
     "counter-squared": require("@/components/CounterSquared.vue").default,
-  },
+  }
   // methods: {
   //   sendEmail()
   //   {

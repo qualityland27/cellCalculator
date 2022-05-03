@@ -43,12 +43,18 @@ export default createStore({
     withSchulung: 4890,
     aufpreisSchulung: 0,
 
-    startPrice: 60000,
-    calculatedPrice: 60000, 
+    startPrice: 39990,
+    calculatedPrice: 39990, 
+
+    elementVisible: true,
   },
   mutations: {
     // To change Data within the state, können die Dinger von überall triggern, kein asynchroner Code hier möglich
     // man nennt das Aufrufen, commit
+    wait () {
+      setTimeout(() => this.elementVisible = false, 1000)
+    },
+
     increasecounter(state, randomNumber) {
       console.log('random number: ', randomNumber)
       state.counter += randomNumber
@@ -137,18 +143,22 @@ export default createStore({
       }
       console.log(state.aufpreisSchulung);
 
-
-
-      state.calculatedPrice = state.startPrice + state.aufpreisSchweißArt + state.aufpreisSuchSystem + state.aufpreisAbsaugung + state.aufpreisLogging + state.aufpreisMontage + state.aufpreisProduktionsbegleitung + state.aufpreisSchulung;
-
+      var price = state.startPrice + state.aufpreisSchweißArt + state.aufpreisSuchSystem + state.aufpreisAbsaugung + state.aufpreisLogging + state.aufpreisMontage + state.aufpreisProduktionsbegleitung + state.aufpreisSchulung;
+      
+      state.calculatedPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     sendEmail(state)
     {
       console.log("HI");
       var newLine = "%0D%0A";
-      var body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein verbindliches Angebot und einen Terminvorschlag für ihre vCell mit den folgenden Paramtern zu :" + newLine + newLine + 
+      var body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Paramtern:" + newLine + newLine + 
           "Schweißart: " + state.schweißArt.value + newLine + 
-          "Such System: " + state.nahtSuchSystem.value;
+          "Such System: " + state.nahtSuchSystem.value + newLine + 
+          "Absaugung: " + state.absaugung.value + newLine + 
+          "Daten Logging: " + state.logging.value + newLine + 
+          "Montage und Inbetriebnahme: " + state.montage.value + newLine + 
+          "Produktionsbegleitung: " + state.produktionsbegleitung.value + newLine + 
+          "Schulung: " + state.schulung.value + newLine;
       var mail = "mailto:info@volkert.net?subject=Anfrage&body=" + body;
       window.location = mail;
   
@@ -162,7 +172,6 @@ export default createStore({
 
       var dropDownSchweißNahtSuchSystem = document.getElementById("dropDownSchweißNahtSuchSystem");
       dropDownSchweißNahtSuchSystem.selectedIndex = 0;
-
 
 
       var dropDownAbsaugung = document.getElementById("dropDownAbsaugung");
@@ -191,6 +200,19 @@ export default createStore({
         commit('increasecounter', response.data)
       })
     },
+
+    async downloadItem() {
+      const url = 'Volkert_Flyer_A4_VCell.pdf';
+      const label = 'Volkert_Flyer_A4_VCell'
+      const response = await axios.get(url, { responseType: "blob" });
+      const blob = new Blob([response.data], { type: "application/pdf" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = label;
+      link.click();
+      URL.revokeObjectURL(link.href);
+    },
+
     reset ( {commmit} ) {
       this.commit('resetSelects')
       this.commit('calculatePrice')
@@ -201,34 +223,37 @@ export default createStore({
       return state.counter * state.counter
     },
     wigAufpreis (state) {
-      return state.wig
+      return state.wig.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     mig_magAufpreis (state) {
-      return state.mig_mag
+      return state.mig_mag.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     gasAufpreis (state) {
-      return state.gas
+      return state.gas.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },    
     cameraAufpreis (state) {
-      return state.camera
+      return state.camera.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     einmalFilterAufpreis (state) {
-      return state.einmalFilter
+      return state.einmalFilter.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },    
     selbstreinigenderFilterAufpreis (state) {
-      return state.selbstreinigenderFilter
+      return state.selbstreinigenderFilter.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     loggingAufpreis (state) {
-      return state.withDatenLogging
+      return state.withDatenLogging.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     montageAufpreis (state) {
-      return state.withMontage
+      return state.withMontage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     produktionsbegleitungAufpreis (state) {
-      return state.withProduktionsbegleitung
+      return state.withProduktionsbegleitung.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     schulungAufpreis (state) {
-      return state.withSchulung
+      return state.withSchulung.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    },
+    price (state) {
+      return state.calculatedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
     // hier könne Daten nochmal bearbeitete werden bevor sie überall zur Verfügung getellt werden
   },
