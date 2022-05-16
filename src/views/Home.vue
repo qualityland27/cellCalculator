@@ -225,19 +225,22 @@
 
     <!--    Informationszellen    -->
     <!--    Sonderwünsche    -->
-    <figure class="md:flex bg-red-800 hover:bg-red-900 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40 h-96" onclick="window.location.href = 'https://www.volkert.net/Kontakt/'">
-      <div class="md:p-8 text-center md:text-left ">
-        <div class="bigText mx-auto flex justify-center text-center">Sonderwünsche - kein Problem!</div>
-        <div class="text mx-auto flex justify-center text-center">Bauform, Roboter, Programmierung, Greifer, Spannvorrichtungen, Schweißparamter, Schweißnahtverfolgung etc.</div>
-        <div class="text font-bold mx-auto flex justify-center text-center">Sprechen Sie uns einfach an!</div>
+  
+
+    <figure class="flex bg-red-800 hover:bg-red-900 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40" onclick="window.location.href = 'https://www.volkert.net/Kontakt/'">
+      <div class="p-8 text-center">
+        <div class="bigText mx-auto flex justify-center">Sonderwünsche - kein Problem!</div>
+        <div class="text mx-auto flex justify-center">Bauform, Roboter, Programmierung, Greifer, Spannvorrichtungen, Schweißparamter, Schweißnahtverfolgung etc.</div>
+        <div class="text font-bold mx-auto flex justify-center">Sprechen Sie uns einfach an!</div>
       </div>
     </figure>
+ 
 
 
   <!--    Warum VCell    -->
-    <div class="w-5/6 mx-auto flex justify-center content-center mt-10 h-96">
-    <figure class="md:flex bg-gray-400 mx-auto justify-center rounded-xl p-8 md:p-0 dark:bg-slate-800 w-1/2 mr-5">
-      <div class="md:p-8 text-center md:text-left ">
+    <div class="w-5/6 mx-auto flex justify-center content-center mt-10">
+    <figure class="flex bg-gray-400 mx-auto justify-center rounded-xl p-8 md:p-0 dark:bg-slate-800 w-1/2 mr-5">
+      <div class="p-8 text-left ">
         <div class="bigText mx-auto flex justify-center text-center">Warum V-Cell?</div>
         <ul class="list-disc text list-insides ">
           <li>Zeitsparend – Schnell / einfach umrüstbar </li>
@@ -248,12 +251,13 @@
       </div>
     </figure>
 
+
     <!--    Warum Volkert    -->
-    <figure class="md:flex bg-gray-400 mx-auto justify-center rounded-xl p-8 md:p-0 dark:bg-slate-800 w-1/2 ml-5">
-      <div class="md:p-8 text-center md:text-left ">
+    <figure class="flex bg-gray-400 mx-auto justify-center rounded-xl p-8 md:p-0 dark:bg-slate-800 w-1/2 ml-5">
+      <div class="p-8 text-left ">
         <div class="bigText mx-auto flex justify-center text-center">Warum Volkert?</div>
-          <ul class="list-disc text list-insides ">
-          <li>100% Flexibilität – wir passen uns ihren Bedürfnissen an</li>
+        <ul class="list-disc text list-insides ">
+          <li class="text_normal">100% Flexibilität – wir passen uns ihren Bedürfnissen an</li>
           <li>360° Made in Germany – von Entwicklung bis Fertigung</li>
           <li>Höchste Qualität – durch Leidenschaft</li>
           <li>Experten im Schweißbereich</li>
@@ -265,36 +269,23 @@
 
     
    <!--    Technische Daten    -->
-    <figure class="md:flex bg-gray-100 mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40 h-96">
-      <div class="md:p-8 text-center md:text-left ">
-        <div class="text font-bold mx-auto flex justify-center text-center">Technische Daten</div>
+    <figure class="flex bg-gray-100 mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40">
+      <div class="p-8">
 
-      <div class="flex mx-auto">
-        <div class="flex-none w-64">
-          <ul class="list-none text list-insides ">
-            <li>Abmessung in BxLxH</li>
-            <li>Arbeitsbereich</li>
-            <li>Traglasten</li>
-            <li>Schweißverfahren</li>
-            <li>Roboter</li>
-          </ul>
+        <div class="p-8 flex justify-center text-center space-y-0 flex-col">
+          <div class="text font-bold mx-auto flex justify-center">Technische Daten</div>
+          <div class="text_normal text-left">Abmessung in BxLxH</div>
+          <div class="text  text-left">800 x 1200 x 1800 mm (Kompaktversion)</div>
+          <div class="text_normal  text-left">Arbeitsbereich</div>
+          <div class="text  text-left">400 mm³ (Kompaktversion), bis 3200 mm³</div>
         </div>
-        <div class="flex-none w-96">
-          <ul class="list-none text list-insides ">
-            <li>800 x 1200 x 1800 mm (Kompaktversion)</li>
-            <li>400 mm³ (Kompaktversion), bis 3200 mm³</li>
-            <li>3 kg (Kompaktversion), max. 250 kg</li>
-            <li>MAG, MIG, WIG, CMT, Plasma</li>
-            <li>Yaskawa, ABB, Fanuc</li>
-          </ul>
-        </div>
-      </div>
 
-      <!--    Downloadbutton (nur Klick auf den Text funktioniert)   -->
-      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded items-center mt-8 mx-auto flex justify-center text-center" @click="$store.dispatch('downloadItem')">
-        <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
-        <a >DOWNLOAD FLYER</a>
-      </button>
+
+        <!--    Downloadbutton (nur Klick auf den Text funktioniert)   -->
+        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded items-center mt-8 mx-auto flex justify-center text-center" @click="$store.dispatch('downloadItem')">
+          <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+          <a >DOWNLOAD FLYER</a>
+        </button>
 
     </div>
   </figure>
@@ -325,12 +316,12 @@
 
     <div class="angebotButton w-2/6 mx-auto flex flex-row mb-40">
       <button
-        class="flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-16"
+        class="flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-24 lg:h-16"
         onclick="window.location.href = 'https://www.volkert.net/Leistungen/'">
         Leistungen
       </button>
       <button
-        class="flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-16 w-24 mx-2"
+        class="flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-24 lg:h-16 mx-2"
         onclick="window.location.href = 'https://www.volkert.net/Leistungen/360-Grad-Made-in-Germany/'">
         360 Grad - Made in Germany
       </button>
@@ -391,6 +382,12 @@ export default {
   margin-top: 60px;
   margin-bottom: 16px;
 }
+.title_sm {
+  font-weight: light;
+  font-size: 28px;
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
 .sub-title {
   font-weight: normal;
   font-size: 24px;
@@ -403,11 +400,29 @@ export default {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.bigText{
+.text_normal {
+  font-weight: normal;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.text_sm {
+  font-weight: lighter;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.bigText {
   font-weight: light;
   font-size: 52px;
-  margin-top: 40;
+  margin-top: 40px;
   margin-bottom: 40px;
+}
+.bigText_sm {
+  font-weight: light;
+  font-size: 36px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .kleingedrucktes {
   font-size: 12px;
