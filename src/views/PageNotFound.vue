@@ -17,16 +17,7 @@
 
 
 <script>
-// import tailwindConfig from './../../tailwind.config'
 
-// const blue = tailwindConfig.theme.extend.colors['volkert-blue']
-
-// export default {
-//   name: "PageNotFound",
-//   created() {
-//     document.body.style.backgroundColor = blue;
-//   },
-// };
 </script>
 
 

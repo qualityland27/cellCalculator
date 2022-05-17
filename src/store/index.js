@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 import router from '../router'
+import usb from '../assets/icons/usb.svg'
 
 export default createStore({
   state: {
@@ -48,6 +49,10 @@ export default createStore({
 
     elementVisible: true,
   },
+
+
+
+
   mutations: {
     // To change Data within the state, können die Dinger von überall triggern, kein asynchroner Code hier möglich
     // man nennt das Aufrufen, commit
@@ -63,8 +68,6 @@ export default createStore({
     decreasecounter(state) {
       state.counter--
 
-
-      
     },
     calculatePrice (state) {
       state.schweißArt = document.getElementById("dropDownSchweißArt");
@@ -147,6 +150,7 @@ export default createStore({
       
       state.calculatedPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
+
     sendEmail(state)
     {
       console.log("HI");
@@ -161,18 +165,18 @@ export default createStore({
           "Schulung: " + state.schulung.value + newLine;
       var mail = "mailto:info@volkert.net?subject=Anfrage&body=" + body;
       window.location = mail;
-  
     },
+
     printPage(state) {
       window.print();
     },
+
     resetSelects(state) {
       var dropDownSchweißArt = document.getElementById("dropDownSchweißArt");
       dropDownSchweißArt.selectedIndex = 0;
 
       var dropDownSchweißNahtSuchSystem = document.getElementById("dropDownSchweißNahtSuchSystem");
       dropDownSchweißNahtSuchSystem.selectedIndex = 0;
-
 
       var dropDownAbsaugung = document.getElementById("dropDownAbsaugung");
       dropDownAbsaugung.selectedIndex = 0;
@@ -190,6 +194,10 @@ export default createStore({
       dropDownSchulung.selectedIndex = 0;
     }
   },
+
+
+
+
   actions: {
     // Sind auch Methods
     // Können Daten von State lesen aber nicht ändern, hier geht asynchroner code, reach out for ui, wait for respone ect..
@@ -218,6 +226,10 @@ export default createStore({
       this.commit('calculatePrice')
     }
   },
+
+
+
+
   getters: {
     counterSquared (state) {
       return state.counter * state.counter
