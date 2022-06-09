@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="vcell">
     <div class="title w-5/6 mx-auto flex justify-center">
       Ein Produkt. Deine Anforderungen.
     </div>

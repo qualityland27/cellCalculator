@@ -19,7 +19,7 @@ const routes = [
   {
     path: '/vprint',
     name: 'VPrint',
-    component: VPrint
+    component: VPrint    
   },
   {
     path: '/about',
