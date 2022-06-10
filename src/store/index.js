@@ -192,7 +192,40 @@ export default createStore({
 
       var dropDownSchulung = document.getElementById("dropDownSchulung");
       dropDownSchulung.selectedIndex = 0;
-    }
+    },
+
+    goto(refName) {
+      var element = this.$refs[refName];
+      var top = element.offsetTop;
+
+      window.scrollTo(0, top);
+    },
+
+    scrollToElement(state, payload) {
+
+      console.log(state)
+      console.log(payload);
+      // document.getElementById('header1').scrollIntoView({ behavior: 'smooth' })
+
+      if (payload == "overview") {
+        document.getElementById('plugAndPlayHeader').scrollIntoView({ behavior: 'smooth' })
+      } else if (payload == "whyVPrint") {
+        document.getElementById('intelligentConstructionHeader').scrollIntoView({ behavior: 'smooth' })
+      } else if (payload == "technicalDetails") {
+        //document.getElementById('intelligentConstructionHeader').scrollIntoView({ behavior: 'smooth' })
+      }
+    },
+
+    sendPrinterEmail(state)
+    {
+      console.log("Sending Printer Mail");
+      var newLine = "%0D%0A";
+      var body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot für den vPrint." + newLine + newLine + "Mit freundlichen Grüßen," + newLine
+ 
+      var mail = "mailto:info@volkert.net?subject=Anfrage vPrint&body=" + body;
+      window.location = mail;
+    },
+
   },
 
 

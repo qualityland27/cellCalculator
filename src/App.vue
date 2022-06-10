@@ -5,10 +5,10 @@
     <img v-show="$route.name=='VCell'" src="./assets/background_vcell.jpg" >
     <img v-show="$route.name=='VPrint'" src="./assets/background_vprint.jpg" >
   </div>
-  <div id="nav" class="absolute top-0 w-screen content-center items-center flex justify-center text-white bg-volkert-blue h-20 opacity-100">
+  <div id="nav" class="absolute top-0 w-screen content-center items-center flex justify-center text-white bg-volkert-blue h-20 opacity-100" v-show="$route.name!=='about'">
     <a class="mx-2" href="https://www.volkert.net/">Home</a> 
-    <!-- <router-link class="mx-2" to="/">Home </router-link>  | -->
-    <!-- <router-link class="mx-2" to="/about">About</router-link> -->
+    <!-- <router-link class="mx-2" to="/">Home </router-link>  |
+    <router-link class="mx-2" to="/about">About</router-link> -->
   </div>
 </div>  
 
