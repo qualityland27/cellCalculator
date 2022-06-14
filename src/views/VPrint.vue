@@ -58,6 +58,9 @@
             <div class="m-8">
                 <img src="../assets/icons/sdcard.png" class="flex-auto " alt="">
             </div>     
+            <div class="m-8">
+                <img src="../assets/icons/sdcard.png" class="flex-auto " alt="">
+            </div> 
         </div>
 
 
