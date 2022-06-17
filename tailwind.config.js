@@ -12,7 +12,8 @@ module.exports = {
           'volkert-blue':'#0E3083',
           'volkert-dark-blue':'#091F57',
           'test-color':'#3E599C',
-          'cement-color':'#806d59'
+          'cement-color':'#806d59',
+          'render-gray':'#343435'
         }
       },
     },

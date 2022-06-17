@@ -196,7 +196,7 @@
 
         <!-- Lighting-->
         <!-- Bilder -->
-        <div class="flex mx-auto justify-center items-center mt-80">
+        <div class="flex mx-auto  justify-center items-center mt-80">
             <!-- <div class="m-8 ">
                 <img src="../assets/icons/green.png" class="flex-auto " alt="">
             </div>
@@ -207,13 +207,13 @@
                 <img src="../assets/icons/red.png" class="flex-auto " alt="">
             </div> -->
             <div class="m-8 flex-auto text-white">
-                <img src="../assets/green2.png" class="flex-auto " alt="">
+                <img src="../assets/green22.png" class="flex-auto" alt="">
             </div>
             <div class=" flex-auto text-white">
-                <img src="../assets/blue2.png" class="flex-auto " alt="">
+                <img src="../assets/blue22.png" class="flex-auto" alt="">
             </div>
             <div class="m-8 flex-auto text-white">
-                <img src="../assets/red2.png" class="flex-auto " alt="">
+                <img src="../assets/red22.png" class="flex-auto" alt="">
             </div>
         </div>
 
@@ -246,7 +246,7 @@
         <div class="flex flex-row w-1/2 items-center mx-auto justify-center text-white mt-60">
             <img src="../assets/präzise.jpg" class="flex-auto mr-8 h-96" alt="">
             <img src="../assets/langlebig.jpg" class="flex-auto mr-8 h-96" alt="">
-            <img src="../assets/präzise.jpg" class="flex-auto mr-8 h-96" alt="">
+            <img src="../assets/umweltfreundlich2.jpg" class="flex-auto mr-8 h-96" alt="">
 
 
             <!-- <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild Präzise</div>
@@ -258,7 +258,7 @@
         <!-- separator and text-->
         <div class="w-1/2 mx-auto justify-center mt-8 flex flex-col">
             <!-- Text above separator -->
-            <div class="above_separator text-left">Hochwertigste Bauteile</div>
+            <div class="above_separator text-left">Besonderheiten</div>
             <!-- separator -->
             <div class="flex items-center w-full">
                 <div class="flex-auto border-t border-gray-900"></div>
@@ -307,7 +307,7 @@
                             stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span class="ml-2">Das optimale Filament liefern wir mit.</span>
+                        <span class="ml-2">Das optimale und recylebare Filament liefern wir mit.</span>
                     </div>
                 </li>
                 <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
@@ -319,7 +319,7 @@
                         <span class="ml-2">Die Bediensoftware ist spielend einfach.</span>
                     </div>
                 </li>
-                <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
+                <!-- <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
                     <div class="flex flex-row items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
@@ -327,7 +327,7 @@
                         </svg>
                         <span class="ml-2">Weiteres ....</span>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
 
