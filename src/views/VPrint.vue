@@ -5,11 +5,15 @@
         <div class="grid grid-cols-2 items-center w-11/12 mx-auto justify-center mt-8">
             <div class="title_2 text-left"> 3Dental</div>
             <div class="flex flex-row-reverse mt-4 items-center">
-                <button class="text_big ml-8 p-1 px-2 bg-volkert-blue rounded-md text-white hover:bg-volkert-dark-blue hover:border-transparent" 
-                    @click="$store.commit('sendPrinterEmail')"          >Anfrage</button>
-                <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'technicalDetails')" >Technsiche Daten</div>
-                <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'whyVPrint')">Warum VPrint</div>
-                <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'overview')">Überblick</div>
+                <button
+                    class="text_big ml-8 p-1 px-2 bg-volkert-blue rounded-md text-white hover:bg-volkert-dark-blue hover:border-transparent"
+                    @click="$store.commit('sendPrinterEmail')">Anfrage</button>
+                <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'technicalDetails')">
+                    Technsiche Daten</div>
+                <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'whyVPrint')">Warum
+                    VPrint</div>
+                <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'overview')">
+                    Überblick</div>
             </div>
         </div>
         <!-- separator -->
@@ -26,7 +30,8 @@
 
 
         <!-- Motto des Druckers: Precision. Never Ending. -->
-        <div id="plugAndPlayHeader" class="title_bold flex mt-20 mb-8 w-11/12 items-center mx-auto justify-center">Precision. Never Ending.</div>
+        <div id="plugAndPlayHeader" class="title_bold flex mt-20 mb-8 w-11/12 items-center mx-auto justify-center">
+            Precision. Never Ending.</div>
 
         <!-- Erstes Bild Drucker -->
         <div class="w-1/2 justify-center mx-auto mx-4">
@@ -57,10 +62,7 @@
             </div>
             <div class="m-8">
                 <img src="../assets/icons/sdcard.png" class="flex-auto " alt="">
-            </div>     
-            <div class="m-8">
-                <img src="../assets/icons/sdcard.png" class="flex-auto " alt="">
-            </div> 
+            </div>
         </div>
 
 
@@ -82,7 +84,7 @@
         </div>>
 
 
-        
+
 
         <!-- Display and Touch -->
         <!-- Bild -->
@@ -104,7 +106,7 @@
             </div>
         </div>
 
-        
+
 
         <!-- Header Timelapse -->
         <div class="title_2 flex mt-40 mb-8 w-11/12 items-center mx-auto justify-center">Print. Whatever you want.</div>
@@ -157,12 +159,37 @@
 
 
         <!-- Intelligent Construction -->
-        <div id="intelligentConstructionHeader" class="title_bold flex mt-20 mb-8 w-11/12 items-center mx-auto justify-center">Intelligent. Construction.</div>
+        <div id="intelligentConstructionHeader"
+            class="title_bold flex mt-20 mb-8 w-11/12 items-center mx-auto justify-center">Intelligent. Construction.
+        </div>
 
         <!-- Erstes Bild Drucker -->
-        <div class="w-2/3 h-80 bg-gray-800 flex items-center mx-auto justify-center text-white">Bild Housing</div>
-        <div class="w-2/3 h-80 bg-gray-800 flex items-center mx-auto justify-center text-white mt-8">Bild Zugänglichkeit von allen Seiten</div>
-        <div class="w-2/3 h-80 bg-gray-800 flex items-center mx-auto justify-center text-white mt-8">Bild Werkzeugschublade</div>
+        <!-- <div class="w-2/3 h-80 bg-gray-800 flex items-center mx-auto justify-center text-white">Bild Housing</div>
+        <div class="w-2/3 h-80 bg-gray-800 flex items-center mx-auto justify-center text-white mt-8">Bild Zugänglichkeit
+            von allen Seiten</div>
+        <div class="w-2/3 h-80 bg-gray-800 flex items-center mx-auto justify-center text-white mt-8">Bild
+            Werkzeugschublade</div> -->
+
+        <div class="w-2/3 flex flex-row mx-auto justify-center text-white mt-8">
+            <div class="w-1/4 text h-max bg-volkert-blue flex items-center justify-center">
+                Housing
+            </div>
+            <img src="../assets/housing.png" class="w-3/4 flex-auto " alt="">
+        </div>
+
+        <div class="w-2/3 flex flex-row mx-auto justify-center text-white mt-8">
+            <img src="../assets/zugänglichkeit.jpg" class="w-3/4 flex-auto " alt="">
+            <div class="w-1/4 text h-max bg-volkert-blue flex items-center justify-center">
+                Zugänglich
+            </div>
+        </div>
+
+        <div class="w-2/3 flex flex-row mx-auto justify-center text-white mt-8">
+            <div class="w-1/4 text h-max bg-volkert-blue flex items-center justify-center">
+                Werkzeugschublade
+            </div>
+            <img src="../assets/schublade.jpg" class="w-3/4 flex-auto " alt="">
+        </div>
 
 
 
@@ -179,15 +206,15 @@
             <div class="m-8 ">
                 <img src="../assets/icons/red.png" class="flex-auto " alt="">
             </div> -->
-            <div class="m-8 flex-auto text-white">Bild Drucker beleuchtet im Dunkeln (Wie in Präsentation)
-                <img src="../assets/green.png" class="flex-auto " alt="">
-            </div>     
-            <div class="m-8 flex-auto text-white">Bild Drucker beleuchtet im Dunkeln (Wie in Präsentation)
-                <img src="../assets/yellow.png" class="flex-auto " alt="">
+            <div class="m-8 flex-auto text-white">
+                <img src="../assets/green2.png" class="flex-auto " alt="">
             </div>
-            <div class="m-8 flex-auto text-white">Bild Drucker beleuchtet im Dunkeln (Wie in Präsentation)
-                <img src="../assets/red.png" class="flex-auto " alt="">
-            </div>       
+            <div class=" flex-auto text-white">
+                <img src="../assets/blue2.png" class="flex-auto " alt="">
+            </div>
+            <div class="m-8 flex-auto text-white">
+                <img src="../assets/red2.png" class="flex-auto " alt="">
+            </div>
         </div>
 
         <!-- Lighting -->
@@ -217,9 +244,14 @@
         <!-- Bild -->
         <!-- <img src="../assets/icons/touch.png" class="flex-auto w-1/2 items-center mx-auto justify-center mt-40" alt=""> -->
         <div class="flex flex-row w-1/2 items-center mx-auto justify-center text-white mt-60">
-            <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild Präzise</div>
-            <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild langlebig</div>
-            <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild umweltschonend</div>
+            <img src="../assets/präzise.jpg" class="flex-auto mr-8 h-96" alt="">
+            <img src="../assets/langlebig.jpg" class="flex-auto mr-8 h-96" alt="">
+            <img src="../assets/präzise.jpg" class="flex-auto mr-8 h-96" alt="">
+
+
+            <!-- <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild Präzise</div>
+            <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild langlebig</div> -->
+            <!-- <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild umweltschonend</div> -->
         </div>
 
         <!-- Hochwertige Bauteile -->
@@ -254,45 +286,50 @@
         ------------------------------------------------------------ -->
 
         <!-- Text -->
-        <div class="title_bold flex mt-96 mb-8 w-11/12 items-center mx-auto justify-center mt-40">Du musst kein Ingenieur sein. Sondern Zahnarzt.</div>
+        <div class="title_bold flex mt-96 mb-8 w-11/12 items-center mx-auto justify-center mt-40">Du musst kein
+            Ingenieur sein. Sondern Zahnarzt.</div>
 
         <!-- Text: Wir haben die Ingenieurarbeit bereits geleistet -->
         <div class="m-3 w-1/2 items-center mx-auto justify-center">
-        <ul class="w-full rounded-lg mt-2 mb-3 ">
-            <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
-                <div class="flex flex-row items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span class="ml-2">Die optimaleen Druckeinstellungen wurden bereits von uns ermitellt.</span>
-                </div>
-            </li>
-            <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
-                <div class="flex flex-row items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span class="ml-2">Das optimale Filament liefern wir mit.</span>
-                </div>
-            </li>
-            <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
-                <div class="flex flex-row items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span class="ml-2">Die Bediensoftware ist spielend einfach.</span>
-                </div>
-            </li>
-            <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
-                <div class="flex flex-row items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span class="ml-2">Weiteres ....</span>
-                </div>
-            </li>
-        </ul>
-        </div>  
+            <ul class="w-full rounded-lg mt-2 mb-3 ">
+                <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
+                    <div class="flex flex-row items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-2">Die optimaleen Druckeinstellungen wurden bereits von uns ermitellt.</span>
+                    </div>
+                </li>
+                <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
+                    <div class="flex flex-row items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-2">Das optimale Filament liefern wir mit.</span>
+                    </div>
+                </li>
+                <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
+                    <div class="flex flex-row items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-2">Die Bediensoftware ist spielend einfach.</span>
+                    </div>
+                </li>
+                <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
+                    <div class="flex flex-row items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-2">Weiteres ....</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
 
 
@@ -300,7 +337,8 @@
 
         <!-- Amortisation -->
         <!-- Text -->
-        <div class="title_2 flex mt-40 mb-8 w-11/12 items-center mx-auto justify-center">Rentiert sich. Ziemlich schnell.</div>
+        <div class="title_2 flex mt-40 mb-8 w-11/12 items-center mx-auto justify-center">Rentiert sich. Ziemlich
+            schnell.</div>
 
         <!-- Amortisation -->
         <!-- Diagramm -->
@@ -328,7 +366,8 @@
 
         <!-- Entwicklung und Fertigung -->
         <!-- Text -->
-        <div class="title_bold flex mt-96 mb-8 w-11/12 items-center mx-auto justify-center mt-40">Von Profis. Für Profis</div>
+        <div class="title_bold flex mt-96 mb-8 w-11/12 items-center mx-auto justify-center mt-40">Von Profis. Für Profis
+        </div>
 
         <!-- Bilder Greifswald und Freiburg -->
         <div class="w-5/6 mx-auto ">
@@ -348,7 +387,7 @@
         <!-- Bild Volkert -->
         <img src="../assets/logo_volkert.png" class="flex-auto w-1/3 items-center mx-auto justify-center mt-8" alt="">>
 
-        
+
 
 
 
@@ -363,25 +402,25 @@
 
                 <!-- Made in Germany -->
                 <!-- separator and text-->
-                    <div class="w-1/2 mx-auto justify-start mt-12 flex flex-col text-white mt-24">
-                        <!-- Text above separator -->
-                        <div class="above_separator text-left">This product is</div>
-                        <!-- separator -->
-                        <div class="flex items-center w-full">
-                            <div class="flex-auto border-t border-white"></div>
-                        </div>
-                        <!-- Test below separator -->
-                        <div class="flex flex-row mt-4">
-                            <!-- <div class="below_separator font-semibold">Made In Germany.</div> -->
-                            <div class="below_separator font-semibold mr-2 text-black">Made </div>
-                            <div class="below_separator font-semibold mr-2 text-red-800">in </div>
-                            <div class="below_separator font-semibold mr-2 text-yellow-500">Germany. </div>
-                        </div>
-
+                <div class="w-1/2 mx-auto justify-start mt-12 flex flex-col text-white mt-24">
+                    <!-- Text above separator -->
+                    <div class="above_separator text-left">This product is</div>
+                    <!-- separator -->
+                    <div class="flex items-center w-full">
+                        <div class="flex-auto border-t border-white"></div>
                     </div>
+                    <!-- Test below separator -->
+                    <div class="flex flex-row mt-4">
+                        <!-- <div class="below_separator font-semibold">Made In Germany.</div> -->
+                        <div class="below_separator font-semibold mr-2 text-black">Made </div>
+                        <div class="below_separator font-semibold mr-2 text-red-800">in </div>
+                        <div class="below_separator font-semibold mr-2 text-yellow-500">Germany. </div>
+                    </div>
+
+                </div>
             </div>
         </div>
- 
+
     </div>
 </template>
 
