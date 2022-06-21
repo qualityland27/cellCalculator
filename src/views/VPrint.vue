@@ -34,7 +34,7 @@
             Precision. Never Ending.</div>
 
         <!-- Erstes Bild Drucker -->
-        <div class="w-1/2 justify-center mx-auto mx-4">
+        <div class="w-1/2 flex flex-row justify-center mx-auto">
             <img alt="Vue" class="logo bg-white" src="../assets/vprint_title_gray.png" />
         </div>
         <!-- <div class="w-1/2 h-96 bg-gray-800 flex items-center mx-auto justify-center text-white">Bild drucker Gesamt</div> -->
@@ -112,7 +112,7 @@
         <div class="title_2 flex mt-40 mb-8 w-11/12 items-center mx-auto justify-center">Print. Whatever you want.</div>
 
         <!-- Timelapse -->
-        <div class="w-1/2 justify-center mx-auto mx-4">
+        <div class="w-1/2 justify-center mx-auto mx-auto">
             <img alt="Vue" class="logo bg-white" src="../assets/timelapse.jpg" />
         </div>
         <!-- <div class="w-1/2 h-96 bg-gray-800 flex items-center mx-auto justify-center text-white">Video druckt (2 - 3s Timelaps) ; Video endet mit grüner Beleuchtung.</div> -->
@@ -170,22 +170,22 @@
         <div class="w-2/3 h-80 bg-gray-800 flex items-center mx-auto justify-center text-white mt-8">Bild
             Werkzeugschublade</div> -->
 
-        <div class="w-2/3 flex flex-row mx-auto justify-center text-white mt-8">
-            <div class="w-1/4 text h-max bg-volkert-blue flex items-center justify-center">
+        <div class="w-2/3 bg-volkert-blue flex flex-row mx-auto justify-center text-white items-center mt-8">
+            <div class="w-1/4 text flex justify-center">
                 Housing
             </div>
             <img src="../assets/housing.png" class="w-3/4 flex-auto " alt="">
         </div>
 
-        <div class="w-2/3 flex flex-row mx-auto justify-center text-white mt-8">
+        <div class="w-2/3 bg-volkert-blue flex flex-row mx-auto justify-center text-white items-center mt-8">
             <img src="../assets/zugänglichkeit.jpg" class="w-3/4 flex-auto " alt="">
-            <div class="w-1/4 text h-max bg-volkert-blue flex items-center justify-center">
+            <div class="w-1/4 text flex justify-center">
                 Zugänglich
             </div>
         </div>
 
-        <div class="w-2/3 flex flex-row mx-auto justify-center text-white mt-8">
-            <div class="w-1/4 text h-max bg-volkert-blue flex items-center justify-center">
+        <div class="w-2/3 bg-volkert-blue flex flex-row mx-auto justify-center text-white items-center mt-8">
+            <div class="w-1/4 text flex justify-center">
                 Werkzeugschublade
             </div>
             <img src="../assets/schublade.jpg" class="w-3/4 flex-auto " alt="">
