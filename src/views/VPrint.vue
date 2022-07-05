@@ -126,14 +126,17 @@
         <!-- Text -->
         <div class="w-1/2 mx-auto justify-center mt-8 flex flex-col  mt-80">
             <!-- Text above separator -->
-            <div class="above_separator text-left">Kein Kratzen</div>
+            <div class="above_separator text-left">Druckbett</div>
             <!-- separator -->
             <div class="flex items-center w-full">
                 <div class="flex-auto border-t border-gray-900"></div>
             </div>
             <!-- Test below separator -->
             <div class="flex flex-col mt-4 items-left">
-                <div class="below_separator font-semibold">Temperatursensible Haftplatte</div>
+                <div class="below_separator font-semibold">Temperatursensible Haftplatte zum einfachen Lösen</div>
+            </div>
+            <div class="flex flex-col mt-4 items-left">
+                <div class="below_separator font-semibold">Herausnehmbar</div>
             </div>
         </div>
 
