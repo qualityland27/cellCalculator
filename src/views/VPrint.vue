@@ -28,22 +28,25 @@
         From the beginning of printing until printing is finished 
         ------------------------------------------------------------ -->
 
+        <div class="flex flex-col justify-center items-center w-1/2 mx-auto mt-20 h-screen">
+            <!-- Motto des Druckers: Precision. Never Ending. -->
+            <div id="plugAndPlayHeader" class="title_bold mb-8 ">
+                Precision. Never Ending.</div>
 
-        <!-- Motto des Druckers: Precision. Never Ending. -->
-        <div id="plugAndPlayHeader" class="title_bold flex mt-20 mb-8 w-11/12 items-center mx-auto justify-center">
-            Precision. Never Ending.</div>
+            <!-- Erstes Bild Drucker -->
+            <div class="">
+                <img alt="Vue" class="logo bg-white" src="../assets/vprint_title_gray.png" />
+            </div>
+            <!-- <div class="w-1/2 h-96 bg-gray-800 flex items-center mx-auto justify-center text-white">Bild drucker Gesamt</div> -->
 
-        <!-- Erstes Bild Drucker -->
-        <div class="w-1/2 flex flex-row justify-center mx-auto">
-            <img alt="Vue" class="logo bg-white" src="../assets/vprint_title_gray.png" />
+            <!-- Preisangabe -->
+            <div class="mt-4">
+                <div class="price font-semibold">Ab 8.990 Euro</div>
+            </div>
         </div>
-        <!-- <div class="w-1/2 h-96 bg-gray-800 flex items-center mx-auto justify-center text-white">Bild drucker Gesamt</div> -->
 
 
-        <!-- Preisangabe -->
-        <div class="flex flex-col mt-4 items-center">
-            <div class="price font-semibold">Ab 8.900 Euro</div>
-        </div>
+
 
 
 
@@ -102,14 +105,17 @@
             <!-- Test below separator -->
             <div class="flex flex-col mt-4 items-left">
                 <div class="below_separator font-semibold">Einfache Bedienung über Touch</div>
-                <div class="below_separator font-semibold">HD 1920 x 1080</div>
+                <div class="below_separator font-semibold">1024 x 600 Pixel</div>
             </div>
         </div>
 
 
 
+
+
         <!-- Header Timelapse -->
-        <div class="title_2 flex mt-40 mb-8 w-11/12 items-center mx-auto justify-center">Print. Whatever you want.</div>
+        <div class="title_2 flex mt-40 mb-8 w-11/12 items-center mx-auto justify-center">Print. Whatever you want.
+        </div>
 
         <!-- Timelapse -->
         <div class="w-1/2 justify-center mx-auto mx-auto">
@@ -163,7 +169,8 @@
 
         <!-- Intelligent Construction -->
         <div id="intelligentConstructionHeader"
-            class="title_bold flex mt-20 mb-8 w-11/12 items-center mx-auto justify-center">Intelligent. Construction.
+            class="title_bold flex mt-20 mb-8 w-11/12 items-center mx-auto justify-center">Intelligent.
+            Construction.
         </div>
 
         <!-- Erstes Bild Drucker -->
@@ -239,42 +246,21 @@
 
 
 
-
-
-
-        <!-- Hochwertige Bauteile -->
-
-        <!-- Bild -->
-        <!-- <img src="../assets/icons/touch.png" class="flex-auto w-1/2 items-center mx-auto justify-center mt-40" alt=""> -->
-        <div class="flex flex-row w-1/2 items-center mx-auto justify-center text-white mt-60">
-            <img src="../assets/präzise.jpg" class="flex-auto mr-8 h-96" alt="">
-            <img src="../assets/langlebig.jpg" class="flex-auto mr-8 h-96" alt="">
-            <img src="../assets/umweltfreundlich2.jpg" class="flex-auto mr-8 h-96" alt="">
-
-
-            <!-- <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild Präzise</div>
-            <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild langlebig</div> -->
-            <!-- <div class="flex-auto h-96 bg-gray-800 mr-8 text-white">Bild umweltschonend</div> -->
-        </div>
-
         <!-- Hochwertige Bauteile -->
         <!-- separator and text-->
-        <div class="w-1/2 mx-auto justify-center mt-8 flex flex-col">
-            <!-- Text above separator -->
-            <div class="above_separator text-left">Besonderheiten</div>
-            <!-- separator -->
-            <div class="flex items-center w-full">
-                <div class="flex-auto border-t border-gray-900"></div>
+        <div class="w-1/2 mx-auto justify-center mt-40 flex flex-col h-screen">
+            <div class="columns-3 mx-auto justify-center mt-4">
+                <img src="../assets/präzise.jpg" class="py-1 h-full " alt="">
+                <img src="../assets/langlebig.jpg" class="py-1 h-full " alt="">
+                <img src="../assets/umweltfreundlich2.jpg" class="py-1 h-full" alt="">
             </div>
-            <!-- Test below separator -->
-            <div class="flex flex-col mt-4 items-left">
-                <div class="below_separator font-semibold">Päzise.</div>
-                <div class="below_separator font-semibold">Langlebig.</div>
-                <div class="below_separator font-semibold">Umweltschonend.</div>
 
+            <div class="columns-3  mt-2">
+                <div class="flex justify-center below_separator font-semibold">Päzise.</div>
+                <div class="flex justify-center below_separator font-semibold">Langlebig.</div>
+                <div class="flex justify-center below_separator font-semibold">Umweltschonend.</div>
             </div>
         </div>
-
 
 
 
@@ -288,41 +274,42 @@
         Der Drucker armortisiert sich schnell 
         ------------------------------------------------------------ -->
 
-        <!-- Text -->
-        <div class="title_bold flex mt-96 mb-8 w-11/12 items-center mx-auto justify-center mt-40">Du musst kein
-            Ingenieur sein. Sondern Zahnarzt.</div>
+        <div class="h-screen">
+            <!-- Text -->
+            <div class="title_bold flex mt-96 mb-8 w-11/12 items-center mx-auto justify-center mt-40">Du musst kein
+                Ingenieur sein. Sondern Zahnarzt.</div>
 
-        <!-- Text: Wir haben die Ingenieurarbeit bereits geleistet -->
-        <div class="m-3 w-1/2 items-center mx-auto justify-center">
-            <ul class="w-full rounded-lg mt-2 mb-3 ">
-                <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
-                    <div class="flex flex-row items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span class="ml-2">Die optimaleen Druckeinstellungen wurden bereits von uns ermitellt.</span>
-                    </div>
-                </li>
-                <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
-                    <div class="flex flex-row items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span class="ml-2">Das optimale und recylebare Filament liefern wir mit.</span>
-                    </div>
-                </li>
-                <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
-                    <div class="flex flex-row items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span class="ml-2">Die Bediensoftware ist spielend einfach.</span>
-                    </div>
-                </li>
-                <!-- <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
+            <!-- Text: Wir haben die Ingenieurarbeit bereits geleistet -->
+            <div class="m-3 w-1/2 items-center mx-auto justify-center">
+                <ul class="w-full rounded-lg mt-2 mb-3 ">
+                    <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
+                        <div class="flex flex-row items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="ml-2">Die optimalen Druckeinstellungen wurden bereits von uns ermitellt.</span>
+                        </div>
+                    </li>
+                    <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
+                        <div class="flex flex-row items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="ml-2">Das optimale und recylebare Filament liefern wir mit.</span>
+                        </div>
+                    </li>
+                    <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
+                        <div class="flex flex-row items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="ml-2">Die Bediensoftware ist spielend einfach.</span>
+                        </div>
+                    </li>
+                    <!-- <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
                     <div class="flex flex-row items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
@@ -331,7 +318,8 @@
                         <span class="ml-2">Weiteres ....</span>
                     </div>
                 </li> -->
-            </ul>
+                </ul>
+            </div>
         </div>
 
 
@@ -369,17 +357,18 @@
 
         <!-- Entwicklung und Fertigung -->
         <!-- Text -->
-        <div class="title_bold flex mt-96 mb-8 w-11/12 items-center mx-auto justify-center mt-40">Von Profis. Für Profis
+        <div class="title_bold flex mt-96 mb-8 w-11/12 items-center mx-auto justify-center mt-40">Von Profis. Für
+            Profis
         </div>
 
         <!-- Bilder Greifswald und Freiburg -->
         <div class="w-5/6 mx-auto ">
             <div class="grid grid-cols-2 mx-auto mt-8">
                 <div class="">
-                    <img alt="Vue" class="logo bg-white" src="../assets/logo_greifswald.png" />
+                    <img alt="Vue" class="logo bg-white border-4 border-red-500" src="../assets/logo_greifswald.png" />
                 </div>
                 <div class="">
-                    <img alt="Vue" class="logo bg-white" src="../assets/logo_freiburg.png" />
+                    <img alt="Vue" class="logo bg-white border-4 border-red-500" src="../assets/logo_freiburg.png" />
                 </div>
             </div>
         </div>
@@ -424,6 +413,143 @@
             </div>
         </div>
 
+
+
+
+
+
+        <!-- Technical Details -->
+        <!-- Text -->
+        <div id="technicalDetailsHeader" class="title_bold flex mt-40 mb-8 w-11/12 items-center mx-auto justify-center">
+            Technische Daten.</div>
+
+        <!-- Amortisation -->
+        <!-- separator and text-->
+
+        <!-- Maschinengroeße -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Maschinengröße (B×T×H): </div>
+            <div class="col-span-2 above_separator">625×500×520 mm</div>
+        </div>
+
+        <!-- Drucktechnologie -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Drucktechnologie: </div>
+            <div class="col-span-2 above_separator">FFF / FDM</div>
+        </div>
+
+        <!-- Druckvolumen -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Druckvolumen (B×T×H): </div>
+            <div class="col-span-2 above_separator">200×200×200 mm</div>
+        </div>
+
+        <!-- Druckkopf -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Druckkopf: </div>
+            <div class="col-span-2 above_separator">E3D Hemera Bowden-Extruder</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Filamentdurchmesser: 1,75mm</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Geschwindigkeit Druckkopf: 100 mm/s</div>
+        </div>
+
+        <!-- Düse -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Düse: </div>
+            <div class="col-span-2 above_separator">Düsendurchmesser: 0,4 mm (wechselbar)</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Maximale Düsentemperatur: 350 °C</div>
+        </div>
+
+        <!-- Druckbett -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Druckbett: </div>
+            <div class="col-span-2 above_separator">Beheiztes Druckbett mit Glasplatte</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Magnetschnellwechselsystem</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Maximale Temperatur der Platte: 80 °C</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Beheiztes Bettmaterial: Silikon</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Druckbettnivellierung: Autobed-Levelling (Selbstkalibrierendes
+                System)</div>
+        </div>
+
+        <!-- Druckbare Materialien: -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Druckbare Materialien: </div>
+            <div class="col-span-2 above_separator bg-red-400">PLA / ABS / HIPS / PC / TPU / TPE / NYLON / PETG /
+                ASA /
+                PVA /
+                Glasfasergefüllt Kohlefaserverstärkt / Metallpartikel gefüllt / Holzgefüllt </div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator"></div>
+        </div>
+
+        <!-- Empfohlene Materialien -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Empfohlene Materialien: </div>
+            <div class="col-span-2 above_separator bg-red-400">Was empfehlen wir?</div>
+
+        </div>
+
+        <!-- Elektrik -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Elektrik: </div>
+            <div class="col-span-2 above_separator">Netzteileingang: 100-240V AC, 50/60Hz 230V @3.3A</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Stromversorgungsausgang: 24V DC, 600 W, 600 W</div>
+        </div>
+
+        <!-- Slicing-Software -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
+            <div class="below_separator font-semibold">Slicing-Software: </div>
+            <div class="col-span-2 above_separator">Ultimaker Cura, Simplify3D</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Unterstützte Dateitypen: STL, OBJ, 3MF</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Unterstütztes Betriebssystem: Windows / iOS / Linux</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Konnektivität: WiFi, USB-Anschluss, SD-Karte</div>
+        </div>
+
+        <!-- Steuerung am Drucker -->
+        <div class="w-4/5 mx-auto justify-center grid grid-cols-3 mb-8 background_technical_details">
+            <div class="below_separator font-semibold">Steuerung am Drucker: </div>
+            <div class="col-span-2 above_separator">5 Zoll Touchscreen</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Wiederaufnahme des Druckvorgangs nach Stromausfall: Ja</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Bildschirmauflösung: 1024 x 600</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Motion Controller: ARM Kortex M7.400 MHz FPU</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Logiksteuerung: Freescale imx6, Quad-Core 1 GHz ARM-Prozessor
+            </div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Speicher: 16 GB</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Onboard-Flash: 8 GB</div>
+            <div class=""></div>
+            <div class="col-span-2 above_separator">Ports: USB 2.0, SD Karten-Slot, Kaltgerätestecker 230V</div>
+        </div>
+
+
+
+
+
+        <!-- Kleingedrucktes -->
+        <div class="bg-gray-100">
+            <div class="w-4/5 mx-auto justify-center mt-4 py-4 kleingedrucktes bg-red-500">* Amortisation: Bei
+                täglichem
+                Druck
+                eines Löffels. Es wurden 200 Öffnungstage für eine Praxis angenommen. Der Druck eines Löffels ist
+                mit
+                1,00 Euro eingegangen. Für einen herkömmlichen Löffel wurden 16,00 Euro kalkuliert.</div>
+        </div>
+
     </div>
 </template>
 
@@ -437,6 +563,10 @@
 
 
 <style>
+
+
+
+
 
 /* div {
     margin-bottom: 10px;
@@ -477,6 +607,19 @@
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.kleingedrucktes {
+    font-weight: lighter;
+    font-size: 14px;
+    color: rgb(63, 63, 63);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.background_technical_details {
+    background-color: #f3f4f6; /*  bg-gray-100 */
+    border-radius: 12px;
+    margin-top: 8px;
+    padding: 12px;
+}
 
 
 .square {
@@ -484,3 +627,4 @@
   padding-bottom: 50%;
 }
 </style>
+ 

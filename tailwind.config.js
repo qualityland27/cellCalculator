@@ -2,6 +2,7 @@
 module.exports = {
     // content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  // content: ["./src/**/*.{html,js}"],
     // purge: [
     //   './views/**/*.{html,js}',
     //   './components/**/*.{html,js}',
@@ -20,5 +21,6 @@ module.exports = {
     },
     variants: {
       extend: {},
-    },
+  }
+    
   }

@@ -212,7 +212,7 @@ export default createStore({
       } else if (payload == "whyVPrint") {
         document.getElementById('intelligentConstructionHeader').scrollIntoView({ behavior: 'smooth' })
       } else if (payload == "technicalDetails") {
-        //document.getElementById('intelligentConstructionHeader').scrollIntoView({ behavior: 'smooth' })
+        document.getElementById('technicalDetailsHeader').scrollIntoView({ behavior: 'smooth' })
       }
     },
 
