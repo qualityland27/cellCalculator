@@ -57,9 +57,9 @@
             <div class="m-8">
                 <img src="../assets/icons/usb.png" class="flex-auto " alt="">
             </div>
-            <div class="m-8">
+            <!-- <div class="m-8">
                 <img src="../assets/icons/ethernet.png" class="flex-auto " alt="">
-            </div>
+            </div> -->
             <div class="m-8">
                 <img src="../assets/icons/wifi.png" class="flex-auto " alt="">
             </div>
@@ -80,8 +80,8 @@
             <!-- Test below separator -->
             <div class="flex flex-col mt-4 items-left">
                 <div class="below_separator font-semibold">USB</div>
-                <div class="below_separator font-semibold">Ethernet (Netzwerkkabel)</div>
-                <div class="below_separator font-semibold">Wifi</div>
+                <!-- <div class="below_separator font-semibold">Ethernet (Netzwerkkabel)</div> -->
+                <div class="below_separator font-semibold">WiFi</div>
                 <div class="below_separator font-semibold">SD-Karte</div>
             </div>
         </div>>
@@ -239,7 +239,7 @@
             <!-- Test below separator -->
             <div class="flex flex-col mt-4 items-left">
                 <div class="below_separator font-semibold">16,7 Mio. Farben (RGB)</div>
-                <div class="below_separator font-semibold">Individuell einstellbar</div>
+                <div class="below_separator font-semibold">Druckstatusanzeige</div>
             </div>
         </div>>
 
@@ -248,7 +248,7 @@
 
         <!-- Hochwertige Bauteile -->
         <!-- separator and text-->
-        <div class="w-1/2 mx-auto justify-center mt-40 flex flex-col h-screen">
+        <div class="w-1/2 mx-auto justify-center mt-40 flex flex-col hscreen-">
             <div class="columns-3 mx-auto justify-center mt-4">
                 <img src="../assets/präzise.jpg" class="py-1 h-full " alt="">
                 <img src="../assets/langlebig.jpg" class="py-1 h-full " alt="">
@@ -258,7 +258,7 @@
             <div class="columns-3  mt-2">
                 <div class="flex justify-center below_separator font-semibold">Päzise.</div>
                 <div class="flex justify-center below_separator font-semibold">Langlebig.</div>
-                <div class="flex justify-center below_separator font-semibold">Umweltschonend.</div>
+                <div class="flex justify-center below_separator font-semibold">Nachhaltig.</div>
             </div>
         </div>
 
@@ -355,29 +355,35 @@
 
 
 
-        <!-- Entwicklung und Fertigung -->
-        <!-- Text -->
-        <div class="title_bold flex mt-96 mb-8 w-11/12 items-center mx-auto justify-center mt-40">Von Profis. Für
-            Profis
-        </div>
 
-        <!-- Bilder Greifswald und Freiburg -->
-        <div class="w-5/6 mx-auto ">
-            <div class="grid grid-cols-2 mx-auto mt-8">
-                <div class="">
-                    <img alt="Vue" class="logo bg-white border-4 border-red-500" src="../assets/logo_greifswald.png" />
-                </div>
-                <div class="">
+        <div class="w-11/12 mx-auto justify-center mt-40 flex flex-col h-screen">
+
+            <!-- Entwicklung und Fertigung -->
+            <!-- Text -->
+            <div class="title_bold flex mt-96 mb-8 items-center mx-auto justify-center mt-40">Von Profis. Für
+                Profis
+            </div>
+
+            <!-- Bilder Greifswald und Freiburg -->
+            <div class="w-5/6 mx-auto ">
+                <div class="grid grid-cols-2 mx-auto items-center mt-8">
+                    <div class="">
+                        <img alt="Vue" class="logo bg-white" src="../assets/logo_greifswald.png" />
+                    </div>
+                    <!-- <div class="">
                     <img alt="Vue" class="logo bg-white border-4 border-red-500" src="../assets/logo_freiburg.png" />
+                </div> -->
+                    <img src="../assets/logo_volkert.png" class="" alt="" />
                 </div>
             </div>
         </div>
+
 
         <!-- Bild Greifswald -->
         <!-- <img src="../assets/logo_greifswald.png" class="flex-auto w-1/3 items-center mx-auto justify-start mt-8" alt="">> -->
 
         <!-- Bild Volkert -->
-        <img src="../assets/logo_volkert.png" class="flex-auto w-1/3 items-center mx-auto justify-center mt-8" alt="">>
+        <!-- <img src="../assets/logo_volkert.png" class="flex-auto w-1/3 items-center mx-auto justify-center mt-8" alt=""> -->
 
 
 
@@ -429,7 +435,11 @@
         <!-- Maschinengroeße -->
         <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
             <div class="below_separator font-semibold">Maschinengröße (B×T×H): </div>
-            <div class="col-span-2 above_separator">625×500×520 mm</div>
+            <!-- <div class="col-span-2 above_separator">625×500×520 mm</div>
+            <div class=""></div> -->
+            <div class="col-span-2">
+                <img src="../assets/vprint_dimensions.png" class="w-2/3 mx-auto" alt="">
+            </div>
         </div>
 
         <!-- Drucktechnologie -->
@@ -479,19 +489,28 @@
 
         <!-- Druckbare Materialien: -->
         <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
-            <div class="below_separator font-semibold">Druckbare Materialien: </div>
-            <div class="col-span-2 above_separator bg-red-400">PLA / ABS / HIPS / PC / TPU / TPE / NYLON / PETG /
+            <div class="flex flex-row">
+                <div class="below_separator font-semibold">Druckbare Materialien</div>
+                <div class="below_separator font-thin">**</div>
+                <div class="below_separator font-semibold">:</div>
+            </div>
+
+            <div class="col-span-2 above_separator">PLA / ABS / HIPS / PC / TPU / TPE / NYLON / PETG /
                 ASA /
                 PVA /
-                Glasfasergefüllt Kohlefaserverstärkt / Metallpartikel gefüllt / Holzgefüllt </div>
+                Glasfasergefüllt Kohlefaserverstärkt / Metallpartikel gefüllt / Holzgefüllt</div>
             <div class=""></div>
             <div class="col-span-2 above_separator"></div>
         </div>
 
         <!-- Empfohlene Materialien -->
         <div class="w-4/5 mx-auto justify-center grid grid-cols-3 background_technical_details">
-            <div class="below_separator font-semibold">Empfohlene Materialien: </div>
-            <div class="col-span-2 above_separator bg-red-400">Was empfehlen wir?</div>
+            <div class="flex flex-row">
+                <div class="below_separator font-semibold">Empfohlene Materialien</div>
+                <div class="below_separator font-thin">***</div>
+                <div class="below_separator font-semibold">:</div>
+            </div>
+            <div class="col-span-2 above_separator">TrayFill Filament V2</div>
 
         </div>
 
@@ -500,7 +519,7 @@
             <div class="below_separator font-semibold">Elektrik: </div>
             <div class="col-span-2 above_separator">Netzteileingang: 100-240V AC, 50/60Hz 230V @3.3A</div>
             <div class=""></div>
-            <div class="col-span-2 above_separator">Stromversorgungsausgang: 24V DC, 600 W, 600 W</div>
+            <div class="col-span-2 above_separator">Stromversorgungsausgang: 24V DC, 600 W</div>
         </div>
 
         <!-- Slicing-Software -->
@@ -542,14 +561,22 @@
 
         <!-- Kleingedrucktes -->
         <div class="bg-gray-100">
-            <div class="w-4/5 mx-auto justify-center mt-4 py-4 kleingedrucktes bg-red-500">* Amortisation: Bei
+            <div class="w-4/5 mx-auto justify-center py-1 pt-8 kleingedrucktes">* Amortisation: Bei
                 täglichem
                 Druck
                 eines Löffels. Es wurden 200 Öffnungstage für eine Praxis angenommen. Der Druck eines Löffels ist
                 mit
                 1,00 Euro eingegangen. Für einen herkömmlichen Löffel wurden 16,00 Euro kalkuliert.</div>
+            <div class="w-4/5 mx-auto justify-center py-1 kleingedrucktes">** Druckbare Materialien: Die
+                angegebenen Materialien können grundsätzlich mit diesem Drucker gedruckt werden.
+            </div>
+            <div class="w-4/5 mx-auto justify-center py-1 kleingedrucktes">*** Empfohlene Materialien:
+                Mit
+                diesen Filamenten wurden Dauerläufe durchgeführt. Der Drucker inkl. Düse und Druckbett wurden für
+                eben
+                diese Materialien optimiert.
+            </div>
         </div>
-
     </div>
 </template>
 
