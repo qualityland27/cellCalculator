@@ -100,6 +100,7 @@ router.beforeEach((to, from, next) => {
     .forEach(tag => document.head.appendChild(tag));
 
   next();
-});
+})
+
 
 export default router

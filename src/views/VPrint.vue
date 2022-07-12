@@ -1,25 +1,57 @@
 <template slot="actions" slot-scope="data">
     <div class="vprint">
+
+        <!-- v-if="!$store.getters.isMobile" -->
         <!-- Separator with navigation -->
         <!-- Text above separator -->
-        <div class="grid grid-cols-2 items-center w-11/12 mx-auto justify-center mt-8">
-            <div class="title_2 text-left"> 3Dental</div>
-            <div class="flex flex-row-reverse mt-4 items-center">
-                <button
-                    class="text_big ml-8 p-1 px-2 bg-volkert-blue rounded-md text-white hover:bg-volkert-dark-blue hover:border-transparent"
-                    @click="$store.commit('sendPrinterEmail')">Anfrage</button>
-                <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'technicalDetails')">
+        <div class="w-screen w-11/12 mx-auto justify-center">
+            <!-- Only Displayed if Desktop  -->
+            <div class="grid grid-cols-6 items-center mt-8" v-if="!$store.getters.isMobile">
+                <div class="text-xl sm:text-4xl text-left"> 3Dental</div>
+                <div class="flex flex-row-reverse mt-4 items-center text-xs sm:text-base col-span-5">
+                    <button
+                        class="text_big ml-8 p-1 px-2 bg-volkert-blue rounded-md text-white hover:bg-volkert-dark-blue hover:border-transparent"
+                        @click="$store.commit('sendPrinterEmail')">Anfrage</button>
+                    <div class="text_big ml-8 cursor-pointer"
+                        @click="$store.commit('scrollToElement', 'technicalDetails')">
+                        Technsiche Daten</div>
+                    <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'whyVPrint')">
+                        Warum
+                        VPrint</div>
+                    <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'overview')">
+                        Überblick</div>
+                </div>
+            </div>
+
+            <!-- Only Displayed if Mobile  -->
+            <div class="grid grid-cols-2 items-center mt-8 mb-1" v-if="$store.getters.isMobile">
+                <div class="text-2xl text-left font-medium"> 3Dental</div>
+                <div class="flex flex-row-reverse items-center text-xs mr-2">
+                    <button
+                        class="text-xs ml-8 p-1 p-2 bg-volkert-blue rounded-md text-white hover:bg-volkert-dark-blue hover:border-transparent"
+                        @click="$store.commit('sendPrinterEmail')">Anfrage</button>
+                </div>
+            </div>
+
+            <!-- separator -->
+            <div class="flex-grow border-t border-gray-900"></div>
+
+            <!-- Only Displayed if Mobile  -->
+            <div class="flex flex-col-reverse mt-4 justify-start text-xs" v-if="$store.getters.isMobile">
+                <div class="text-xs ml-6 p-4 " @click="$store.commit('scrollToElement', 'technicalDetails')">
                     Technsiche Daten</div>
-                <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'whyVPrint')">Warum
+                <div class="flex-grow border-t border-gray-300 mx-10"></div>
+                <div class="text-xs ml-6 p-4 cursor-pointer" @click="$store.commit('scrollToElement', 'whyVPrint')">
+                    Warum
                     VPrint</div>
-                <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'overview')">
+                <div class="flex-grow border-t border-gray-300 mx-10"></div>
+                <div class="text-xs ml-6 p-4 cursor-pointer" @click="$store.commit('scrollToElement', 'overview')">
                     Überblick</div>
             </div>
+
         </div>
-        <!-- separator -->
-        <div class="flex items-center w-11/12 mx-auto justify-center">
-            <div class="flex-grow border-t border-gray-900"></div>
-        </div>
+
+
 
 
         <!-- ------------------------------------------------------------
@@ -28,9 +60,9 @@
         From the beginning of printing until printing is finished 
         ------------------------------------------------------------ -->
 
-        <div class="flex flex-col justify-center items-center w-1/2 mx-auto mt-20 h-screen">
+        <div class="flex flex-col justify-center items-center w-11/12 sm:w-1/2 mx-auto mt-8 sm:mt-20 sm:h-screen">
             <!-- Motto des Druckers: Precision. Never Ending. -->
-            <div id="plugAndPlayHeader" class="title_bold mb-8 ">
+            <div id="plugAndPlayHeader" class="text-5xl sm:text-6xl font-bold mb-8 text-center">
                 Precision. Never Ending.</div>
 
             <!-- Erstes Bild Drucker -->
@@ -55,16 +87,16 @@
         <!-- Bilder -->
         <div class="flex mx-auto justify-center items-center mt-40">
             <div class="m-8">
-                <img src="../assets/icons/usb.png" class="flex-auto " alt="">
+                <img src="../assets/icons/usb.png" class="flex-auto" alt="">
             </div>
             <!-- <div class="m-8">
                 <img src="../assets/icons/ethernet.png" class="flex-auto " alt="">
             </div> -->
             <div class="m-8">
-                <img src="../assets/icons/wifi.png" class="flex-auto " alt="">
+                <img src="../assets/icons/wifi.png" class="flex-auto" alt="">
             </div>
             <div class="m-8">
-                <img src="../assets/icons/sdcard.png" class="flex-auto " alt="">
+                <img src="../assets/icons/sdcard.png" class="flex-auto" alt="">
             </div>
         </div>
 
@@ -84,7 +116,7 @@
                 <div class="below_separator font-semibold">WiFi</div>
                 <div class="below_separator font-semibold">SD-Karte</div>
             </div>
-        </div>>
+        </div>
 
 
 
@@ -584,17 +616,17 @@
 
 
 <script>
-
+export default {
+    
+  async mounted() {
+    this.$store.commit('isMobile')
+}
+}
 </script>
 
 
 
 <style>
-
-
-
-
-
 /* div {
     margin-bottom: 10px;
   } */
@@ -604,36 +636,72 @@
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 .title_bold {
   font-weight: bold;
   font-size: 60px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.title_bold_mobile {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .above_separator {
   font-weight: lighter;
   font-size: 28px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.above_separator_mobile {
+    font-weight: lighter;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .below_separator {
   font-weight: normal;
   font-size: 28px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.below_separator_mobile {
+    font-weight: normal;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .text_big {
   font-weight: light;
   font-size: 16px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.text_big_mobile {
+    font-weight: light;
+    font-size: 13px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .price {
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.price_mobile {
   font-weight: normal;
-  font-size: 20px;
+  font-size: 10px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 .kleingedrucktes {
     font-weight: lighter;
     font-size: 14px;
@@ -641,8 +709,16 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
+.kleingedrucktes_mobile {
+    font-weight: lighter;
+    font-size: 7px;
+    color: rgb(63, 63, 63);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 .background_technical_details {
-    background-color: #f3f4f6; /*  bg-gray-100 */
+    background-color: #f3f4f6;
+    /*  bg-gray-100 */
     border-radius: 12px;
     margin-top: 8px;
     padding: 12px;

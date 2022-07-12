@@ -48,6 +48,8 @@ export default createStore({
     calculatedPrice: 39990, 
 
     elementVisible: true,
+
+    isMobile: false,
   },
 
 
@@ -226,6 +228,20 @@ export default createStore({
       window.location = mail;
     },
 
+    isMobile(state) {
+      console.log("i am here")
+      console.log(screen.width)
+
+      if (screen.width < 600) {
+        console.log("true block")
+        state.isMobile = true;
+
+      } else {
+        console.log("false block")
+        state.isMobile = false;
+      }
+    }
+
   },
 
 
@@ -257,6 +273,20 @@ export default createStore({
     reset ( {commmit} ) {
       this.commit('resetSelects')
       this.commit('calculatePrice')
+    },
+
+    isMobile () {
+      console.log("i am here")
+      console.log(screen.width)
+
+      if (screen.width < 600) {
+        console.log("true block")
+        return true
+
+      } else {
+        console.log("false block")
+        return false
+      }
     }
   },
 
@@ -299,6 +329,9 @@ export default createStore({
     },
     price (state) {
       return state.calculatedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    },
+    isMobile(state) {
+      return state.isMobile
     }
     // hier könne Daten nochmal bearbeitete werden bevor sie überall zur Verfügung getellt werden
   },
