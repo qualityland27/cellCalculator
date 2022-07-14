@@ -17,10 +17,23 @@
 
   <router-view />
 
-  <footer class="content-center items-center flex justify-center text-white bg-volkert-blue h-20 opacity-100"
+  <footer class="content-center items-start flex justify-center text-white bg-volkert-blue h-auto p-8 opacity-100"
     v-show="$route.name!=='PageNotFound'">
-    <!-- <router-link class="mx-2" to="/about">Impressum</router-link> -->
-    <a class="mx-2" href="https://www.volkert.net/Kontakt/Impressum/">Impressum</a>
+    <!-- <a class="mx-2" href="https://www.volkert.net/Kontakt/Impressum/">Impressum</a> -->
+    <div class="mx-auto sm:py-4 w-1/4" v-if="!$store.getters.isMobile">
+      <img src="./assets/logo_volkert_weiss.png" width="" class="flex-shrink mx-4 " />
+    </div>
+    <div class="mx-auto sm:py-4">
+      <div class="text-xs sm:text-lg font-semibold mb-2">Adresse</div>
+      <div class="mx-1 text-xs sm:text-lg font-light">Volkert Maschinen- und Anlagenbau GmbH</div>
+      <div class="mx-1 text-xs sm:text-lg font-light">Neukolmberg, 19</div>
+      <div class="mx-1 text-xs sm:text-lg font-light">93476 Blaibach</div>
+    </div>
+    <div class="mx-auto  sm:py-4">
+      <div class="text-xs sm:text-lg font-semibold mb-2">Kontakt</div>
+      <div class="mx-1 text-xs sm:text-lg font-light">Telefon: +49 9944 4190632</div>
+      <div class="mx-1 text-xs sm:text-lg font-light">E-Mail: info@volkert.net</div>
+    </div>
   </footer>
 </template>
 

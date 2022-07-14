@@ -49,6 +49,8 @@ export default createStore({
 
     elementVisible: true,
 
+    show_mobile_nav_bar: false,
+
     isMobile: false,
   },
 
@@ -229,19 +231,21 @@ export default createStore({
     },
 
     isMobile(state) {
-      console.log("i am here")
-      console.log(screen.width)
-
       if (screen.width < 600) {
-        console.log("true block")
         state.isMobile = true;
 
       } else {
-        console.log("false block")
         state.isMobile = false;
       }
-    }
+    },
 
+    change_show_mobile_nav_bar (state) {
+      if (state.show_mobile_nav_bar == false ) {
+        state.show_mobile_nav_bar = true;
+      } else {
+        state.show_mobile_nav_bar = false;
+      }
+    }
   },
 
 
@@ -332,6 +336,9 @@ export default createStore({
     },
     isMobile(state) {
       return state.isMobile
+    },
+    show_mobile_nav_bar(state) {
+      return state.show_mobile_nav_bar
     }
     // hier könne Daten nochmal bearbeitete werden bevor sie überall zur Verfügung getellt werden
   },
