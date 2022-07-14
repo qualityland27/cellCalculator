@@ -499,7 +499,7 @@
         <!-- Maschinengroeße -->
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
-            <div class="text-lg sm:text-3xl font-semibold">Maschinengröße (B×T×H): </div>
+            <div class="text-lg sm:text-2xl font-semibold">Maschinengröße (B×T×H): </div>
             <!-- <div class="col-span-2 text-3xl font-light">625×500×520 mm</div>
             <div class=""></div> -->
             <div class="sm:col-span-2">
@@ -510,50 +510,50 @@
         <!-- Drucktechnologie -->
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
-            <div class="text-lg sm:text-3xl font-semibold">Drucktechnologie: </div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">FFF / FDM</div>
+            <div class="text-lg sm:text-2xl font-semibold">Drucktechnologie: </div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">FFF / FDM</div>
         </div>
 
         <!-- Druckvolumen -->
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
-            <div class="text-lg sm:text-3xl font-semibold">Druckvolumen (B×T×H): </div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">200×200×200 mm</div>
+            <div class="text-lg sm:text-2xl font-semibold">Druckvolumen (B×T×H): </div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">200×200×200 mm</div>
         </div>
 
         <!-- Druckkopf -->
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
-            <div class="text-lg sm:text-3xl font-semibold">Druckkopf: </div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">E3D Hemera Bowden-Extruder</div>
+            <div class="text-lg sm:text-2xl font-semibold">Druckkopf: </div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">E3D Hemera Bowden-Extruder</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Filamentdurchmesser: 1,75mm</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Filamentdurchmesser: 1,75mm</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Geschwindigkeit Druckkopf: 100 mm/s</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Geschwindigkeit Druckkopf: 100 mm/s</div>
         </div>
 
         <!-- Düse -->
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
-            <div class="text-lg sm:text-3xl font-semibold">Düse: </div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Düsendurchmesser: 0,4 mm (wechselbar)</div>
+            <div class="text-lg sm:text-2xl font-semibold">Düse: </div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Düsendurchmesser: 0,4 mm (wechselbar)</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Maximale Düsentemperatur: 350 °C</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Maximale Düsentemperatur: 350 °C</div>
         </div>
 
         <!-- Druckbett -->
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
-            <div class="text-lg sm:text-3xl font-semibold">Druckbett: </div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Beheiztes Druckbett mit Glasplatte</div>
+            <div class="text-lg sm:text-2xl font-semibold">Druckbett: </div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Beheiztes Druckbett mit Glasplatte</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Magnetschnellwechselsystem</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Magnetschnellwechselsystem</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Maximale Temperatur der Platte: 80 °C</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Maximale Temperatur der Platte: 80 °C</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Beheiztes Bettmaterial: Silikon</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Beheiztes Bettmaterial: Silikon</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Druckbettnivellierung: Autobed-Levelling
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Druckbettnivellierung: Autobed-Levelling
                 (Selbstkalibrierendes
                 System)</div>
         </div>
@@ -562,12 +562,12 @@
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
             <div class="flex flex-row">
-                <div class="text-lg sm:text-3xl font-semibold">Druckbare Materialien</div>
-                <div class="text-lg sm:text-3xl font-thin">**</div>
-                <div class="text-lg sm:text-3xl font-semibold">:</div>
+                <div class="text-lg sm:text-2xl font-semibold">Druckbare Materialien</div>
+                <div class="text-lg sm:text-2xl font-thin">**</div>
+                <div class="text-lg sm:text-2xl font-semibold">:</div>
             </div>
 
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">PLA / ABS / HIPS / PC / TPU / TPE / NYLON / PETG /
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">PLA / ABS / HIPS / PC / TPU / TPE / NYLON / PETG /
                 ASA /
                 PVA /
                 Glasfasergefüllt Kohlefaserverstärkt / Metallpartikel gefüllt / Holzgefüllt</div>
@@ -577,60 +577,60 @@
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
             <div class="flex flex-row">
-                <div class="text-lg sm:text-3xl font-semibold">Empfohlene Materialien</div>
-                <div class="text-lg sm:text-3xl font-thin">***</div>
-                <div class="text-lg sm:text-3xl font-semibold">:</div>
+                <div class="text-lg sm:text-2xl font-semibold">Empfohlene Materialien</div>
+                <div class="text-lg sm:text-2xl font-thin">***</div>
+                <div class="text-lg sm:text-2xl font-semibold">:</div>
             </div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">TrayFill Filament V2</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">TrayFill Filament V2</div>
 
         </div>
 
         <!-- Elektrik -->
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
-            <div class="text-lg sm:text-3xl font-semibold">Elektrik: </div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Netzteileingang: 100-240V AC, 50/60Hz 230V @3.3A
+            <div class="text-lg sm:text-2xl font-semibold">Elektrik: </div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Netzteileingang: 100-240V AC, 50/60Hz 230V @3.3A
             </div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Stromversorgungsausgang: 24V DC, 600 W</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Stromversorgungsausgang: 24V DC, 600 W</div>
         </div>
 
         <!-- Slicing-Software -->
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
-            <div class="text-lg sm:text-3xl font-semibold">Slicing-Software: </div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Ultimaker Cura, Simplify3D</div>
+            <div class="text-lg sm:text-2xl font-semibold">Slicing-Software: </div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Ultimaker Cura, Simplify3D</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Unterstützte Dateitypen: STL, OBJ, 3MF</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Unterstützte Dateitypen: STL, OBJ, 3MF</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Unterstütztes Betriebssystem: Windows / iOS /
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Unterstütztes Betriebssystem: Windows / iOS /
                 Linux</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Konnektivität: WiFi, USB-Anschluss, SD-Karte</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Konnektivität: WiFi, USB-Anschluss, SD-Karte</div>
         </div>
 
         <!-- Steuerung am Drucker -->
         <div
             class="w-11/12 sm:w-4/5 mx-auto justify-start sm:justify-center flex-row sm:grid sm:grid-cols-3 background_technical_details">
-            <div class="text-lg sm:text-3xl font-semibold">Steuerung am Drucker: </div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">5 Zoll Touchscreen</div>
+            <div class="text-lg sm:text-2xl font-semibold">Steuerung am Drucker: </div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">5 Zoll Touchscreen</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Wiederaufnahme des Druckvorgangs nach
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Wiederaufnahme des Druckvorgangs nach
                 Stromausfall: Ja</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Bildschirmauflösung: 1024 x 600</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Bildschirmauflösung: 1024 x 600</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Motion Controller: ARM Kortex M7.400 MHz FPU</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Motion Controller: ARM Kortex M7.400 MHz FPU</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Logiksteuerung: Freescale imx6, Quad-Core 1 GHz
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Logiksteuerung: Freescale imx6, Quad-Core 1 GHz
                 ARM-Prozessor
             </div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Speicher: 16 GB</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Speicher: 16 GB</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Onboard-Flash: 8 GB</div>
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Onboard-Flash: 8 GB</div>
             <div class=""></div>
-            <div class="sm:col-span-2 text-lg sm:text-3xl font-light">Ports: USB 2.0, SD Karten-Slot, Kaltgerätestecker
+            <div class="sm:col-span-2 text-lg sm:text-2xl font-light">Ports: USB 2.0, SD Karten-Slot, Kaltgerätestecker
                 230V</div>
         </div>
 
