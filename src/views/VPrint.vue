@@ -313,7 +313,7 @@
             </div>
 
             <div class="columns-3 mt-2">
-                <div class="flex justify-center text-xl sm:text-3xl font-semibold">Päzise.</div>
+                <div class="flex justify-center text-xl sm:text-3xl font-semibold">Präzise.</div>
                 <div class="flex justify-center text-xl sm:text-3xl font-semibold">Langlebig.</div>
                 <div class="flex justify-center text-xl sm:text-3xl font-semibold">Nachhaltig.</div>
             </div>
@@ -347,7 +347,7 @@
                                 stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span class="ml-2">Die optimalen Druckeinstellungen wurden bereits von uns ermitellt.</span>
+                            <span class="ml-2">Die optimalen Druckeinstellungen wurden bereits von uns ermittelt.</span>
                         </div>
                     </li>
                     <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
@@ -356,7 +356,7 @@
                                 stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span class="ml-2">Das optimale und recylebare Filament liefern wir mit.</span>
+                            <span class="ml-2">Das optimale und recyclebare Filament liefern wir mit.</span>
                         </div>
                     </li>
                     <li class="mb-1 p-3 pl-3 bg-gray-100 rounded-lg">
