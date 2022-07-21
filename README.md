@@ -12,6 +12,9 @@ yarn install
 npm run serve or 
 yarn run serve
 ```
+##### http://localhost:8080/vcell
+##### http://localhost:8080/vprint
+
 
 ### Compiles and minifies for production
 ```
