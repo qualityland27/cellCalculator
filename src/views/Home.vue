@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <div class="title w-5/6 mx-auto flex justify-center">
+    <div class="text-5xl sm:text-6xl font-bold w-5/6 mx-auto flex justify-center mt-8 mb-8">
       Ein Produkt. Deine Anforderungen.
     </div>
 
 
     <!-- Volkert Separator  -->
-    <div class="relative flex py-5 items-center w-3/5 mx-auto flex justify-center">
+    <div class="relative flex py-5 items-center w-4/5 sm:w-3/5 mx-auto flex justify-center">
       <div class="flex-grow border-t border-gray-900"></div>
       <img src="../assets/volkert_logo.png" width="100" class="flex-shrink mx-4 " />
       <div class="flex-grow border-t border-gray-900"></div>
@@ -14,7 +14,7 @@
 
 
     <!-- Text -->
-    <div class="sub-title w-5/6 mx-auto flex text-justify text-center mb-40">
+    <div class="text-lg sm:text-2xl w-5/6 mx-auto flex text-justify text-center mb-40 mt-8">
       Die V-Cell ist ein kompaktes Automatisierungsmodul. Die Robotereinheit
       kann für verschiedene Zwecke eingesetzt werden. So zählen Schweißen,
       Handling und Maschinenbestückung zu den häufigsten Anwendungsbereichen.
@@ -30,11 +30,14 @@
 
 
 
+    <!--          Grid with 2 cols            -->
+    <!--                   |                  -->
+    <!--         Image     |     Selection    -->
+    <!--                   |                  -->
 
-    <div class="grid grid-cols-2">
-
-      <!-- 1. Col -->
-      <div class="sticky top-20 content-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2">
+      <!-- 1. Col: Image -->
+      <div class="sm:sticky top-20 content-center">
         <!-- Image CVell  -->
         <img alt="Vue" class="logo bg-white" src="../assets/vCell3.png" />
 
@@ -45,15 +48,15 @@
         </div>
       </div>
 
-      <!-- 2. Col -->
-      <div class="flex-row justify-end">
+      <!-- 2. Col: Selection -->
+      <div class="flex flex-col ">
 
         <!--    ------------------------------    -->
         <!--  Schweißpaket: Header and Drop Down  -->
         <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4">Schweißpaket:</div>
+        <div class="font-bold bottom-4 mt-4 ml-2">Schweißpaket:</div>
 
-        <select class="bg-gray-100 rounded-md w-80 h-10" @change="$store.commit('calculatePrice')"
+        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
           id="dropDownSchweißArt">
           <option value="withoutSchweißart">Ohne (+0 Euro)</option>
           <option value="wig">WIG (+{{ $store.getters.wigAufpreis }} Euro)</option>
@@ -64,12 +67,12 @@
         <!--    ------------------------------    -->
         <!--   Suchsystem: Header and Drop Down   -->
         <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4">Schweißnahtsuchsystem:</div>
+        <div class="font-bold bottom-4 mt-4 ml-2">Schweißnahtsuchsystem:</div>
 
         <!-- <div class="schweißNahtSuchSystem"> 
             {{ $store.state.schweißNaht }}
         </div> -->
-        <select class="bg-gray-100 rounded-md w-80 h-10" @change="$store.commit('calculatePrice')"
+        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
           id="dropDownSchweißNahtSuchSystem">
           <option value="without">Ohne (+0 Euro)</option>
           <option value="gas">Gasdüse (+{{ $store.getters.gasAufpreis }} Euro)</option>
@@ -80,9 +83,9 @@
         <!--    ------------------------------    -->
         <!--    Absaugung: Header and Drop Down    -->
         <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4">Absaugung:</div>
+        <div class="font-bold bottom-4 mt-4 ml-2">Absaugung:</div>
 
-        <select class="bg-gray-100 rounded-md w-80 h-10" @change="$store.commit('calculatePrice')"
+        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
           id="dropDownAbsaugung">
 
           <option value="withoutAbsaugung">Ohne (+0 Euro)</option>
@@ -96,9 +99,9 @@
         <!--    ------------------------------    -->
         <!--    DatenLogging: Header and Drop Down    -->
         <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4">Daten Logging:</div>
+        <div class="font-bold bottom-4 mt-4 ml-2">Daten Logging:</div>
 
-        <select class="bg-gray-100 rounded-md w-80 h-10" @change="$store.commit('calculatePrice')"
+        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
           id="dropDownDatenLogging">
 
           <option value="withoutDatenLogging">Ohne (+0 Euro)</option>
@@ -110,9 +113,10 @@
         <!--    ---------------------------------------    -->
         <!--    Montage/Inbetrieb: Header and Drop Down    -->
         <!--    ---------------------------------------    -->
-        <div class="font-bold bottom-4 mt-4">Montage und Inbetriebnahme:</div>
+        <div class="font-bold bottom-4 mt-4 ml-2">Montage und Inbetriebnahme:</div>
 
-        <select class="bg-gray-100 rounded-md w-80 h-10" @change="$store.commit('calculatePrice')" id="dropDownMontage">
+        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
+          id="dropDownMontage">
 
           <option value="withoutMontage">Ohne (+0 Euro)</option>
           <option value="withMontage">Mit Montage und Inbetriebnahme (+{{ $store.getters.montageAufpreis }}
@@ -124,9 +128,9 @@
         <!--    -----------------------------------------    -->
         <!--    Produktionsbegleit.: Header and Drop Down    -->
         <!--    -----------------------------------------    -->
-        <div class="font-bold bottom-4 mt-4">Produktionsbegleitung:</div>
+        <div class="font-bold bottom-4 mt-4 ml-2">Produktionsbegleitung:</div>
 
-        <select class="bg-gray-100 rounded-md w-80 h-10" @change="$store.commit('calculatePrice')"
+        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
           id="dropDownProduktionsbegleitung">
 
           <option value="withoutProduktionsbegleitung">Ohne (+0 Euro)</option>
@@ -138,9 +142,9 @@
         <!--    ------------------------------    -->
         <!--    Schulung: Header and Drop Down    -->
         <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4">Schulung:</div>
+        <div class="font-bold bottom-4 mt-4 ml-2">Schulung:</div>
 
-        <select class="bg-gray-100 rounded-md w-80 h-10" @change="$store.commit('calculatePrice')"
+        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
           id="dropDownSchulung">
 
           <option value="withoutSchulung">Ohne (+0 Euro)</option>
@@ -151,7 +155,7 @@
 
 
         <!--    Buttons    -->
-        <div class="mt-12 mr-2">
+        <div class="mt-12 mr-2 ml-2">
           <button class="
             w-full
             rounded-md
@@ -163,7 +167,7 @@
           </button>
         </div>
 
-        <div class="mt-2 mr-2 flex flex-row">
+        <div class="mt-2 mr-2 ml-2 flex flex-row">
           <button class="
             flex-auto 
             font-bold 
@@ -195,19 +199,19 @@
       <!--    that the image scrolles further    -->
       <!--    ------------------------------    -->
 
-      <div class="w-5/6 mx-auto justify-center content-center mt-40 grid-cols-2">
+      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
         <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
         </div>
       </div>
-      <div class="w-5/6 mx-auto justify-center content-center mt-40 grid-cols-2">
+      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
         <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
         </div>
       </div>
-      <div class="w-5/6 mx-auto justify-center content-center mt-40 grid-cols-2">
+      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
         <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
         </div>
       </div>
-      <div class="w-5/6 mx-auto justify-center content-center mt-40 grid-cols-2">
+      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
         <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
         </div>
       </div>
@@ -220,7 +224,7 @@
 
 
     <!-- Text -->
-    <div class="sub-title w-5/6 mx-auto flex text-justify text-center mt-40">
+    <div class="text-lg sm:text-2xl w-5/6 mx-auto flex text-justify text-center mt-40">
       Die V-Cell wird in ihrer Basisausführung mit dem Cobot Panda vom Hersteller Franka Emika geliefert. Der
       Cobot
       zeichnet sich durch eine einfache grafische
@@ -243,25 +247,29 @@
 
 
     <figure
-      class="flex bg-red-800 hover:bg-red-900 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40"
+      class="flex bg-red-800 hover:bg-red-900 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-11/12 sm:w-1/2 mt-40"
       onclick="window.location.href = 'https://www.volkert.net/Kontakt/'">
       <div class="p-8 text-center">
-        <div class="bigText mx-auto flex justify-center">Sonderwünsche - kein Problem!</div>
-        <div class="text mx-auto flex justify-center">Bauform, Roboter, Programmierung, Greifer,
+        <div class="text-4xl sm:text-5xl font-semibold mx-auto flex justify-center mt-8 mb-12">Sonderwünsche - kein
+          Problem!</div>
+        <div class="text-md sm:text-xl font-light mx-auto flex justify-center mb-8">Bauform, Roboter, Programmierung,
+          Greifer,
           Spannvorrichtungen,
           Schweißparamter, Schweißnahtverfolgung etc.</div>
-        <div class="text font-bold mx-auto flex justify-center">Sprechen Sie uns einfach an!</div>
+        <div class="text-lg sm:text-xl font-bold mx-auto flex justify-center">Sprechen Sie uns einfach an!</div>
       </div>
     </figure>
 
 
 
     <!--    Warum VCell    -->
-    <div class="w-5/6 mx-auto flex justify-center content-center mt-10">
-      <figure class="flex bg-gray-800 mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mr-5 text-white">
+    <div class="sm:w-4/5 mx-auto flex flex-col sm:flex-row justify-center content-center">
+      <figure
+        class="flex bg-gray-800 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-11/12 sm:w-1/2 sm:mr-5 mt-10">
         <div class="p-8 text-left ">
-          <div class="bigText mx-auto flex justify-center text-center">Warum V-Cell?</div>
-          <ul class="list-disc text list-insides ">
+          <div class="text-4xl sm:text-5xl font-semibold mt-8 mb-12 mx-auto flex justify-center text-center ">Warum
+            V-Cell?</div>
+          <ul class="list-disc text-md sm:text-xl font-light list-insides ">
             <li>Zeitsparend – Schnell / einfach umrüstbar </li>
             <li>Robust – Einfache und effiziente Konstruktion</li>
             <li>Kompakte Bauform – Transport mit Stapler / Hubwagen</li>
@@ -272,10 +280,12 @@
 
 
       <!--    Warum Volkert    -->
-      <figure class="flex bg-gray-800 mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 ml-5 text-white">
+      <figure
+        class="flex bg-gray-800 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-11/12 sm:w-1/2 sm:ml-5 mt-10">
         <div class="p-8 text-left ">
-          <div class="bigText mx-auto flex justify-center text-center">Warum Volkert?</div>
-          <ul class="list-disc text list-insides ">
+          <div class="text-4xl sm:text-5xl font-semibold mt-8 mb-12 mx-auto flex justify-center text-center">Warum
+            Volkert?</div>
+          <ul class="list-disc text-md sm:text-xl font-light list-insides ">
             <li class="text_normal">100% Flexibilität – wir passen uns ihren Bedürfnissen an</li>
             <li>360° Made in Germany – von Entwicklung bis Fertigung</li>
             <li>Höchste Qualität – durch Leidenschaft</li>
@@ -292,15 +302,14 @@
 
 
     <!--    Technische Daten    -->
-    <figure class="flex bg-gray-100 mx-auto justify-center rounded-xl p-8 md:p-0 w-1/2 mt-40">
-      <div class="p-8">
-
-        <div class="p-8 flex justify-center text-center space-y-0 flex-col">
-          <div class="text font-bold mx-auto flex justify-center">Technische Daten</div>
-          <div class="text_normal text-left">Abmessung in BxLxH</div>
-          <div class="text  text-left">800 x 1200 x 1800 mm (Kompaktversion)</div>
-          <div class="text_normal  text-left">Arbeitsbereich</div>
-          <div class="text  text-left">400 mm³ (Kompaktversion), bis 3200 mm³</div>
+    <figure class="flex bg-gray-100 mx-auto justify-center rounded-xl p-8 md:p-0 w-11/12 sm:w-1/2 xl:w-1/3 mt-40">
+      <div class="">
+        <div class="p-8 flex justify-center text-center flex-col">
+          <div class="text-2xl sm:text-3xl font-bold mx-auto flex justify-center mb-10">Technische Daten</div>
+          <div class="text-md sm:text-xl font-semibold text-left">Abmessung in BxLxH</div>
+          <div class="text-md sm:text-xl font-light text-left">800 x 1200 x 1800 mm (Kompaktversion)</div>
+          <div class="text-md sm:text-xl font-semibold text-left mt-4">Arbeitsbereich</div>
+          <div class="text-md sm:text-xl font-light text-left">400 mm³ (Kompaktversion), bis 3200 mm³</div>
         </div>
 
 
@@ -319,7 +328,7 @@
 
 
     <!--    Logos der Roboterhersteller    -->
-    <div class="grid w-5/6 mx-auto grid-cols-4 gap-4 flex items-center mt-40">
+    <div class="grid w-5/6 mx-auto grid-cols-2 sm:grid-cols-4 gap-4 flex items-center mt-40">
       <div class="mb-4">
         <img src="../assets/yaskawa_logo.jpg" class="max-w-full h-auto" alt="">
       </div>
@@ -337,18 +346,18 @@
 
 
     <!--    Links zu anderen Seiten unserer Homepage    -->
-    <div class="text font-bold mx-auto flex justify-center text-center mt-40">
+    <div class="text-md sm:text-xl font-bold mx-auto flex justify-center text-center mt-40">
       Wissen Sie schon, was wir neben der VCELL anbieten? Oder wissen Sie, wie wir unsere Qualität garantieren?
     </div>
 
-    <div class="angebotButton w-2/6 mx-auto flex flex-row mb-40">
+    <div class="text-md sm:text-xl w-4/6 sm:w-2/6 mx-auto flex flex-row mt-10 mb-40">
       <button
-        class="flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-24 lg:h-16"
+        class="w-1/2 flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-24 lg:h-16"
         onclick="window.location.href = 'https://www.volkert.net/Leistungen/'">
         Leistungen
       </button>
       <button
-        class="flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-24 lg:h-16 mx-2"
+        class="w-1/2 flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-24 lg:h-16 mx-2"
         onclick="window.location.href = 'https://www.volkert.net/Leistungen/360-Grad-Made-in-Germany/'">
         360 Grad - Made in Germany
       </button>

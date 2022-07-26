@@ -53,7 +53,7 @@
         <!--    ------------------------------    -->
         <div class="font-bold bottom-4 mt-4">Schweißpaket:</div>
 
-        <select class="bg-gray-100 rounded-md w-80 h-10" @change="$store.commit('calculatePrice')"
+        <select class="bg-gray-  rounded-md w-80 h-10" @change="$store.commit('calculatePrice')"
           id="dropDownSchweißArt">
           <option value="withoutSchweißart">Ohne (+0 Euro)</option>
           <option value="wig">WIG (+{{ $store.getters.wigAufpreis }} Euro)</option>
