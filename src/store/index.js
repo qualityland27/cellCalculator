@@ -2,21 +2,39 @@ import { createStore } from 'vuex'
 import axios from 'axios'
 import router from '../router'
 import usb from '../assets/icons/usb.svg'
+import colors from 'tailwindcss/colors'
 
 export default createStore({
   state: {
     counter: 0,
+
+    weldingAttributes: [
+      { name: 'weldingTypes', selectedPrice: '0', },
+      { name: 'searchSystems', selectedPrice: '0', },
+    ],
+
     schweißArt: "",
     withoutSchweißart: 0,
     wig: 8900,
     mig_mag: 18500,
     aufpreisSchweißArt: 0,
+    chargeWeldingType: 0,
+    weldingTypes: [
+      { name: 'ohne', price: 0, },
+      { name: 'wig', price: 8900, },
+      { name: 'migMag', price: 18500, },
+    ],
 
     nahtSuchSystem: "",
     without: 0,
     gas: 1800,
     camera: 18900,
     aufpreisSuchSystem: 0,
+    searchSystems: [
+      { name: 'ohne', price: '0', },
+      { name: 'wig', price: '8900', },
+      { name: 'migMag', price: '18500', },
+    ],
 
     absaugung: "",
     withoutAbsaugung: 0,
@@ -52,6 +70,22 @@ export default createStore({
     show_mobile_nav_bar: false,
 
     isMobile: false,
+
+    weldingTypeList_none: true,
+    weldingTypeList_wig: false,
+    weldingTypeList_mig_mag: false,
+
+    // weldingTypeList: { name, price, selected}
+
+    modalVisible: false,
+
+    weldingIconBlk_visible: false,
+    grippingIconBlk_visible: true,
+
+    weldingApplicationSelected: true,
+    grippingApplicationSelected: false,
+
+
   },
 
 
@@ -240,13 +274,136 @@ export default createStore({
     },
 
     change_show_mobile_nav_bar (state) {
-      if (state.show_mobile_nav_bar == false ) {
+      if (state.shows_mobile_nav_bar == false ) {
         state.show_mobile_nav_bar = true;
       } else {
         state.show_mobile_nav_bar = false;
       }
+    },
+
+    //
+    // Change Selection Code
+    //
+    handle_welding_type_none(state) {
+      console.log("handle_welding_type_none");
+
+      const green = colors.green[600]; // #16a34a
+      const gray = colors.gray[300];
+      const volkert_blue = '#0E3083';
+      const white = '#ffffff'
+      const black = '#000000'
+
+      var welding_type_none_btn = document.getElementById('welding_type_none_btn');
+      var welding_type_wig_btn = document.getElementById('welding_type_wig_btn');
+      var welding_type_migmag_btn = document.getElementById('welding_type_migmag_btn');
+
+
+      state.weldingTypeList_none = true;
+      state.weldingTypeList_wig = false;
+      state.weldingTypeList_mig_mag = false;
+
+
+    },
+
+    handle_welding_type_wig(state) {
+      console.log("handle_welding_type_wig");
+
+      state.weldingTypeList_none = false;
+      state.weldingTypeList_wig = true;
+      state.weldingTypeList_mig_mag = false;
+
+
+    },
+
+
+    handle_welding_type_migmag(state) {
+      console.log("handle_welding_type_wig");
+
+      state.weldingTypeList_none = false;
+      state.weldingTypeList_wig = false;
+      state.weldingTypeList_mig_mag = true;
+    },
+
+
+    calculate_price_checkbox(state) {
+      console.log("within method calculate_price_checkbox");
+
+      //
+      // Get all WeldingTypes
+      //
+      var selected_weldingType = document.getElementsByName('weldingType');
+      console.log(selected_weldingType);
+
+      //
+      // Iterate over weldingTypes and search for checked one
+      // Put price into separate global variable
+      //
+      for (var i = 0; i < selected_weldingType.length; i++) {
+        if (selected_weldingType[i].checked == true) {
+          state.chargeWeldingType = state.weldingTypes[i].price
+        }
+      }
+
+
+
+
+      var price = state.startPrice + state.chargeWeldingType;
+
+      state.calculatedPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    },
+
+    handle_modal (state) {
+      console.log("in handle_modal")
+      let modal = document.getElementById("small-modal");
+      if (state.modalVisible == true) {
+        modal.style.display = "none";
+        state.modalVisible = false;
+      } else {
+        modal.style.display = "block";
+        state.modalVisible = true;
+      }
+    },
+
+    // handle_welding_btn (state) {
+
+    //   if (state.weldingIconBlk_visible) {
+    //     document.getElementById('welding_icon_color').style.visibility = 'visible';
+    //     document.getElementById('welding_icon_blk').style.visibility = 'hidden';
+    //     state.weldingIconBlk_visible = false;
+    //   } else {
+    //     document.getElementById('welding_icon_color').style.visibility = 'hidden';
+    //     document.getElementById('welding_icon_blk').style.visibility = 'visible';
+    //     state.weldingIconBlk_visible = true;
+    //   }
+
+    // },
+
+
+    handle_weldingIconBlk_visible(state) {
+      console.log("in welding")
+
+      if (state.weldingApplicationSelected == false) {
+        state.weldingApplicationSelected = !state.weldingApplicationSelected;
+        state.grippingApplicationSelected = !state.grippingApplicationSelected
+      }
+    },
+    handle_grippingIconBlk_visible(state) {
+      console.log("in gripping")
+
+      if (state.grippingApplicationSelected == false) {
+        state.weldingApplicationSelected = !state.weldingApplicationSelected;
+        state.grippingApplicationSelected = !state.grippingApplicationSelected
+      }
+
     }
+
+
   },
+  
+
+
+
+
 
 
 
@@ -339,6 +496,18 @@ export default createStore({
     },
     show_mobile_nav_bar(state) {
       return state.show_mobile_nav_bar
+    },
+    weldingIconBlk_visible(state) {
+      return state.weldingIconBlk_visible
+    },
+    grippingIconBlk_visible(state) {
+      return state.grippingIconBlk_visible
+    },
+    weldingApplicationSelected(state) {
+      return state.weldingApplicationSelected
+    },
+    grippingApplicationSelected(state) {
+      return state.grippingApplicationSelected
     }
     // hier könne Daten nochmal bearbeitete werden bevor sie überall zur Verfügung getellt werden
   },

@@ -93,7 +93,7 @@
 
             <!-- Preisangabe -->
             <div class="mt-4">
-                <div class="text-xl sm:text-lg font-semibold">Ab 8.990 Euro</div>
+                <div class="text-xl sm:text-base font-semibold">Ab 8.990 Euro</div>
             </div>
         </div>
 

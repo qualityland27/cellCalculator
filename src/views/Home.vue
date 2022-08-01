@@ -5,6 +5,7 @@
     </div>
 
 
+
     <!-- Volkert Separator  -->
     <div class="relative flex py-5 items-center w-4/5 sm:w-3/5 mx-auto flex justify-center">
       <div class="flex-grow border-t border-gray-900"></div>
@@ -27,6 +28,7 @@
     </div>
 
 
+    <calculator />
 
 
 
@@ -368,6 +370,8 @@
 <script>
 import Counter from "../components/Counter.vue";
 import CounterSquared from "../components/CounterSquared.vue";
+import Calculator from "../components/Calculator.vue";
+
 import VueNumeric from "vue-numeric";
 
 
@@ -396,6 +400,7 @@ export default {
   components: {
     counter: require("@/components/Counter.vue").default,
     "counter-squared": require("@/components/CounterSquared.vue").default,
+    "calculator": require("@/components/Calculator.vue").default,
   }
   // methods: {
   //   sendEmail()
