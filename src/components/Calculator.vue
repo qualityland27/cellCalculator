@@ -1,6 +1,20 @@
 <template>
   <div class="calculator">
 
+    <!-- Cookie-Free Zone -->
+    <div v-show="elementVisible" id="cookie-free-zone"
+      class="flex flex-row hideElement animate-fade transition duration-700 place-items-center flex fixed inset-x-0 bottom-0 mb-8 z-50 mx-auto h-16 w-80 bg-green-400 rounded-lg text-center text-white transition-opacity duration-700 ease-in opacity-100">
+      <div class="text-xl font-semibold m-auto">Cookie-Free Zone</div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 m-auto" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+
+
+
+
     <!--          Grid with 2 cols            -->
     <!--                   |                  -->
     <!--         Image     |     Selection    -->
@@ -710,8 +724,18 @@
 </template>
 
 <script>
-export default {
+import { red } from 'tailwindcss/colors'
 
+export default {
+  data() {
+    return {
+      elementVisible: true
+    }
+  },
+
+  created() {
+    setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 10000)
+  }
 }
 
 </script>
