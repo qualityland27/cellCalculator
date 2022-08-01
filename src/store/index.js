@@ -85,6 +85,8 @@ export default createStore({
     weldingApplicationSelected: true,
     grippingApplicationSelected: false,
 
+    notClickedYet: true
+
 
   },
 
@@ -395,9 +397,18 @@ export default createStore({
         state.grippingApplicationSelected = !state.grippingApplicationSelected
       }
 
+    },
+    show_initial_info(state) {
+      let initialInfoModal = document.getElementById("initialInfo-modal");
+
+      if (state.notClickedYet == true) {
+        console.log("show initial Info Modal");
+        initialInfoModal.style.display = "block";
+        state.notClickedYet = false;
+      } else {
+        initialInfoModal.style.display = "none";
+      }
     }
-
-
   },
   
 
