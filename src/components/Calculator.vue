@@ -2,15 +2,63 @@
   <div class="calculator">
 
     <!-- Cookie-Free Zone -->
-    <div v-show="elementVisible" id="cookie-free-zone"
-      class="flex flex-row hideElement animate-fade transition duration-700 place-items-center flex fixed inset-x-0 bottom-0 mb-8 z-50 mx-auto h-16 w-80 bg-green-400 rounded-lg text-center text-white transition-opacity duration-700 ease-in opacity-100">
-      <div class="text-xl font-semibold m-auto">Cookie-Free Zone</div>
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 m-auto" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd"
-          d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
-          clip-rule="evenodd" />
-      </svg>
+    <div v-show="elementVisible" id="cookie-free-zone" class="hideElement animate-fade transition duration-700 transition-opacity ease-in opacity-100 mx-auto max-w-xs fixed inset-x-0 bottom-0 mb-2 z-50 bg-white shadow-xl p-2 text-slate-500 flex justify-center dark:bg-slate-800
+    dark:text-slate-400 rounded-lg ">
+      <div class="flex items-center gap-4">
+        <svg class="h-10 w-10" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+          style="enable-background:new 0 0 512 512;" xml:space="preserve">
+          <path style="fill:#DC774E;" d="M210.348,0C94.174,0,0,94.174,0,210.348c0,81.616,46.474,152.373,114.407,187.246l283.187-283.187
+          	C362.721,46.474,291.964,0,210.348,0z" />
+          <path style="fill:#F7CD95;" d="M397.593,114.407C465.526,149.29,512,220.036,512,301.652C512,417.826,417.826,512,301.652,512
+          	c-81.616,0-152.362-46.474-187.246-114.407c-14.764-28.762-23.102-61.384-23.102-95.941c0-116.173,94.174-210.348,210.348-210.348
+          	C336.21,91.305,368.831,99.643,397.593,114.407z" />
+          <g>
+            <path style="fill:#8E4238;" d="M97.404,131.972c8.788,8.8,8.788,23.046,0,31.834c-8.788,8.788-23.034,8.788-31.823,0
+	          	s-8.788-23.034,0-31.834C74.369,123.184,88.615,123.184,97.404,131.972z" />
+            <path style="fill:#8E4238;" d="M378.824,371.318c12.423,0,22.505,10.071,22.505,22.505c0,12.434-10.082,22.505-22.505,22.505
+	          	c-12.434,0-22.506-10.071-22.506-22.505S366.389,371.318,378.824,371.318z" />
+            <path style="fill:#8E4238;" d="M340.823,175.183c24.857,0,45.011,20.154,45.011,45.011s-20.154,45.011-45.011,45.011
+	          	c-24.869,0-45.011-20.154-45.011-45.011S315.955,175.183,340.823,175.183z" />
+          </g>
+          <path style="fill:#B75548;" d="M172.718,230.659c12.434,0,22.505,10.071,22.505,22.506c0,12.434-10.071,22.505-22.505,22.505
+	          c-12.434,0-22.505-10.071-22.505-22.505C150.213,240.73,160.284,230.659,172.718,230.659z" />
+          <circle style="fill:#8E4238;" cx="239.751" cy="383.1" r="45.011" />
+          <path style="fill:#B75548;" d="M430.586,291.075c12.423,0,22.505,10.071,22.505,22.505c0,12.434-10.082,22.506-22.505,22.506
+          	c-12.434,0-22.505-10.071-22.505-22.506S418.152,291.075,430.586,291.075z" />
+          <g>
+            <circle style="fill:#700D00;" cx="206.342" cy="61.384" r="8.44" />
+            <circle style="fill:#700D00;" cx="250.936" cy="220.194" r="8.44" />
+            <circle style="fill:#700D00;" cx="321.131" cy="326.33" r="8.44" />
+          </g>
+        </svg>
+        <div>
+          <strong class="">Cookie-Free Zone</strong>
+        </div>
+      </div>
     </div>
+
+
+    <!-- Conact via Mail and WhatsApp -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 flex flex-col pl-1 pb-2">
+      <a href="https://wa.me/49168711573"
+        class="bg-green-700 hover:bg-green-800 active:bg-green-900 w-16 h-16 p-4 mb-1 rounded-full flex items-center justify-center ">
+        <svg class="text-white fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+          </path>
+        </svg>
+      </a>
+      <a href="mailto:info@volkert.net"
+        class="bg-volkert-blue hover:bg-volkert-dark-blue active:bg-volkert-darkest-blue w-16 h-16 p-4 rounded-full flex items-center justify-center">
+        <svg class="text-white " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </a>
+    </div>
+
 
 
 
@@ -36,6 +84,7 @@
       <!-- 2. Col: Selection -->
       <div class="flex flex-col" @click="$store.commit('show_initial_info')" data-modal-toggle="initialInfo-modaly">
 
+        <!-- Show inital info - on first click you see hint that not everything ist listed -->
         <div id="initialInfo-modal" tabindex="-1"
           class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
           <div class="relative p-4 w-full max-w-md h-full md:h-auto mx-auto">
@@ -73,30 +122,6 @@
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <!--  -->
@@ -542,120 +567,6 @@
 
 
 
-
-
-
-        <!--  -->
-        <!-- Old Drop Downs for Development reasons -->
-        <!--  -->
-
-        <div class="mt-40">Anwendung</div>
-
-        <!--    ------------------------------    -->
-        <!--  Schweißpaket: Header and Drop Down  -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Schweißpaket:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownSchweißArt">
-          <option value="withoutSchweißart">Ohne (+0 Euro)</option>
-          <option value="wig">WIG (+{{ $store.getters.wigAufpreis }} Euro)</option>
-          <option value="mig_mag"> MIG/MAG (+{{ $store.getters.mig_magAufpreis }} Euro) </option>
-        </select>
-
-
-        <!--    ------------------------------    -->
-        <!--   Suchsystem: Header and Drop Down   -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Schweißnahtsuchsystem:</div>
-
-        <!-- <div class="schweißNahtSuchSystem"> 
-              {{ $store.state.schweißNaht }}
-          </div> -->
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownSchweißNahtSuchSystem">
-          <option value="without">Ohne (+0 Euro)</option>
-          <option value="gas">Gasdüse (+{{ $store.getters.gasAufpreis }} Euro)</option>
-          <option value="camera"> Kamera (+{{ $store.getters.cameraAufpreis }} Euro) </option>
-        </select>
-
-
-        <!--    ------------------------------    -->
-        <!--    Absaugung: Header and Drop Down    -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Absaugung:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownAbsaugung">
-
-          <option value="withoutAbsaugung">Ohne (+0 Euro)</option>
-          <option value="einmalFilter"> Mit Einmalfilter (+{{ $store.getters.einmalFilterAufpreis }} Euro)
-          </option>
-          <option value="selbstreinigenderFilter">Mit selbstreinigendem Filter (+{{
-            $store.getters.selbstreinigenderFilterAufpreis
-            }} Euro)</option>
-        </select>
-
-
-        <!--    ------------------------------    -->
-        <!--    DatenLogging: Header and Drop Down    -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Daten Logging:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownDatenLogging">
-
-          <option value="withoutDatenLogging">Ohne (+0 Euro)</option>
-          <option value="withDatenLogging"> Mit Datenlogging (+{{ $store.getters.loggingAufpreis }} Euro)
-          </option>
-        </select>
-
-
-        <!--    ---------------------------------------    -->
-        <!--    Montage/Inbetrieb: Header and Drop Down    -->
-        <!--    ---------------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Montage und Inbetriebnahme:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownMontage">
-
-          <option value="withoutMontage">Ohne (+0 Euro)</option>
-          <option value="withMontage">Mit Montage und Inbetriebnahme (+{{ $store.getters.montageAufpreis }}
-            Euro)
-          </option>
-        </select>
-
-
-        <!--    -----------------------------------------    -->
-        <!--    Produktionsbegleit.: Header and Drop Down    -->
-        <!--    -----------------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Produktionsbegleitung:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownProduktionsbegleitung">
-
-          <option value="withoutProduktionsbegleitung">Ohne (+0 Euro)</option>
-          <option value="withProduktionsbegleitung">Ein Tag Produktionsbegleitung (+{{
-            $store.getters.produktionsbegleitungAufpreis
-            }} Euro)</option>
-        </select>
-
-
-        <!--    ------------------------------    -->
-        <!--    Schulung: Header and Drop Down    -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Schulung:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownSchulung">
-
-          <option value="withoutSchulung">Ohne (+0 Euro)</option>
-          <option value="withSchulung">
-            Mit Schulung (+{{ $store.getters.schulungAufpreis }} Euro)
-          </option>
-        </select>
-
-
         <!--    Buttons    -->
         <div class="mt-12 mr-2 ml-2">
           <button class="
@@ -734,12 +645,11 @@ export default {
   },
 
   created() {
-    setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 10000)
+    setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 3000)
   }
 }
 
 </script>
 
 <style>
-
 </style>
