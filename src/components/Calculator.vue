@@ -227,7 +227,6 @@
               preserveAspectRatio="xMidYMid meet">
               <title id="">Handling</title>
 
-
               <g class="fill-gray-500" transform="translate(0.000000,1134.000000) scale(0.100000,-0.100000)"
                 fill="#000000" stroke="none">
                 <path d="M3748 10073 c-3 -698 -4 -1270 -2 -1272 3 -3 293 -7 646 -9 l641 -5
@@ -284,6 +283,64 @@
         <!--                                                                              -->
 
 
+        <!--  -->
+        <!-- Size and WorkLoad -->
+        <!--  -->
+        <div class="flex flex-row justify-between mt-12">
+          <div class="text-xl md:text-2xl font-semibold ">Größe und Traglast:</div>
+          <div class="flex justify-between mb-4">
+            <button type="button"
+              class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-toggle="small-modal" @click="$store.commit('handle_modal')">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TODO -->
+        <!-- TODO -->
+        <!-- TODO: Ids anpassen  -->
+        <!-- TODO -->
+        <!-- TODO -->
+
+        <!-- Welding Package Radio Buttons (selection) -->
+        <div class="mr-4">
+          <ul class="grid gap-6 w-full grid-flow-col grid-cols-max mr-4">
+            <li class="h-full">
+              <input type="radio" id="size-standard" name="size" value="size-standard" class="hidden peer"
+                @click="$store.commit('calculate_price_checkbox')" checked>
+              <label for="size-standard"
+                class="inline-flex flex justify-start p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 stroke-gray-500 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue peer-checked:stroke-volkert-blue">
+                <div class="flex flex-row justify-start items-center gap-4">
+                  <vcell_standard_icon class="w-18 h-18" />
+                  <div class="flex flex-col">
+                    <div class="w-full text-lg font-semibold">Standard</div>
+                    <div class="w-full">+ 0 €</div>
+                  </div>
+                </div>
+              </label>
+            </li>
+            <li v-if="!$store.getters.weldingApplicationSelected" class="h-full">
+              <input type="radio" id="size-compact" name="size" value="size-compact" class="hidden peer"
+                @click="$store.commit('calculate_price_checkbox')">
+              <label for="size-compact"
+                class="inline-flex flex justify-start p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 stroke-gray-500 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue peer-checked:stroke-volkert-blue">
+                <div class="flex flex-row justify-start items-center gap-4">
+                  <vcell_compact_icon class="w-18 h-18" />
+                  <div class="flex flex-col">
+                    <div class="w-full text-lg font-semibold">Kompakt</div>
+                    <div class="w-full">- 9.900 €</div>
+                  </div>
+                </div>
+              </label>
+            </li>
+          </ul>
+        </div>
 
 
 
@@ -293,6 +350,53 @@
         <!-- If Welding Application -->
         <!--  -->
         <div v-if="$store.getters.weldingApplicationSelected">
+
+          <!-- Welding Package Info PupUp (Modal) -->
+          <div id="small-modal" tabindex="-1" @click="$store.commit('handle_modal')"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+            <div class="relative p-4 w-full w-1/2 h-full md:h-auto">
+              <!-- Modal content -->
+              <div class="relative bg-gray-500 rounded-lg shadow">
+                <!-- Modal header -->
+                <div class="flex justify-between items-center p-5 rounded-t border-b">
+                  <h3 class="text-xl font-medium text-white">
+                    Schweißpaket
+                  </h3>
+                  <button type="button"
+                    class="text-white bg-transparent hover:bg-gray-500 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                    data-modal-toggle="small-modal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                  </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-6 space-y-6">
+                  <p class="text-base leading-relaxed text-white">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam
+                  </p>
+                  <p class="text-base leading-relaxed text-white">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <!-- <div class="flex items-center p-6 space-x-2 rounded-b border-t">
+                  <button data-modal-toggle="small-modal" type="button" @click="$store.commit('handle_modal')"
+                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                    Verstanden</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+
+
           <!--  -->
           <!-- Hardware Options -->
           <!--  -->
@@ -336,7 +440,7 @@
                   class="inline-flex justify-between items-center p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue">
                   <div class="block">
                     <div class="w-full text-lg font-semibold">WIG</div>
-                    <div class="w-full">+ 8.900 Euro</div>
+                    <div class="w-full">+ 8.900 €</div>
                   </div>
                 </label>
               </li>
@@ -347,7 +451,7 @@
                   class="inline-flex justify-between items-center p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue">
                   <div class="block">
                     <div class="w-full text-lg font-semibold">MIG/MAG</div>
-                    <div class="w-full">+ 18.500 Euro</div>
+                    <div class="w-full">+ 18.500 €</div>
                   </div>
                 </label>
               </li>
@@ -456,7 +560,7 @@
             <ul class="grid gap-6 w-full grid-cols-3 mr-4">
               <li>
                 <input type="radio" id="weldingType-none" name="weldingType" value="weldingType-none"
-                  class="hidden peer" required="" @click="$store.commit('calculate_price_checkbox')" checked>
+                  class="hidden peer" required="" @click="$store.commit('calculate_price_checkbox')" checked="true">
                 <label for="weldingType-none"
                   class="inline-flex justify-between items-center p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue">
                   <div class="block">
@@ -485,10 +589,9 @@
                     <div class="w-full">+ 9.900 Euro</div>
                   </div>
                 </label>
-              </li>
+              </li>´
             </ul>
           </div>
-
 
 
           <!-- Welding Package Info PupUp (Modal) -->
@@ -597,6 +700,7 @@
               rounded-md 
               h-16
               ml-2 
+              text-white
               hover:bg-gray-500 hover:border-transparent" @click="$store.commit('printPage')">
             Drucken
           </button>
@@ -638,17 +742,21 @@
 import { red } from 'tailwindcss/colors'
 
 export default {
+
   data() {
     return {
-      elementVisible: true
+      elementVisible: true,
     }
   },
+  components: {
+    "vcell_standard_icon": require("@/assets/icons/vcell_standard_icon.vue").default,
+    "vcell_compact_icon": require("@/assets/icons/vcell_compact_icon.vue").default,
 
+},
   created() {
     setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 3000)
   }
 }
-
 </script>
 
 <style>
