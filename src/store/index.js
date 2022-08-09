@@ -366,6 +366,48 @@ export default createStore({
       }
     },
 
+    handle_modal_byID(state, payload) {
+      console.log("in handle_modal_byID")
+      console.log(payload)
+
+
+      try {
+        console.log('try block')
+
+        let modal = document.getElementById(payload.id);
+        if (state.modalVisible == true) {
+          modal.style.display = "none";
+          state.modalVisible = false;
+        } else {
+          modal.style.display = "block";
+          state.modalVisible = true;
+        }
+      } catch (error) {          
+        console.log('catch block')
+
+        let modal = document.getElementById(payload);
+        if (state.modalVisible == true) {
+          modal.style.display = "none";
+          state.modalVisible = false;
+        } else {
+          modal.style.display = "block";
+          state.modalVisible = true;
+        }                 // Step 3.5: It never reaches here because the code above threw an error
+      }
+
+      // let modal = document.getElementById(payload.id);
+      // if (state.modalVisible == true) {
+      //   modal.style.display = "none";
+      //   state.modalVisible = false;
+      // } else {
+      //   modal.style.display = "block";
+      //   state.modalVisible = true;
+      // }
+
+    },
+
+
+
     // handle_welding_btn (state) {
 
     //   if (state.weldingIconBlk_visible) {

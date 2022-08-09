@@ -291,7 +291,7 @@
           <div class="flex justify-between mb-4">
             <button type="button"
               class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-              data-modal-toggle="small-modal" @click="$store.commit('handle_modal')">
+              data-modal-toggle="info-size-workload" @click="$store.commit('handle_modal_byID', 'info-size-workload')">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
@@ -301,6 +301,11 @@
             </button>
           </div>
         </div>
+
+        <!-- Welding Package Info PupUp (Modal) -->
+        <InfoModal id="info-size-workload" header="Größe und Traglast" text1="Text Nummer 1 bissle was"
+          text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+
 
         <!-- TODO -->
         <!-- TODO -->
@@ -351,51 +356,6 @@
         <!--  -->
         <div v-if="$store.getters.weldingApplicationSelected">
 
-          <!-- Welding Package Info PupUp (Modal) -->
-          <div id="small-modal" tabindex="-1" @click="$store.commit('handle_modal')"
-            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-            <div class="relative p-4 w-full w-1/2 h-full md:h-auto">
-              <!-- Modal content -->
-              <div class="relative bg-gray-500 rounded-lg shadow">
-                <!-- Modal header -->
-                <div class="flex justify-between items-center p-5 rounded-t border-b">
-                  <h3 class="text-xl font-medium text-white">
-                    Schweißpaket
-                  </h3>
-                  <button type="button"
-                    class="text-white bg-transparent hover:bg-gray-500 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-                    data-modal-toggle="small-modal">
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                  </button>
-                </div>
-                <!-- Modal body -->
-                <div class="p-6 space-y-6">
-                  <p class="text-base leading-relaxed text-white">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam
-                  </p>
-                  <p class="text-base leading-relaxed text-white">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam
-                  </p>
-                </div>
-                <!-- Modal footer -->
-                <!-- <div class="flex items-center p-6 space-x-2 rounded-b border-t">
-                  <button data-modal-toggle="small-modal" type="button" @click="$store.commit('handle_modal')"
-                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    Verstanden</button>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-
 
           <!--  -->
           <!-- Hardware Options -->
@@ -410,7 +370,8 @@
             <div class="text-lg font-medium">Schweißpaket:</div>
             <button type="button"
               class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-              data-modal-toggle="small-modal" @click="$store.commit('handle_modal')">
+              data-modal-toggle="info-welding-package"
+              @click="$store.commit('handle_modal_byID', 'info-welding-package')">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
@@ -419,6 +380,12 @@
               <span class="sr-only">Close modal</span>
             </button>
           </div>
+
+
+          <!-- Welding Package Info PupUp (Modal) -->
+          <InfoModal id="info-welding-package" header="Schweißpaket" text1="Text Nummer 1 bissle was"
+            text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+
 
           <!-- Welding Package Radio Buttons (selection) -->
           <div class="mr-4">
@@ -460,13 +427,12 @@
 
 
 
-          <!-- Welding Package Info PupUp (Modal) -->
-          <div id="small-modal" tabindex="-1" @click="$store.commit('handle_modal')"
+
+          <!-- <div id="small-modal" tabindex="-1" @click="$store.commit('handle_modal')"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
             <div class="relative p-4 w-full w-1/2 h-full md:h-auto">
-              <!-- Modal content -->
+              
               <div class="relative bg-gray-500 rounded-lg shadow">
-                <!-- Modal header -->
                 <div class="flex justify-between items-center p-5 rounded-t border-b">
                   <h3 class="text-xl font-medium text-white">
                     Schweißpaket
@@ -483,7 +449,6 @@
                     <span class="sr-only">Close modal</span>
                   </button>
                 </div>
-                <!-- Modal body -->
                 <div class="p-6 space-y-6">
                   <p class="text-base leading-relaxed text-white">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
@@ -494,18 +459,37 @@
                     labore et dolore magna aliquyam
                   </p>
                 </div>
-                <!-- Modal footer -->
-                <!-- <div class="flex items-center p-6 space-x-2 rounded-b border-t">
-                  <button data-modal-toggle="small-modal" type="button" @click="$store.commit('handle_modal')"
-                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    Verstanden</button>
-                </div> -->
               </div>
             </div>
+          </div> -->
+
+
+
+          <!--                                                                              -->
+          <!-- Welding Seam Search System-->
+          <!--                                                                              -->
+          <div class="mt-2 flex justify-between mb-4">
+            <div class="text-lg font-medium">Schweißnahtsuchsystem:</div>
+            <button type="button"
+              class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-toggle="info-search-system" @click="$store.commit('handle_modal_byID', 'info-search-system')">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
           </div>
 
+          <!-- Welding Seam Search System PupUp (Modal) -->
+          <InfoModal id="info-search-system" header="Schweißnahtsuchsystem" text1="Text Nummer 1 bissle was"
+            text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
 
-          <!--  -->
+
+
+
+          <!-- -->
           <!-- Software Options -->
           <!--  -->
 
@@ -545,7 +529,7 @@
             <div class="text-lg font-medium">Greifer:</div>
             <button type="button"
               class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-              data-modal-toggle="small-modal" @click="$store.commit('handle_modal')">
+              data-modal-toggle="info-gripper" @click="$store.commit('handle_modal_byID', 'info-gripper')">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
@@ -554,6 +538,11 @@
               <span class="sr-only">Close modal</span>
             </button>
           </div>
+
+          <!-- Gripper Info PupUp (Modal) -->
+          <InfoModal id="info-gripper" header="Greifer" text1="Text Nummer 1 bissle was"
+            text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" />
+
 
           <!-- Welding Package Radio Buttons (selection) -->
           <div class="mr-4">
@@ -594,49 +583,7 @@
           </div>
 
 
-          <!-- Welding Package Info PupUp (Modal) -->
-          <div id="small-modal" tabindex="-1" @click="$store.commit('handle_modal')"
-            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-            <div class="relative p-4 w-full w-1/2 h-full md:h-auto">
-              <!-- Modal content -->
-              <div class="relative bg-gray-500 rounded-lg shadow">
-                <!-- Modal header -->
-                <div class="flex justify-between items-center p-5 rounded-t border-b">
-                  <h3 class="text-xl font-medium text-white">
-                    Greifer
-                  </h3>
-                  <button type="button"
-                    class="text-white bg-transparent hover:bg-gray-500 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-                    data-modal-toggle="small-modal">
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                  </button>
-                </div>
-                <!-- Modal body -->
-                <div class="p-6 space-y-6">
-                  <p class="text-base leading-relaxed text-white">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam
-                  </p>
-                  <p class="text-base leading-relaxed text-white">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam
-                  </p>
-                </div>
-                <!-- Modal footer -->
-                <!-- <div class="flex items-center p-6 space-x-2 rounded-b border-t">
-                  <button data-modal-toggle="small-modal" type="button" @click="$store.commit('handle_modal')"
-                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    Verstanden</button>
-                </div> -->
-              </div>
-            </div>
-          </div>
+
 
 
           <!--  -->
@@ -740,6 +687,7 @@
 
 <script>
 import { red } from 'tailwindcss/colors'
+import InfoModal from './InfoModal.vue'
 
 export default {
 
@@ -751,7 +699,8 @@ export default {
   components: {
     "vcell_standard_icon": require("@/assets/icons/vcell_standard_icon.vue").default,
     "vcell_compact_icon": require("@/assets/icons/vcell_compact_icon.vue").default,
-
+    "ínfoModal": require("@/components/InfoModal.vue").default,
+    InfoModal
 },
   created() {
     setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 3000)
