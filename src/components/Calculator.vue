@@ -260,7 +260,12 @@
 
 
           <!-- Welding Package Radio Buttons (selection) -->
-          <div class="mr-4">
+          <Selection name="weldingType" 
+            id1="weldingType-none" text1="Eigenes" price1="+ 0 €" 
+            id2="weldingType-wig" text2="WIG" price2="+ 8.900 €"
+            id3="wedingType-migmag" text3="MIG/MAG" price3="+ 18.500 €"  />
+
+          <!-- <div class="mr-4">
             <ul class="grid gap-6 w-full grid-cols-3 mr-4">
               <li>
                 <input type="radio" id="weldingType-none" name="weldingType" value="weldingType-none"
@@ -295,7 +300,7 @@
                 </label>
               </li>
             </ul>
-          </div>
+          </div> -->
 
 
 
@@ -524,6 +529,7 @@
 import { red } from 'tailwindcss/colors'
 import InfoModal from './InfoModal.vue'
 import Gripping_icon from '../assets/icons/gripping_icon.vue'
+import Selection from './Selection.vue'
 
 export default {
 
@@ -538,7 +544,8 @@ export default {
     "welding_icon": require("@/assets/icons/welding_icon.vue").default,
     "ínfoModal": require("@/components/InfoModal.vue").default,
     InfoModal,
-    Gripping_icon
+    Gripping_icon,
+    Selection
 },
   created() {
     setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 3000)
