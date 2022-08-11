@@ -8,9 +8,15 @@ export default createStore({
   state: {
     counter: 0,
 
-    weldingAttributes: [
-      { name: 'weldingTypes', selectedPrice: '0', },
-      { name: 'searchSystems', selectedPrice: '0', },
+    // allAlltributes: [
+    //   { name: 'weldingType', charge: '0', },
+    //   { name: 'searchSystem',  charge: '0', },
+    // ],
+
+    chargeSize: 0,
+    sizes: [
+      { name: 'standard', price: 0, },
+      { name: 'compact', price: -9900, },
     ],
 
     schweißArt: "",
@@ -18,7 +24,7 @@ export default createStore({
     wig: 8900,
     mig_mag: 18500,
     aufpreisSchweißArt: 0,
-    chargeWeldingType: 0,
+    // chargeWeldingType: 0,
     weldingTypes: [
       { name: 'ohne', price: 0, },
       { name: 'wig', price: 8900, },
@@ -30,10 +36,11 @@ export default createStore({
     gas: 1800,
     camera: 18900,
     aufpreisSuchSystem: 0,
+    // chargeSearchSystem: 0,
     searchSystems: [
-      { name: 'ohne', price: '0', },
-      { name: 'wig', price: '8900', },
-      { name: 'migMag', price: '18500', },
+      { name: 'ohne', price: 0, },
+      { name: 'gas', price: 1800, },
+      { name: 'camera', price: 18900, },
     ],
 
     absaugung: "",
@@ -41,11 +48,56 @@ export default createStore({
     einmalFilter: 3900,
     selbstreinigenderFilter: 6900,
     aufpreisAbsaugung: 0,
+    // chargeExhaustSystem: 0,
+    exhaustSystems: [
+      { name: 'ohne', price: 0, },
+      { name: 'gas', price: 3900, },
+      { name: 'camera', price: 6900, },
+    ],
 
     logging: "",
     withoutdatenLogging: 0,
     withDatenLogging: 4450,
     aufpreisLogging: 0,
+    // chargeDataLogging: 0,
+    dataLoggingSystems: [
+      { name: 'ohne', price: 0, },
+      { name: 'logging', price: 4450, },
+    ],
+
+    // chargeMeasuring: 0,
+    measuringySystems: [
+      { name: 'ohne', price: 0, },
+      { name: 'length-measuring', price: 4450, },
+      { name: 'optical-measuring', price: 16750 },
+    ],
+
+    // chargeSingualizer: 0,
+    singualizerSystems: [
+      { name: 'ohne', price: 0, },
+      { name: 'length-measuring', price: 4450, },
+      { name: 'optical-measuring', price: 16750 },
+    ],
+
+    //  Assembly Service
+    assemblyServices: [
+      { name: 'ohne', price: 0, },
+      { name: 'with-assemblyService', price: 3900, },
+    ],
+
+    // Production Support
+    productionSupportServices: [
+      { name: 'ohne', price: 0, },
+      { name: 'one-day', price: 680, },
+      { name: 'two-days', price: 1360, },
+    ],
+
+    // Scooling
+    scoolingServices: [
+      { name: 'ohne', price: 0, },
+      { name: 'with-scooling', price: 4890, },
+    ],
+
 
     montage: "",
     withoutMontage: 0,
@@ -63,7 +115,7 @@ export default createStore({
     aufpreisSchulung: 0,
 
     startPrice: 39990,
-    calculatedPrice: 39990, 
+    calculatedPrice: 39990,
 
     elementVisible: true,
 
@@ -96,7 +148,7 @@ export default createStore({
   mutations: {
     // To change Data within the state, können die Dinger von überall triggern, kein asynchroner Code hier möglich
     // man nennt das Aufrufen, commit
-    wait () {
+    wait() {
       setTimeout(() => this.elementVisible = false, 1000)
     },
 
@@ -109,7 +161,7 @@ export default createStore({
       state.counter--
 
     },
-    calculatePrice (state) {
+    calculatePrice(state) {
       state.schweißArt = document.getElementById("dropDownSchweißArt");
       console.log(state.schweißArt.value);
 
@@ -131,7 +183,7 @@ export default createStore({
       state.schulung = document.getElementById("dropDownSchulung");
       console.log(state.schulung.value);
 
-      if ( state.schweißArt.value == "withoutSchweißart" ) {
+      if (state.schweißArt.value == "withoutSchweißart") {
         state.aufpreisSchweißArt = state.withoutSchweißart;
       } else if (state.schweißArt.value == "wig") {
         state.aufpreisSchweißArt = state.wig;
@@ -140,7 +192,7 @@ export default createStore({
       }
       console.log(state.aufpreisSchweißArt);
 
-      if ( state.nahtSuchSystem.value == "without" ) {
+      if (state.nahtSuchSystem.value == "without") {
         state.aufpreisSuchSystem = state.without;
       } else if (state.nahtSuchSystem.value == "gas") {
         state.aufpreisSuchSystem = state.gas;
@@ -149,7 +201,7 @@ export default createStore({
       }
       console.log(state.aufpreisSuchSystem);
 
-      if ( state.absaugung.value == "withoutAbsaugung" ) {
+      if (state.absaugung.value == "withoutAbsaugung") {
         state.aufpreisAbsaugung = state.withoutAbsaugung;
       } else if (state.absaugung.value == "einmalFilter") {
         state.aufpreisAbsaugung = state.einmalFilter;
@@ -158,28 +210,28 @@ export default createStore({
       }
       console.log(state.aufpreisAbsaugung);
 
-      if ( state.logging.value == "withoutDatenLogging" ) {
+      if (state.logging.value == "withoutDatenLogging") {
         state.aufpreisLogging = state.withoutdatenLogging;
       } else if (state.logging.value == "withDatenLogging") {
         state.aufpreisLogging = state.withDatenLogging;
       }
       console.log(state.aufpreisLogging);
 
-      if ( state.montage.value == "withoutMontage" ) {
+      if (state.montage.value == "withoutMontage") {
         state.aufpreisMontage = state.withoutMontage;
       } else if (state.montage.value == "withMontage") {
         state.aufpreisMontage = state.withMontage;
       }
       console.log(state.aufpreisMontage);
 
-      if ( state.produktionsbegleitung.value == "withoutProduktionsbegleitung" ) {
+      if (state.produktionsbegleitung.value == "withoutProduktionsbegleitung") {
         state.aufpreisProduktionsbegleitung = state.withoutProduktionsbegleitung;
       } else if (state.produktionsbegleitung.value == "withProduktionsbegleitung") {
         state.aufpreisProduktionsbegleitung = state.withProduktionsbegleitung;
       }
       console.log(state.aufpreisProduktionsbegleitung);
 
-      if ( state.schulung.value == "withoutSchulung" ) {
+      if (state.schulung.value == "withoutSchulung") {
         state.aufpreisSchulung = state.withoutSchulung;
       } else if (state.schulung.value == "withSchulung") {
         state.aufpreisSchulung = state.withSchulung;
@@ -187,22 +239,21 @@ export default createStore({
       console.log(state.aufpreisSchulung);
 
       var price = state.startPrice + state.aufpreisSchweißArt + state.aufpreisSuchSystem + state.aufpreisAbsaugung + state.aufpreisLogging + state.aufpreisMontage + state.aufpreisProduktionsbegleitung + state.aufpreisSchulung;
-      
+
       state.calculatedPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
 
-    sendEmail(state)
-    {
+    sendEmail(state) {
       console.log("HI");
       var newLine = "%0D%0A";
-      var body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Paramtern:" + newLine + newLine + 
-          "Schweißart: " + state.schweißArt.value + newLine + 
-          "Such System: " + state.nahtSuchSystem.value + newLine + 
-          "Absaugung: " + state.absaugung.value + newLine + 
-          "Daten Logging: " + state.logging.value + newLine + 
-          "Montage und Inbetriebnahme: " + state.montage.value + newLine + 
-          "Produktionsbegleitung: " + state.produktionsbegleitung.value + newLine + 
-          "Schulung: " + state.schulung.value + newLine;
+      var body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Paramtern:" + newLine + newLine +
+        "Schweißart: " + state.schweißArt.value + newLine +
+        "Such System: " + state.nahtSuchSystem.value + newLine +
+        "Absaugung: " + state.absaugung.value + newLine +
+        "Daten Logging: " + state.logging.value + newLine +
+        "Montage und Inbetriebnahme: " + state.montage.value + newLine +
+        "Produktionsbegleitung: " + state.produktionsbegleitung.value + newLine +
+        "Schulung: " + state.schulung.value + newLine;
       var mail = "mailto:info@volkert.net?subject=Anfrage&body=" + body;
       window.location = mail;
     },
@@ -256,12 +307,11 @@ export default createStore({
       }
     },
 
-    sendPrinterEmail(state)
-    {
+    sendPrinterEmail(state) {
       console.log("Sending Printer Mail");
       var newLine = "%0D%0A";
       var body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot für den vPrint." + newLine + newLine + "Mit freundlichen Grüßen," + newLine
- 
+
       var mail = "mailto:info@volkert.net?subject=Anfrage vPrint&body=" + body;
       window.location = mail;
     },
@@ -275,8 +325,8 @@ export default createStore({
       }
     },
 
-    change_show_mobile_nav_bar (state) {
-      if (state.shows_mobile_nav_bar == false ) {
+    change_show_mobile_nav_bar(state) {
+      if (state.shows_mobile_nav_bar == false) {
         state.show_mobile_nav_bar = true;
       } else {
         state.show_mobile_nav_bar = false;
@@ -330,31 +380,203 @@ export default createStore({
     calculate_price_checkbox(state) {
       console.log("within method calculate_price_checkbox");
 
-      //
-      // Get all WeldingTypes
-      //
-      var selected_weldingType = document.getElementsByName('weldingType');
-      console.log(selected_weldingType);
+      const charges = []
 
-      //
-      // Iterate over weldingTypes and search for checked one
+
+
+      ///////////////////////
+      // SIZE AND WORKLOAD //
+      ///////////////////////
+
+      //////////////////////////////////
+      // Get Selection with name size //
+      //////////////////////////////////
+      var allSizes = document.getElementsByName('size');
+
+      // Iterate over allSizes and search for checked one
       // Put price into separate global variable
-      //
-      for (var i = 0; i < selected_weldingType.length; i++) {
-        if (selected_weldingType[i].checked == true) {
-          state.chargeWeldingType = state.weldingTypes[i].price
+      for (var i = 0; i < allSizes.length; i++) {
+        if (allSizes[i].checked == true) {
+          // state.chargeSize = state.sizes[i].price
+          charges.push(state.sizes[i].price)
         }
       }
 
 
 
 
-      var price = state.startPrice + state.chargeWeldingType;
+      ////////////////////////
+      // WELDING ATTRIBUTES //
+      ////////////////////////
 
-      state.calculatedPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      /////////////////////////////////////////
+      // Get Selection with name weldingType //
+      /////////////////////////////////////////
+      var allWeldingTypes = document.getElementsByName('weldingType');
+
+      // Iterate over weldingTypes and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < allWeldingTypes.length; i++) {
+        if (allWeldingTypes[i].checked == true) {
+          // state.chargeWeldingType = state.weldingTypes[i].price
+          charges.push(state.weldingTypes[i].price)
+        }
+      }
+
+      //////////////////////////////////////////
+      // Get Selection with name searchSystem //
+      //////////////////////////////////////////
+      var AllSearchSystems = document.getElementsByName('searchSystem');
+
+      // Iterate over SearchSystems and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < AllSearchSystems.length; i++) {
+        if (AllSearchSystems[i].checked == true) {
+          // state.chargeSearchSystem = state.searchSystems[i].price
+          charges.push(state.searchSystems[i].price)
+        }
+      }
+
+      ///////////////////////////////////////////
+      // Get Selection with name exhaustSystem //
+      ///////////////////////////////////////////
+      var allExhaustSystems = document.getElementsByName('exhaustSystem');
+
+      // Iterate over SearchSystems and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < allExhaustSystems.length; i++) {
+        if (allExhaustSystems[i].checked == true) {
+          // state.chargeExhaustSystem = state.exhaustSystems[i].price
+          charges.push(state.exhaustSystems[i].price)
+        }
+      }
+
+
+      ////////////////////////
+      // GRIPPING ATTRIBUTES //
+      ////////////////////////
+
+      /////////////////////////////////////////
+      // Get Selection with name measuring //
+      /////////////////////////////////////////
+      var allMeasureTypes = document.getElementsByName('measuring');
+
+      // Iterate over allMeasureTypes and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < allMeasureTypes.length; i++) {
+        if (allMeasureTypes[i].checked == true) {
+          // state.chargeMeasuring = state.measuringySystems[i].price
+          charges.push(state.measuringySystems[i].price)
+        }
+      }
+
+      /////////////////////////////////////////
+      // Get Selection with name singualizer //
+      /////////////////////////////////////////
+      var allSingualizerTypes = document.getElementsByName('singualizer');
+
+      // Iterate over allSingualizerTypes and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < allSingualizerTypes.length; i++) {
+        if (allSingualizerTypes[i].checked == true) {
+          // state.chargeSingualizer = state.singualizerSystems[i].price
+          charges.push(state.singualizerSystems[i].price)
+        }
+      }
+
+      
+
+      /////////////////////////
+      // SOFTWARE ATTRIBUTES //
+      /////////////////////////
+
+      //////////////////////////////////////////
+      // Get Selection with name dataLogging //
+      //////////////////////////////////////////
+      var allDataLogging = document.getElementsByName('dataLogging');
+
+      // Iterate over allDataLogging and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < allDataLogging.length; i++) {
+        if (allDataLogging[i].checked == true) {
+          // state.chargeDataLogging = state.dataLoggingSystems[i].price
+          charges.push(state.dataLoggingSystems[i].price)
+        }
+      }
+
+
+
+      //////////////
+      // SERVICES //
+      //////////////
+
+      //////////////////////////////////////////
+      // Get Selection with name assemblyService //
+      //////////////////////////////////////////
+      var allAssemblyService = document.getElementsByName('assemblyService');
+
+      // Iterate over allAssemblyService and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < allAssemblyService.length; i++) {
+        if (allAssemblyService[i].checked == true) {
+          // state.chargeDataLogging = state.dataLoggingSystems[i].price
+          charges.push(state.assemblyServices[i].price)
+        }
+      }
+
+      //////////////////////////////////////////
+      // Get Selection with name productionSupport //
+      //////////////////////////////////////////
+      var allProductionSupport = document.getElementsByName('productionSupport');
+
+      // Iterate over allAssemblyService and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < allProductionSupport.length; i++) {
+        if (allProductionSupport[i].checked == true) {
+          // state.chargeDataLogging = state.dataLoggingSystems[i].price
+          charges.push(state.productionSupportServices[i].price)
+        }
+      }
+
+      //////////////////////////////////////////
+      // Get Selection with name scooling //
+      //////////////////////////////////////////
+      var allScooling = document.getElementsByName('scooling');
+
+      // Iterate over allAssemblyService and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < allScooling.length; i++) {
+        if (allScooling[i].checked == true) {
+          // state.chargeDataLogging = state.dataLoggingSystems[i].price
+          charges.push(state.scoolingServices[i].price)
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+      // info - exhaustSystem
+      charges.push(state.startPrice)
+
+
+      // var price = state.startPrice + state.chargeSize + state.chargeWeldingType + state.chargeSearchSystem + state.chargeExhaustSystem + state.chargeDataLogging;
+      var price2 = 0;
+      for (var i = 0, n = charges.length; i < n; i++) {
+        price2 += charges[i];
+      }
+      // console.log(price2)
+
+
+      state.calculatedPrice = price2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
 
-    handle_modal (state) {
+    handle_modal(state) {
       console.log("in handle_modal")
       let modal = document.getElementById("small-modal");
       if (state.modalVisible == true) {
@@ -382,7 +604,7 @@ export default createStore({
           modal.style.display = "block";
           state.modalVisible = true;
         }
-      } catch (error) {          
+      } catch (error) {
         console.log('catch block')
 
         let modal = document.getElementById(payload);
@@ -452,7 +674,7 @@ export default createStore({
       }
     }
   },
-  
+
 
 
 
@@ -465,7 +687,7 @@ export default createStore({
     // Sind auch Methods
     // Können Daten von State lesen aber nicht ändern, hier geht asynchroner code, reach out for ui, wait for respone ect..
     // man nennt dispatch
-    increasecounter ({ commit }) {
+    increasecounter({ commit }) {
       console.log("increaseCounter (action)")
       axios('https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new').then(response => {
         commit('increasecounter', response.data)
@@ -484,12 +706,12 @@ export default createStore({
       URL.revokeObjectURL(link.href);
     },
 
-    reset ( {commmit} ) {
+    reset({ commmit }) {
       this.commit('resetSelects')
       this.commit('calculatePrice')
     },
 
-    isMobile () {
+    isMobile() {
       console.log("i am here")
       console.log(screen.width)
 
@@ -508,40 +730,40 @@ export default createStore({
 
 
   getters: {
-    counterSquared (state) {
+    counterSquared(state) {
       return state.counter * state.counter
     },
-    wigAufpreis (state) {
+    wigAufpreis(state) {
       return state.wig.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
-    mig_magAufpreis (state) {
+    mig_magAufpreis(state) {
       return state.mig_mag.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
-    gasAufpreis (state) {
+    gasAufpreis(state) {
       return state.gas.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-    },    
-    cameraAufpreis (state) {
+    },
+    cameraAufpreis(state) {
       return state.camera.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
-    einmalFilterAufpreis (state) {
+    einmalFilterAufpreis(state) {
       return state.einmalFilter.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-    },    
-    selbstreinigenderFilterAufpreis (state) {
+    },
+    selbstreinigenderFilterAufpreis(state) {
       return state.selbstreinigenderFilter.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
-    loggingAufpreis (state) {
+    loggingAufpreis(state) {
       return state.withDatenLogging.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
-    montageAufpreis (state) {
+    montageAufpreis(state) {
       return state.withMontage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
-    produktionsbegleitungAufpreis (state) {
+    produktionsbegleitungAufpreis(state) {
       return state.withProduktionsbegleitung.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
-    schulungAufpreis (state) {
+    schulungAufpreis(state) {
       return state.withSchulung.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
-    price (state) {
+    price(state) {
       return state.calculatedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     isMobile(state) {

@@ -217,6 +217,22 @@
         <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
         </div>
       </div>
+      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
+        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
+        </div>
+      </div>
+      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
+        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
+        </div>
+      </div>
+      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
+        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
+        </div>
+      </div>
+      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
+        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
+        </div>
+      </div>
     </div>
 
 

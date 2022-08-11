@@ -1,6 +1,12 @@
 <template>
   <div class="calculator">
 
+    <!--  -->
+    <!--  -->
+    <!-- Komponente draus machen -->
+    <!--  -->
+    <!--  -->
+
     <!-- Cookie-Free Zone -->
     <div v-show="elementVisible" id="cookie-free-zone" class="hideElement animate-fade transition duration-700 transition-opacity ease-in opacity-100 mx-auto max-w-xs fixed inset-x-0 bottom-0 mb-2 z-50 bg-white shadow-xl p-2 text-slate-500 flex justify-center dark:bg-slate-800
     dark:text-slate-400 rounded-lg ">
@@ -86,7 +92,7 @@
 
         <!-- Show inital info - on first click you see hint that not everything ist listed -->
         <div id="initialInfo-modal" tabindex="-1"
-          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+          class="hidden overflow-y-auot overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
           <div class="relative p-4 w-full max-w-md h-full md:h-auto mx-auto">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <button type="button"
@@ -174,18 +180,14 @@
           </div>
         </div>
 
-        <!-- Welding Package Info PupUp (Modal) -->
+        <!--Size and WorkLoad PupUp (Modal) -->
         <InfoModal id="info-size-workload" header="Größe und Traglast" text1="Text Nummer 1 bissle was"
           text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
 
-
-        <!-- TODO -->
-        <!-- TODO -->
-        <!-- TODO: Ids anpassen  -->
-        <!-- TODO -->
-        <!-- TODO -->
-
-        <!-- Welding Package Radio Buttons (selection) -->
+        <!-- Size and WorkLoad Radio Buttons (selection) -->
+        <!-- Name of Selection is used to calculate price -->
+        <!-- <Selection name="size" id1="size-standard" text1="Standard" price1="+ 0 €" permanentVisible1="true"
+          id2="size-compact" text2="Kompakt" price2="- 9.900 €" unvisibleOnWelding2="true" /> -->
         <div class="mr-4">
           <ul class="grid gap-6 w-full grid-flow-col grid-cols-max mr-4">
             <li class="h-full">
@@ -228,7 +230,6 @@
         <!--  -->
         <div v-if="$store.getters.weldingApplicationSelected">
 
-
           <!--  -->
           <!-- Hardware Options -->
           <!--  -->
@@ -260,10 +261,10 @@
 
 
           <!-- Welding Package Radio Buttons (selection) -->
-          <Selection name="weldingType" 
-            id1="weldingType-none" text1="Eigenes" price1="+ 0 €" 
-            id2="weldingType-wig" text2="WIG" price2="+ 8.900 €"
-            id3="wedingType-migmag" text3="MIG/MAG" price3="+ 18.500 €"  />
+          <!-- Name of Selection is used to calculate price -->
+          <Selection name="weldingType" id1="weldingType-none" text1="Eigenes" price1="+ 0 €" permanentVisible1="true"
+            id2="weldingType-wig" text2="WIG" price2="+ 8.900 €" permanentVisible2="true" id3="wedingType-migmag"
+            text3="MIG/MAG" price3="+ 18.500 €" permanentVisible3="true" />
 
           <!-- <div class="mr-4">
             <ul class="grid gap-6 w-full grid-cols-3 mr-4">
@@ -308,11 +309,11 @@
           <!--                                                                              -->
           <!-- Welding Seam Search System-->
           <!--                                                                              -->
-          <div class="mt-2 flex justify-between mb-4">
+          <div class="mt-8 flex justify-between mb-4">
             <div class="text-lg font-medium">Schweißnahtsuchsystem:</div>
             <button type="button"
               class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-              data-modal-toggle="info-search-system" @click="$store.commit('handle_modal_byID', 'info-search-system')">
+              data-modal-toggle="info-searchSystem" @click="$store.commit('handle_modal_byID', 'info-searchSystem')">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
@@ -323,32 +324,45 @@
           </div>
 
           <!-- Welding Seam Search System PupUp (Modal) -->
-          <InfoModal id="info-search-system" header="Schweißnahtsuchsystem" text1="Text Nummer 1 bissle was"
+          <InfoModal id="info-searchSystem" header="Schweißnahtsuchsystem" text1="Text Nummer 1 bissle was"
             text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
 
-
-
-
-          <!-- -->
-          <!-- Software Options -->
-          <!--  -->
-
-
-
-
-          <!--  -->
-          <!-- Services -->
-          <!--  -->
-
+          <!-- Size and WorkLoad Radio Buttons (selection) -->
+          <!-- Name of Selection is used to calculate price -->
+          <Selection name="searchSystem" id1="without-search-system" text1="Ohne" price1="+ 0 €"
+            permanentVisible1="true" id2="gas" text2="Gasdüse" price2="+ 1.800 €" permanentVisible2="true" id3="camera"
+            text3="Kamera" price3="+ 18.900 €" permanentVisible3="true" />
 
 
 
           <!--  -->
-          <!-- Buttons -->
+          <!-- exhaust -->
           <!--  -->
+          <div class="mt-8 flex justify-between mb-4">
+            <div class="text-lg font-medium">Absaugung:</div>
+            <button type="button"
+              class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-toggle="info-exhaustSystem" @click="$store.commit('handle_modal_byID', 'info-exhaustSystem')">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
 
+          <!-- Welding Seam Search System PupUp (Modal) -->
+          <InfoModal id="info-exhaustSystem" header="Absaugung" text1="Text Nummer 1 bissle was"
+            text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
 
+          <!-- Size and WorkLoad Radio Buttons (selection) -->
+          <Selection name="exhaustSystem" id1="without-exhausting" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
+            id2="oneTime-filter" text2="Einmalfilter" price2="+ 3.900 €" permanentVisible2="true"
+            id3="selfCleaning-filter" text3="Selbstreinigend" price3="+ 6.900 €" permanentVisible3="true" />
         </div>
+
+
 
 
 
@@ -356,11 +370,11 @@
         <!-- If Welding Gripping Application -->
         <!--  -->
         <div v-if="$store.getters.grippingApplicationSelected">
+
           <!--  -->
           <!-- Hardware Options -->
           <!--  -->
           <div class="text-xl md:text-2xl font-semibold mt-12">Hardware Optionen:</div>
-
 
           <!--                                                                              -->
           <!-- Gripper Header-->
@@ -383,10 +397,14 @@
           <InfoModal id="info-gripper" header="Greifer" text1="Text Nummer 1 bissle was"
             text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" />
 
+          <!-- Gripper Radio Buttons (selection) -->
+          <Selection name="gripper" id1="without-gripper" text1="Eigener" price1="+ 0 €" permanentVisible1="true"
+            id2="parallel-gripper" text2="Parallelgreifer" price2="+ 3.900 €" permanentVisible2="true"
+            id3="vacuum-gripper" text3="Vakuumgreifer" price3="+ 6.900 €" permanentVisible3="true"
+            id4="magnetic-gripper" text4="Magnetgreifer" price4="+ 8.900 €" permanentVisible4="true" />
 
-          <!-- Welding Package Radio Buttons (selection) -->
-          <div class="mr-4">
-            <ul class="grid gap-6 w-full grid-cols-3 mr-4">
+          <!-- <div class="mr-4">
+            <ul class="grid gap-6 w-full grid-flow-col mr-4">
               <li>
                 <input type="radio" id="weldingType-none" name="weldingType" value="weldingType-none"
                   class="hidden peer" required="" @click="$store.commit('calculate_price_checkbox')" checked="true">
@@ -420,30 +438,59 @@
                 </label>
               </li>´
             </ul>
+          </div> -->
+
+          <!--                                                                              -->
+          <!-- Measuring Header-->
+          <!--                                                                              -->
+          <div class="mt-8 flex justify-between mb-4">
+            <div class="text-lg font-medium">Messstation:</div>
+            <button type="button"
+              class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-toggle="info-measuring" @click="$store.commit('handle_modal_byID', 'info-measuring')">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
           </div>
 
+          <!-- Measuring Info PupUp (Modal) -->
+          <InfoModal id="info-measuring" header="Greifer" text1="Text Nummer 1 bissle was"
+            text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" />
+
+          <!-- Measuring Radio Buttons (selection) -->
+          <Selection name="measuring" id1="without-measuring" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
+            id2="length-measuring" text2="Längenmessung" price2="+ 4.450 €" permanentVisible2="true"
+            id3="optical-measuring" text3="Optische Prüfung" price3="+ 16.750 €" permanentVisible3="true" />
 
 
+          <!--                                                                              -->
+          <!-- Singualizer Header-->
+          <!--                                                                              -->
+          <div class="mt-8 flex justify-between mb-4">
+            <div class="text-lg font-medium">Vereinzler:</div>
+            <button type="button"
+              class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-toggle="info-singualizer" @click="$store.commit('handle_modal_byID', 'info-singualizer')">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
 
+          <!-- Singualizer Info PupUp (Modal) -->
+          <InfoModal id="info-singualizer" header="Greifer" text1="Text Nummer 1 bissle was"
+            text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" />
 
-          <!--  -->
-          <!-- Software Options -->
-          <!--  -->
-
-
-
-
-          <!--  -->
-          <!-- Services -->
-          <!--  -->
-
-
-
-
-          <!--  -->
-          <!-- Buttons -->
-          <!--  -->
-
+          <!-- Singualizer Radio Buttons (selection) -->
+          <Selection name="singualizer" id1="without-singualizer" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
+            id2="shake-singualizer" text2="Rüttler mit 3D-Kamera" price2="+ 13.450 €" permanentVisible2="true" />
         </div>
 
 
@@ -452,7 +499,129 @@
 
 
 
+        <!--  -->
+        <!-- Software Options -->
+        <!--  -->
+        <div class="text-xl md:text-2xl font-semibold mt-12">Software Optionen:</div>
 
+        <!--                                                                              -->
+        <!-- Data Logging Header -->
+        <!--                                                                              -->
+        <div class="mt-2 flex justify-between mb-4">
+          <div class="text-lg font-medium">Datenlogging:</div>
+          <button type="button"
+            class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+            data-modal-toggle="info-dataLogging" @click="$store.commit('handle_modal_byID', 'info-dataLogging')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+        </div>
+
+        <!-- Data Logging Info PupUp (Modal) -->
+        <InfoModal id="info-dataLogging" header="Datenlogging" text1="Text Nummer 1 bissle was"
+          text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+
+        <!-- Data Logginge Radio Buttons (selection) -->
+        <Selection name="dataLogging" id1="without-logging" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
+          id2="with-data-logging" text2="Logging" price2="+ 4.450 €" permanentVisible2="true" />
+
+
+
+
+
+
+
+
+        <!--  -->
+        <!-- Services -->
+        <!--  -->
+        <div class="text-xl md:text-2xl font-semibold mt-12">Services:</div>
+
+        <!--                                                                              -->
+        <!-- Assembly Service Header -->
+        <!--                                                                              -->
+        <div class="mt-2 flex justify-between mb-4">
+          <div class="text-lg font-medium">Montage und Inbetriebnahme:</div>
+          <button type="button"
+            class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+            data-modal-toggle="info-assemblyService"
+            @click="$store.commit('handle_modal_byID', 'info-assemblyService')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+        </div>
+
+        <!--  Assembly ServiceInfo PupUp (Modal) -->
+        <InfoModal id="info-assemblyService" header="Montage und Inbetriebnahme" text1="Text Nummer 1 bissle was"
+          text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+
+        <!--  Assembly Service Radio Buttons (selection) -->
+        <Selection name="assemblyService" id1="without-assemblyService" text1="Ohne" price1="+ 0 €"
+          permanentVisible1="true" id2="with-assemblyService" text2="Mit Montage und Inbetriebnahme" price2="+ 3.900 €"
+          permanentVisible2="true" />
+
+
+        <!--                                                                              -->
+        <!-- Production Support Header -->
+        <!--                                                                              -->
+        <div class="mt-2 flex justify-between mb-4">
+          <div class="text-lg font-medium">Produktionsbegleitung:</div>
+          <button type="button"
+            class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+            data-modal-toggle="info-productionSupport"
+            @click="$store.commit('handle_modal_byID', 'info-productionSupport')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+        </div>
+
+        <!-- Production Support Info PupUp (Modal) -->
+        <InfoModal id="info-productionSupport" header="Montage und Inbetriebnahme" text1="Text Nummer 1 bissle was"
+          text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+
+        <!-- Production Support Radio Buttons (selection) -->
+        <Selection name="productionSupport" id1="without-productionSupport" text1="Ohne" price1="+ 0 €"
+          permanentVisible1="true" id2="with-1day-productionSupport" text2="1 Tag Produktionsbegleitung"
+          price2="+ 680 €" permanentVisible2="true" id3="with-2day-productionSupport"
+          text3="2 Tage Produktionsbegleitung" price3="+ 1.360 €" permanentVisible3="true" />
+
+
+        <!--                                                                              -->
+        <!-- Scooling Header -->
+        <!--                                                                              -->
+        <div class="mt-2 flex justify-between mb-4">
+          <div class="text-lg font-medium">Schulung:</div>
+          <button type="button"
+            class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+            data-modal-toggle="info-scooling" @click="$store.commit('handle_modal_byID', 'info-scooling')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+        </div>
+
+        <!-- Scooling Info PupUp (Modal) -->
+        <InfoModal id="info-scooling" header="Montage und Inbetriebnahme" text1="Text Nummer 1 bissle was"
+          text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+
+        <!-- v Radio Buttons (selection) -->
+        <Selection name="scooling" id1="without-scooling" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
+          id2="with-scooling" text2="Mit Schulung" price2="+ 4.890 €" permanentVisible2="true" />
 
 
 
@@ -546,7 +715,7 @@ export default {
     InfoModal,
     Gripping_icon,
     Selection
-},
+  },
   created() {
     setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 3000)
   }

@@ -3,7 +3,8 @@
         <!-- Welding Package Radio Buttons (selection) -->
         <div class="mr-4">
             <ul class="grid gap-6 w-full grid-flow-col mr-4">
-                <li>
+                <li
+                    v-if="!$store.getters.weldingApplicationSelected && unvisibleOnWelding1 || $store.getters.weldingApplicationSelected && unvisibleOnGripping1 || permanentVisible1">
                     <input type="radio" :id="id1" :name="name" :value="id1" class="hidden peer" required=""
                         @click="$store.commit('calculate_price_checkbox')" checked>
                     <label :for="id1"
@@ -14,7 +15,8 @@
                         </div>
                     </label>
                 </li>
-                <li class="h-full">
+                <li class="h-full"
+                    v-if="!$store.getters.weldingApplicationSelected && unvisibleOnWelding2 || $store.getters.weldingApplicationSelected && unvisibleOnGripping2 || permanentVisible2">
                     <input type="radio" :id="id2" :name="name" :value="id2" class="hidden peer"
                         @click="$store.commit('calculate_price_checkbox')">
                     <label :for="id2"
@@ -25,7 +27,8 @@
                         </div>
                     </label>
                 </li>
-                <li class="h-full" v-if="id3">
+                <li class="h-full" v-show="id3"
+                    v-if="!$store.getters.weldingApplicationSelected && unvisibleOnWelding3 || $store.getters.weldingApplicationSelected && unvisibleOnGripping3 || permanentVisible3">
                     <input type="radio" :id="id3" :name="name" :value="id3" class="hidden peer"
                         @click="$store.commit('calculate_price_checkbox')">
                     <label :for="id3"
@@ -36,7 +39,8 @@
                         </div>
                     </label>
                 </li>
-                <li class="h-full" v-if="id4">
+                <li class="h-full" v-show="id4"
+                    v-if="!$store.getters.weldingApplicationSelected && unvisibleOnWelding4 || $store.getters.weldingApplicationSelected && unvisibleOnGripping4 || permanentVisible4">
                     <input type="radio" :id="id4" :name="name" :value="id4" class="hidden peer"
                         @click="$store.commit('calculate_price_checkbox')">
                     <label :for="id4"
@@ -54,11 +58,11 @@
 
 <script>
 export default {
-    props: ['name', 
-            'id1', 'text1', 'price1', 
-            'id2', 'text2', 'price2', 
-            'id3', 'text3', 'price3', 
-        'id4', 'text4', 'price4', 'visibility' ]
+    props: ['name',
+        'id1', 'text1', 'price1', 'permanentVisible1', 'unvisibleOnWelding1', 'unvisibleOnGripping1',
+        'id2', 'text2', 'price2', 'permanentVisible2', 'unvisibleOnWelding2', 'unvisibleOnGripping2',
+        'id3', 'text3', 'price3', 'permanentVisible3', 'unvisibleOnWelding3', 'unvisibleOnGripping3',
+        'id4', 'text4', 'price4', 'permanentVisible4', 'unvisibleOnWelding4', 'unvisibleOnGripping4']
 }
 
 </script>
