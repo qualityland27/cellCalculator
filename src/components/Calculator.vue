@@ -168,16 +168,16 @@
           <!-- Application Icons -->
           <div class="grid grid-cols-2 items-center justify-items-center mt-8 gap-6">
             <!-- Welding Button with Icon -->
-            <button type="button" class="text-white rounded-lg text-sm p-1.5" data-modal-toggle="small-modal"
-              @click="$store.commit('handle_weldingIconBlk_visible')">
+            <button type="button" class="text-white rounded-lg text-sm p-1.5" data-modal-toggle="small-modal" @click="$store.commit('handle_weldingIconBlk_visible'), $store.commit('reset_checkboxes'),
+              $store.commit('calculate_price_checkbox')">
               <!-- Welding Icon gray -->
               <welding_icon v-if="!$store.getters.weldingApplicationSelected" fillAll="fill-gray-500" />
               <!-- Welding Icon color -->
               <welding_icon v-else fillAll="fill-gray-700" line1="fill-volkert-blue" />
             </button>
             <!-- Gripping Button with Icon -->
-            <button type="button" class="text-white rounded-lg text-sm p-1.5" data-modal-toggle="small-modal"
-              @click="$store.commit('handle_grippingIconBlk_visible')">
+            <button type="button" class="text-white rounded-lg text-sm p-1.5" data-modal-toggle="small-modal" @click="$store.commit('handle_grippingIconBlk_visible'), $store.commit('reset_checkboxes'),
+              $store.commit('calculate_price_checkbox')">
               <!-- Gripping Icon Gray  -->
               <Gripping_icon v-if="!$store.getters.grippingApplicationSelected" fillAll="fill-gray-500" />
               <!-- Gripping Icon Color -->
@@ -189,7 +189,7 @@
           <!--  -->
           <!-- Size and WorkLoad -->
           <!--  -->
-          <div class="flex flex-row justify-between mt-12">
+          <div class="flex flex-row justify-between mt-12 mb-4">
             <div class="text-xl md:text-2xl font-semibold ">Größe und Traglast:</div>
             <!-- Icon and PopUp (Modal) -->
             <InfoModal id="info-size-workload" header="Größe und Traglast" text1="Text Nummer 1 bissle was"
@@ -268,7 +268,7 @@
             <!--                                                                              -->
             <!-- Welding Package Header-->
             <!--                                                                              -->
-            <div class="mt-2 flex justify-between mb-4">
+            <div class="mt-2 flex justify-between">
               <div class="text-lg font-medium">Schweißpaket:</div>
               <!-- Icon and PopUp (Modal) -->
               <InfoModal id="info-welding-package" header="Schweißpaket" text1="Text Nummer 1 bissle was"
@@ -341,7 +341,7 @@
             <!--                                                                              -->
             <!-- Welding Seam Search System-->
             <!--                                                                              -->
-            <div class="mt-8 flex justify-between mb-4">
+            <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Schweißnahtsuchsystem:</div>
               <!-- Icon and PopUp -->
               <InfoModal id="info-searchSystem" header="Schweißnahtsuchsystem" text1="Text Nummer 1 bissle was"
@@ -374,7 +374,7 @@
             <!--  -->
             <!-- exhaust -->
             <!--  -->
-            <div class="mt-8 flex justify-between mb-4">
+            <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Absaugung:</div>
               <!-- Icon and PopUp (Modal) -->
               <InfoModal id="info-exhaustSystem" header="Absaugung" text1="Text Nummer 1 bissle was"
@@ -420,7 +420,7 @@
             <!--                                                                              -->
             <!-- Gripper Header-->
             <!--                                                                              -->
-            <div class="mt-2 flex justify-between mb-4">
+            <div class="mt-2 flex justify-between">
               <div class="text-lg font-medium">Greifer:</div>
               <!-- Icon and PopUp (Modal) -->
               <InfoModal id="info-gripper" header="Greifer" text1="Text Nummer 1 bissle was"
@@ -487,7 +487,7 @@
             <!--                                                                              -->
             <!-- Measuring Header-->
             <!--                                                                              -->
-            <div class="mt-8 flex justify-between mb-4">
+            <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Messstation:</div>
               <!-- Icon and PopUp (Modal) -->
               <InfoModal id="info-measuring" header="Greifer" text1="Text Nummer 1 bissle was"
@@ -517,7 +517,7 @@
             <!--                                                                              -->
             <!-- Singualizer Header-->
             <!--                                                                              -->
-            <div class="mt-8 flex justify-between mb-4">
+            <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Vereinzler:</div>
               <!-- Icon and PopUp (Modal) -->
               <InfoModal id="info-singualizer" header="Greifer" text1="Text Nummer 1 bissle was"
@@ -552,12 +552,12 @@
           <!--  -->
           <!-- Software Options -->
           <!--  -->
-          <div class="text-xl md:text-2xl font-semibold mt-12">Software Optionen:</div>
+          <div class="text-xl md:text-2xl font-semibold mt-12 mb-4">Software Optionen:</div>
 
           <!--                                                                              -->
           <!-- Data Logging Header -->
           <!--                                                                              -->
-          <div class="mt-2 flex justify-between mb-4">
+          <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Datenlogging:</div>
             <!-- Icon and PopUp (Modal) -->
             <InfoModal id="info-dataLogging" header="Datenlogging" text1="Text Nummer 1 bissle was"
@@ -592,12 +592,12 @@
           <!--  -->
           <!-- Services -->
           <!--  -->
-          <div class="text-xl md:text-2xl font-semibold mt-12">Services:</div>
+          <div class="text-xl md:text-2xl font-semibold mt-12 mb-4">Services:</div>
 
           <!--                                                                              -->
           <!-- Assembly Service Header -->
           <!--                                                                              -->
-          <div class="mt-2 flex justify-between mb-4">
+          <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Montage und Inbetriebnahme:</div>
             <!-- Icon and PopUp (Modal) -->
             <InfoModal id="info-assemblyService" header="Montage und Inbetriebnahme" text1="Text Nummer 1 bissle was"
@@ -628,7 +628,7 @@
           <!--                                                                              -->
           <!-- Production Support Header -->
           <!--                                                                              -->
-          <div class="mt-2 flex justify-between mb-4">
+          <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Produktionsbegleitung:</div>
             <!-- Icon and PopUp (Modal) -->
             <InfoModal id="info-productionSupport" header="Montage und Inbetriebnahme" text1="Text Nummer 1 bissle was"
@@ -660,7 +660,7 @@
           <!--                                                                              -->
           <!-- Scooling Header -->
           <!--                                                                              -->
-          <div class="mt-2 flex justify-between mb-4">
+          <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Schulung:</div>
             <!-- Icon and PopUp (Modal) -->
             <InfoModal id="info-scooling" header="Montage und Inbetriebnahme" text1="Text Nummer 1 bissle was"
@@ -696,7 +696,7 @@
               border-solid border-2 border-light-blue-500
               text-black
               h-16 hover:bg-gray-100 hover:border-transparent 
-              text-xl" @click="$store.dispatch('reset')">
+              text-xl" @click="$store.commit('reset_checkboxes'), $store.commit('calculate_price_checkbox')">
               Auswahl zurücksetzen
             </button>
           </div>

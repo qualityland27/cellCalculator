@@ -8,10 +8,19 @@ export default createStore({
   state: {
     counter: 0,
 
-    // allAlltributes: [
-    //   { name: 'weldingType', charge: '0', },
-    //   { name: 'searchSystem',  charge: '0', },
-    // ],
+    allAlltributes: [
+      { name: 'size' },
+      { name: 'weldingType' },
+      { name: 'searchSystem' },
+      { name: 'exhaustSystem' },
+      { name: 'gripper' },
+      { name: 'measuring' },
+      { name: 'singualizer' },
+      { name: 'dataLogging' },
+      { name: 'assemblyService' },
+      { name: 'productionSupport' },
+      { name: 'scooling' },
+    ],
 
     chargeSize: 0,
     sizes: [
@@ -384,206 +393,268 @@ export default createStore({
       state.weldingTypeList_mig_mag = true;
     },
 
+    reset_checkboxes(state) {
+      console.log('in reset_checkboxes')
+
+      // for every selection
+      for (const elementName of state.allAlltributes) {
+        // search element by name
+        var selection = document.getElementsByName(elementName.name);
+        // search for checked onse and make them false
+        for (var i = 0; i < selection.length; i++) {
+          if (selection[i].checked == true) {
+            selection[i].checked = false;
+          }
+        }
+        // search for the first one and make them checked
+        try {
+          for (var i = 0; i < 1; i++) {
+            selection[i].checked = true;
+            // console.log(selection[i])
+          }
+        }
+        catch (e) {
+          // console.log(e); 
+        }
+      }
+    },
+
 
     calculate_price_checkbox(state) {
       console.log("within method calculate_price_checkbox");
 
       const charges = []
 
+      // console.log(state.allAlltributes)
+      for (const element of state.allAlltributes) {
+        // console.log(element.name)
 
+        var allSizes = document.getElementsByName(element.name);
+        // console.log(allSizes)
 
-      ///////////////////////
-      // SIZE AND WORKLOAD //
-      ///////////////////////
+        for (var i = 0; i < allSizes.length; i++) {
+          if (allSizes[i].checked == true) {
+            // state.chargeSize = state.sizes[i].price
+            // console.log((allSizes[i].nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.textContent))
+            const str = allSizes[i].nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.textContent;
+            // console.log(str)
+            const onlyNumbers = str.replace(/[^\d-]/g, '');
+            // console.log('onlyNumbers')
+            // console.log(parseInt(onlyNumbers))
+            charges.push(parseInt(onlyNumbers))
+            // charges.push(state.sizes[i].price)
 
-      //////////////////////////////////
-      // Get Selection with name size //
-      //////////////////////////////////
-      var allSizes = document.getElementsByName('size');
-
-      // Iterate over allSizes and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allSizes.length; i++) {
-        if (allSizes[i].checked == true) {
-          // state.chargeSize = state.sizes[i].price
-          charges.push(state.sizes[i].price)
+            // console.log(typeof state.sizes[i].price)
+          }
         }
+
       }
 
 
+      // ///////////////////////
+      // // SIZE AND WORKLOAD //
+      // ///////////////////////
 
+      // //////////////////////////////////
+      // // Get Selection with name size //
+      // //////////////////////////////////
+      // var allSizes = document.getElementsByName('size');
 
-      ////////////////////////
-      // WELDING ATTRIBUTES //
-      ////////////////////////
+      // // Iterate over allSizes and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allSizes.length; i++) {
+      //   if (allSizes[i].checked == true) {
+      //     // state.chargeSize = state.sizes[i].price
+      //     // console.log((allSizes[i].nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.textContent))
+      //     const str = allSizes[i].nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.textContent;
+      //     // console.log(str)
+      //     const onlyNumbers = str.replace(/[^\d-]/g, '');
+      //     // console.log('onlyNumbers')
+      //     console.log(parseInt(onlyNumbers))
+      //     charges.push(parseInt(onlyNumbers))
+      //     // charges.push(state.sizes[i].price)
 
-      /////////////////////////////////////////
-      // Get Selection with name weldingType //
-      /////////////////////////////////////////
-      var allWeldingTypes = document.getElementsByName('weldingType');
-
-      // Iterate over weldingTypes and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allWeldingTypes.length; i++) {
-        if (allWeldingTypes[i].checked == true) {
-          // state.chargeWeldingType = state.weldingTypes[i].price
-          charges.push(state.weldingTypes[i].price)
-        }
-      }
-
-      //////////////////////////////////////////
-      // Get Selection with name searchSystem //
-      //////////////////////////////////////////
-      var AllSearchSystems = document.getElementsByName('searchSystem');
-
-      // Iterate over SearchSystems and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < AllSearchSystems.length; i++) {
-        if (AllSearchSystems[i].checked == true) {
-          // state.chargeSearchSystem = state.searchSystems[i].price
-          charges.push(state.searchSystems[i].price)
-        }
-      }
-
-      ///////////////////////////////////////////
-      // Get Selection with name exhaustSystem //
-      ///////////////////////////////////////////
-      var allExhaustSystems = document.getElementsByName('exhaustSystem');
-
-      // Iterate over SearchSystems and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allExhaustSystems.length; i++) {
-        if (allExhaustSystems[i].checked == true) {
-          // state.chargeExhaustSystem = state.exhaustSystems[i].price
-          charges.push(state.exhaustSystems[i].price)
-        }
-      }
-
-
-      ////////////////////////
-      // GRIPPING ATTRIBUTES //
-      ////////////////////////
-
-      /////////////////////////////////////////
-      // Get Selection with name gripper //
-      /////////////////////////////////////////
-      var allGrippers = document.getElementsByName('gripper');
-
-      // Iterate over allGrippers and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allGrippers.length; i++) {
-        if (allGrippers[i].checked == true) {
-          // state.chargeMeasuring = state.measuringySystems[i].price
-          charges.push(state.grippingSystems[i].price)
-        }
-      }
-
-      /////////////////////////////////////////
-      // Get Selection with name measuring //
-      /////////////////////////////////////////
-      var allMeasureTypes = document.getElementsByName('measuring');
-
-      // Iterate over allMeasureTypes and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allMeasureTypes.length; i++) {
-        if (allMeasureTypes[i].checked == true) {
-          // state.chargeMeasuring = state.measuringySystems[i].price
-          charges.push(state.measuringySystems[i].price)
-        }
-      }
-
-      /////////////////////////////////////////
-      // Get Selection with name singualizer //
-      /////////////////////////////////////////
-      var allSingualizerTypes = document.getElementsByName('singualizer');
-
-      // Iterate over allSingualizerTypes and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allSingualizerTypes.length; i++) {
-        if (allSingualizerTypes[i].checked == true) {
-          // state.chargeSingualizer = state.singualizerSystems[i].price
-          charges.push(state.singualizerSystems[i].price)
-        }
-      }
-
-      
-
-      /////////////////////////
-      // SOFTWARE ATTRIBUTES //
-      /////////////////////////
-
-      //////////////////////////////////////////
-      // Get Selection with name dataLogging //
-      //////////////////////////////////////////
-      var allDataLogging = document.getElementsByName('dataLogging');
-
-      // Iterate over allDataLogging and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allDataLogging.length; i++) {
-        if (allDataLogging[i].checked == true) {
-          // state.chargeDataLogging = state.dataLoggingSystems[i].price
-          charges.push(state.dataLoggingSystems[i].price)
-        }
-      }
-
-
-
-      //////////////
-      // SERVICES //
-      //////////////
-
-      //////////////////////////////////////////
-      // Get Selection with name assemblyService //
-      //////////////////////////////////////////
-      var allAssemblyService = document.getElementsByName('assemblyService');
-
-      // Iterate over allAssemblyService and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allAssemblyService.length; i++) {
-        if (allAssemblyService[i].checked == true) {
-          // state.chargeDataLogging = state.dataLoggingSystems[i].price
-          charges.push(state.assemblyServices[i].price)
-        }
-      }
-
-      //////////////////////////////////////////
-      // Get Selection with name productionSupport //
-      //////////////////////////////////////////
-      var allProductionSupport = document.getElementsByName('productionSupport');
-
-      // Iterate over allAssemblyService and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allProductionSupport.length; i++) {
-        if (allProductionSupport[i].checked == true) {
-          // state.chargeDataLogging = state.dataLoggingSystems[i].price
-          charges.push(state.productionSupportServices[i].price)
-        }
-      }
-
-      //////////////////////////////////////////
-      // Get Selection with name scooling //
-      //////////////////////////////////////////
-      var allScooling = document.getElementsByName('scooling');
-
-      // Iterate over allAssemblyService and search for checked one
-      // Put price into separate global variable
-      for (var i = 0; i < allScooling.length; i++) {
-        if (allScooling[i].checked == true) {
-          // state.chargeDataLogging = state.dataLoggingSystems[i].price
-          charges.push(state.scoolingServices[i].price)
-        }
-      }
+      //     // console.log(typeof state.sizes[i].price)
+      //   }
+      // }
 
 
 
 
+      // ////////////////////////
+      // // WELDING ATTRIBUTES //
+      // ////////////////////////
+
+      // /////////////////////////////////////////
+      // // Get Selection with name weldingType //
+      // /////////////////////////////////////////
+      // var allWeldingTypes = document.getElementsByName('weldingType');
+
+      // // Iterate over weldingTypes and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allWeldingTypes.length; i++) {
+      //   if (allWeldingTypes[i].checked == true) {
+      //     // state.chargeWeldingType = state.weldingTypes[i].price
+      //     console.log((allWeldingTypes[i].nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.innerHTML))
+      //     const str = allWeldingTypes[i].nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.innerHTML;
+      //     const onlyNumbers = str.replace(/\D/g, '');
+      //     console.log(onlyNumbers)
+      //     charges.push(state.weldingTypes[i].price)
+      //   }
+      // }
+
+      // //////////////////////////////////////////
+      // // Get Selection with name searchSystem //
+      // //////////////////////////////////////////
+      // var AllSearchSystems = document.getElementsByName('searchSystem');
+
+      // // Iterate over SearchSystems and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < AllSearchSystems.length; i++) {
+      //   if (AllSearchSystems[i].checked == true) {
+      //     // state.chargeSearchSystem = state.searchSystems[i].price
+      //     charges.push(state.searchSystems[i].price)
+      //   }
+      // }
+
+      // ///////////////////////////////////////////
+      // // Get Selection with name exhaustSystem //
+      // ///////////////////////////////////////////
+      // var allExhaustSystems = document.getElementsByName('exhaustSystem');
+
+      // // Iterate over SearchSystems and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allExhaustSystems.length; i++) {
+      //   if (allExhaustSystems[i].checked == true) {
+      //     // state.chargeExhaustSystem = state.exhaustSystems[i].price
+      //     charges.push(state.exhaustSystems[i].price)
+      //   }
+      // }
+
+
+      // ////////////////////////
+      // // GRIPPING ATTRIBUTES //
+      // ////////////////////////
+
+      // /////////////////////////////////////////
+      // // Get Selection with name gripper //
+      // /////////////////////////////////////////
+      // var allGrippers = document.getElementsByName('gripper');
+
+      // // Iterate over allGrippers and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allGrippers.length; i++) {
+      //   if (allGrippers[i].checked == true) {
+      //     // state.chargeMeasuring = state.measuringySystems[i].price
+      //     charges.push(state.grippingSystems[i].price)
+      //   }
+      // }
+
+      // /////////////////////////////////////////
+      // // Get Selection with name measuring //
+      // /////////////////////////////////////////
+      // var allMeasureTypes = document.getElementsByName('measuring');
+
+      // // Iterate over allMeasureTypes and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allMeasureTypes.length; i++) {
+      //   if (allMeasureTypes[i].checked == true) {
+      //     // state.chargeMeasuring = state.measuringySystems[i].price
+      //     charges.push(state.measuringySystems[i].price)
+      //   }
+      // }
+
+      // /////////////////////////////////////////
+      // // Get Selection with name singualizer //
+      // /////////////////////////////////////////
+      // var allSingualizerTypes = document.getElementsByName('singualizer');
+
+      // // Iterate over allSingualizerTypes and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allSingualizerTypes.length; i++) {
+      //   if (allSingualizerTypes[i].checked == true) {
+      //     // state.chargeSingualizer = state.singualizerSystems[i].price
+      //     charges.push(state.singualizerSystems[i].price)
+      //   }
+      // }
+
+
+
+      // /////////////////////////
+      // // SOFTWARE ATTRIBUTES //
+      // /////////////////////////
+
+      // //////////////////////////////////////////
+      // // Get Selection with name dataLogging //
+      // //////////////////////////////////////////
+      // var allDataLogging = document.getElementsByName('dataLogging');
+
+      // // Iterate over allDataLogging and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allDataLogging.length; i++) {
+      //   if (allDataLogging[i].checked == true) {
+      //     // state.chargeDataLogging = state.dataLoggingSystems[i].price
+      //     charges.push(state.dataLoggingSystems[i].price)
+      //   }
+      // }
+
+
+
+      // //////////////
+      // // SERVICES //
+      // //////////////
+
+      // //////////////////////////////////////////
+      // // Get Selection with name assemblyService //
+      // //////////////////////////////////////////
+      // var allAssemblyService = document.getElementsByName('assemblyService');
+
+      // // Iterate over allAssemblyService and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allAssemblyService.length; i++) {
+      //   if (allAssemblyService[i].checked == true) {
+      //     // state.chargeDataLogging = state.dataLoggingSystems[i].price
+      //     charges.push(state.assemblyServices[i].price)
+      //   }
+      // }
+
+      // //////////////////////////////////////////
+      // // Get Selection with name productionSupport //
+      // //////////////////////////////////////////
+      // var allProductionSupport = document.getElementsByName('productionSupport');
+
+      // // Iterate over allAssemblyService and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allProductionSupport.length; i++) {
+      //   if (allProductionSupport[i].checked == true) {
+      //     // state.chargeDataLogging = state.dataLoggingSystems[i].price
+      //     charges.push(state.productionSupportServices[i].price)
+      //   }
+      // }
+
+      // //////////////////////////////////////////
+      // // Get Selection with name scooling //
+      // //////////////////////////////////////////
+      // var allScooling = document.getElementsByName('scooling');
+
+      // // Iterate over allAssemblyService and search for checked one
+      // // Put price into separate global variable
+      // for (var i = 0; i < allScooling.length; i++) {
+      //   if (allScooling[i].checked == true) {
+      //     // state.chargeDataLogging = state.dataLoggingSystems[i].price
+      //     charges.push(state.scoolingServices[i].price)
+      //   }
+      // }
 
 
 
 
 
 
-      // info - exhaustSystem
+
+
+
+
       charges.push(state.startPrice)
 
 
