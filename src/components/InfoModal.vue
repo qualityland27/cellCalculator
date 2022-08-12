@@ -1,4 +1,16 @@
 <template>
+    <div class="flex justify-between mb-4">
+        <button type="button"
+            class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+            :data-modal-toggle="id" @click="$store.commit('handle_modal_byID', { id })">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">Close modal</span>
+        </button>
+    </div>
     <!-- Welding Package Info PupUp (Modal) -->
     <div :id="id" tabindex="-1" @click="$store.commit('handle_modal_byID', { id })"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">

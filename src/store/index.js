@@ -72,6 +72,14 @@ export default createStore({
       { name: 'optical-measuring', price: 16750 },
     ],
 
+    // Gripper
+    grippingSystems: [
+      { name: 'ohne', price: 0, },
+      { name: 'parallel', price: 3900, },
+      { name: 'vaccum', price: 6900 },
+      { name: 'magentic', price: 8900 },
+    ],
+
     // chargeSingualizer: 0,
     singualizerSystems: [
       { name: 'ohne', price: 0, },
@@ -455,6 +463,20 @@ export default createStore({
       ////////////////////////
       // GRIPPING ATTRIBUTES //
       ////////////////////////
+
+      /////////////////////////////////////////
+      // Get Selection with name gripper //
+      /////////////////////////////////////////
+      var allGrippers = document.getElementsByName('gripper');
+
+      // Iterate over allGrippers and search for checked one
+      // Put price into separate global variable
+      for (var i = 0; i < allGrippers.length; i++) {
+        if (allGrippers[i].checked == true) {
+          // state.chargeMeasuring = state.measuringySystems[i].price
+          charges.push(state.grippingSystems[i].price)
+        }
+      }
 
       /////////////////////////////////////////
       // Get Selection with name measuring //
