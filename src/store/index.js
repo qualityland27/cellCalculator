@@ -23,10 +23,10 @@ export default createStore({
     ],
 
     chargeSize: 0,
-    sizes: [
-      { name: 'standard', price: 0, },
-      { name: 'compact', price: -9900, },
-    ],
+    // sizes: [
+    //   { name: 'standard', price: 0, },
+    //   { name: 'compact', price: -9900, },
+    // ],
 
     schweißArt: "",
     withoutSchweißart: 0,
@@ -34,11 +34,11 @@ export default createStore({
     mig_mag: 18500,
     aufpreisSchweißArt: 0,
     // chargeWeldingType: 0,
-    weldingTypes: [
-      { name: 'ohne', price: 0, },
-      { name: 'wig', price: 8900, },
-      { name: 'migMag', price: 18500, },
-    ],
+    // weldingTypes: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'wig', price: 8900, },
+    //   { name: 'migMag', price: 18500, },
+    // ],
 
     nahtSuchSystem: "",
     without: 0,
@@ -46,11 +46,11 @@ export default createStore({
     camera: 18900,
     aufpreisSuchSystem: 0,
     // chargeSearchSystem: 0,
-    searchSystems: [
-      { name: 'ohne', price: 0, },
-      { name: 'gas', price: 1800, },
-      { name: 'camera', price: 18900, },
-    ],
+    // searchSystems: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'gas', price: 1800, },
+    //   { name: 'camera', price: 18900, },
+    // ],
 
     absaugung: "",
     withoutAbsaugung: 0,
@@ -58,62 +58,62 @@ export default createStore({
     selbstreinigenderFilter: 6900,
     aufpreisAbsaugung: 0,
     // chargeExhaustSystem: 0,
-    exhaustSystems: [
-      { name: 'ohne', price: 0, },
-      { name: 'gas', price: 3900, },
-      { name: 'camera', price: 6900, },
-    ],
+    // exhaustSystems: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'gas', price: 3900, },
+    //   { name: 'camera', price: 6900, },
+    // ],
 
     logging: "",
     withoutdatenLogging: 0,
     withDatenLogging: 4450,
     aufpreisLogging: 0,
     // chargeDataLogging: 0,
-    dataLoggingSystems: [
-      { name: 'ohne', price: 0, },
-      { name: 'logging', price: 4450, },
-    ],
+    // dataLoggingSystems: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'logging', price: 4450, },
+    // ],
 
     // chargeMeasuring: 0,
-    measuringySystems: [
-      { name: 'ohne', price: 0, },
-      { name: 'length-measuring', price: 4450, },
-      { name: 'optical-measuring', price: 16750 },
-    ],
+    // measuringySystems: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'length-measuring', price: 4450, },
+    //   { name: 'optical-measuring', price: 16750 },
+    // ],
 
     // Gripper
-    grippingSystems: [
-      { name: 'ohne', price: 0, },
-      { name: 'parallel', price: 3900, },
-      { name: 'vaccum', price: 6900 },
-      { name: 'magentic', price: 8900 },
-    ],
+    // grippingSystems: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'parallel', price: 3900, },
+    //   { name: 'vaccum', price: 6900 },
+    //   { name: 'magentic', price: 8900 },
+    // ],
 
     // chargeSingualizer: 0,
-    singualizerSystems: [
-      { name: 'ohne', price: 0, },
-      { name: 'length-measuring', price: 4450, },
-      { name: 'optical-measuring', price: 16750 },
-    ],
+    // singualizerSystems: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'length-measuring', price: 4450, },
+    //   { name: 'optical-measuring', price: 16750 },
+    // ],
 
     //  Assembly Service
-    assemblyServices: [
-      { name: 'ohne', price: 0, },
-      { name: 'with-assemblyService', price: 3900, },
-    ],
+    // assemblyServices: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'with-assemblyService', price: 3900, },
+    // ],
 
     // Production Support
-    productionSupportServices: [
-      { name: 'ohne', price: 0, },
-      { name: 'one-day', price: 680, },
-      { name: 'two-days', price: 1360, },
-    ],
+    // productionSupportServices: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'one-day', price: 680, },
+    //   { name: 'two-days', price: 1360, },
+    // ],
 
     // Scooling
-    scoolingServices: [
-      { name: 'ohne', price: 0, },
-      { name: 'with-scooling', price: 4890, },
-    ],
+    // scoolingServices: [
+    //   { name: 'ohne', price: 0, },
+    //   { name: 'with-scooling', price: 4890, },
+    // ],
 
 
     montage: "",
@@ -395,59 +395,44 @@ export default createStore({
 
     reset_checkboxes(state) {
       console.log('in reset_checkboxes')
-
-      // for every selection
+      // take name out of array with all attribute names
       for (const elementName of state.allAlltributes) {
-        // search element by name
+        // search selection element by name
         var selection = document.getElementsByName(elementName.name);
-        // search for checked onse and make them false
+        // search for checked ones and make them false
         for (var i = 0; i < selection.length; i++) {
           if (selection[i].checked == true) {
             selection[i].checked = false;
           }
         }
-        // search for the first one and make them checked
+        // search for the first one and make it checked
         try {
           for (var i = 0; i < 1; i++) {
             selection[i].checked = true;
-            // console.log(selection[i])
           }
         }
         catch (e) {
-          // console.log(e); 
         }
       }
     },
 
-
+    // This Method calcualtes the price using selcted items from selection.
+    // Base is the names of the selection which is stored in array (state.allAttributes)
     calculate_price_checkbox(state) {
       console.log("within method calculate_price_checkbox");
-
       const charges = []
-
-      // console.log(state.allAlltributes)
+      // take name out of array with all attribute names
       for (const element of state.allAlltributes) {
-        // console.log(element.name)
-
+        // search selection element by name
         var allSizes = document.getElementsByName(element.name);
-        // console.log(allSizes)
-
+        // search for checked ones. take price out of the tag, remove all charactes except - and convert to number
         for (var i = 0; i < allSizes.length; i++) {
           if (allSizes[i].checked == true) {
-            // state.chargeSize = state.sizes[i].price
-            // console.log((allSizes[i].nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.textContent))
             const str = allSizes[i].nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.textContent;
-            // console.log(str)
             const onlyNumbers = str.replace(/[^\d-]/g, '');
-            // console.log('onlyNumbers')
-            // console.log(parseInt(onlyNumbers))
             charges.push(parseInt(onlyNumbers))
-            // charges.push(state.sizes[i].price)
-
-            // console.log(typeof state.sizes[i].price)
           }
         }
-
       }
 
 
