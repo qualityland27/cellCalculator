@@ -393,6 +393,60 @@ export default createStore({
       state.weldingTypeList_mig_mag = true;
     },
 
+    sendEmail_checkboxes(state) {
+      console.log("in sendEmail_checkboxes");
+
+      let newLine = "%0D%0A";
+      // var x = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Paramtern:" + newLine + newLine +
+      //   "Schweißart: " + state.schweißArt.value + newLine +
+      //   "Such System: " + state.nahtSuchSystem.value + newLine +
+      //   "Absaugung: " + state.absaugung.value + newLine +
+      //   "Daten Logging: " + state.logging.value + newLine +
+      //   "Montage und Inbetriebnahme: " + state.montage.value + newLine +
+      //   "Produktionsbegleitung: " + state.produktionsbegleitung.value + newLine +
+      //   "Schulung: " + state.schulung.value + newLine;
+
+      //   console.log(typeof(x))
+
+      var body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Paramtern:" + newLine 
+
+      if (state.weldingApplicationSelected == true) {
+        body = body + 'Anwendung: Schweißanwendung' + newLine
+      }
+      if (state.grippingApplicationSelected == true) {
+        body = body + newLine + 'Anwendung: Handlinganwendung' + newLine
+      }
+
+      // take name out of array with all attribute names
+      for (const elementName of state.allAlltributes) {
+        // search selection element by name
+        var selection = document.getElementsByName(elementName.name);
+
+        // search for checked ones and make them false
+        for (var i = 0; i < selection.length; i++) {
+          if (selection[i].checked == true) {
+            try {
+              var name = selection[i].nextElementSibling.firstElementChild.firstElementChild.firstElementChild.textContent;
+              // console.log(selection[i].nextElementSibling.firstElementChild.firstElementChild.firstElementChild.textContent);
+              body = body + elementName.name + ": " + name + newLine
+            } catch (e) {
+            }
+
+            // body = body + name + newLine
+          }
+        }
+
+      }
+
+      body = body + newLine + 'Projekttitel: '
+      body = body + newLine + 'Kurzschreibung der Anwendung:'
+      body = body + newLine + 'Bilder befinden sich im Anhang.'
+
+      var mail = "mailto:info@volkert.net?subject=Anfrage&body=" + body;
+      // console.log(body)
+      window.location = mail;
+    },
+
     reset_checkboxes(state) {
       console.log('in reset_checkboxes')
       // take name out of array with all attribute names
@@ -422,18 +476,27 @@ export default createStore({
       console.log("within method calculate_price_checkbox");
       const charges = []
       // take name out of array with all attribute names
-      for (const element of state.allAlltributes) {
-        // search selection element by name
-        var allSizes = document.getElementsByName(element.name);
+      for (const elementName of state.allAlltributes) {
+        // search selection elementName by name
+        var selection = document.getElementsByName(elementName.name);
         // search for checked ones. take price out of the tag, remove all charactes except - and convert to number
-        for (var i = 0; i < allSizes.length; i++) {
-          if (allSizes[i].checked == true) {
-            const str = allSizes[i].nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.textContent;
-            const onlyNumbers = str.replace(/[^\d-]/g, '');
-            charges.push(parseInt(onlyNumbers))
+        try {
+          for (var i = 0; i < selection.length; i++) {
+            if (selection[i].checked == true) {
+              const str = selection[i].nextElementSibling.firstChild.lastChild.lastChild.textContent;
+              console.log(str)
+              const onlyNumbers = str.replace(/[^\d-]/g, '');
+              charges.push(parseInt(onlyNumbers))
+            }
           }
         }
+        catch (e) { }
       }
+
+
+
+
+
 
 
       // ///////////////////////

@@ -3,17 +3,17 @@
 
     <!--  -->
     <!--  -->
-    <!-- TODO: Komponente draus machen (Zug) -->
     <!-- TODO: Info Boxen mit Text befüllen (Zug) -->
     <!-- TODO: Text Kommentieren (Zug) -->
-    <!-- TODO: Auswahl zurücksetzen (rauswerfen oder implementieren) -->
     <!-- TODO: index.js vom store säubern. Unnötige Methoden und Variablen weg. Kommentieren. (Zug) -->
-    <!-- TODO: aus info-Icon eine Komponente machen -->
+    <!-- TODO: Method sendEmail_checkboxes fertig machen -->
     <!--  -->
     <!--  -->
 
+    <CookieFreeZone />
+
     <!-- Cookie-Free Zone -->
-    <div v-show="elementVisible" id="cookie-free-zone" class="hideElement animate-fade transition duration-700 transition-opacity ease-in opacity-100 mx-auto max-w-xs fixed inset-x-0 bottom-0 mb-2 z-50 bg-white shadow-xl p-2 text-slate-500 flex justify-center dark:bg-slate-800
+    <!-- <div v-show="elementVisible" id="cookie-free-zone" class="hideElement animate-fade transition duration-700 transition-opacity ease-in opacity-100 mx-auto max-w-xs fixed inset-x-0 bottom-0 mb-2 z-50 bg-white shadow-xl p-2 text-slate-500 flex justify-center dark:bg-slate-800
     dark:text-slate-400 rounded-lg ">
       <div class="flex items-center gap-4">
         <svg class="h-10 w-10" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@
           <strong class="">Cookie-Free Zone</strong>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
     <!-- Conact via Mail and WhatsApp -->
@@ -169,7 +169,7 @@
           <div class="grid grid-cols-2 items-center justify-items-center mt-8 gap-6">
             <!-- Welding Button with Icon -->
             <button type="button" class="text-white rounded-lg text-sm p-1.5" data-modal-toggle="small-modal" @click="$store.commit('handle_weldingIconBlk_visible'), $store.commit('reset_checkboxes'),
-              $store.commit('calculate_price_checkbox')">
+            $store.commit('calculate_price_checkbox')">
               <!-- Welding Icon gray -->
               <welding_icon v-if="!$store.getters.weldingApplicationSelected" fillAll="fill-gray-500" />
               <!-- Welding Icon color -->
@@ -177,7 +177,7 @@
             </button>
             <!-- Gripping Button with Icon -->
             <button type="button" class="text-white rounded-lg text-sm p-1.5" data-modal-toggle="small-modal" @click="$store.commit('handle_grippingIconBlk_visible'), $store.commit('reset_checkboxes'),
-              $store.commit('calculate_price_checkbox')">
+            $store.commit('calculate_price_checkbox')">
               <!-- Gripping Icon Gray  -->
               <Gripping_icon v-if="!$store.getters.grippingApplicationSelected" fillAll="fill-gray-500" />
               <!-- Gripping Icon Color -->
@@ -215,9 +215,12 @@
 
           <!-- Size and WorkLoad Radio Buttons (selection) -->
           <!-- Name of Selection is used to calculate price -->
-          <!-- <Selection name="size" id1="size-standard" text1="Standard" price1="+ 0 €" permanentVisible1="true"
-          id2="size-compact" text2="Kompakt" price2="- 9.900 €" unvisibleOnWelding2="true" /> -->
-          <div class="mr-4">
+          <Selection name="size" id1="size-standard" text1="Standard" price1="+ 0 €" permanentVisible1="true"
+            icon1="vcell_standard_icon" id2="size-compact" text2="Kompakt" price2="- 9.900 €" unvisibleOnWelding2="true"
+            icon2="vcell_compact_icon" />
+
+
+          <!-- <div class="mr-4">
             <ul class="grid gap-6 w-full grid-flow-col auto-cols-fr mr-4">
               <li class="h-full w-full">
                 <input type="radio" id="size-standard" name="size" value="size-standard" class="hidden peer"
@@ -239,7 +242,7 @@
                 <label for="size-compact"
                   class="inline-flex flex justify-start p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 stroke-gray-500 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue peer-checked:stroke-volkert-blue">
                   <div class="flex flex-row justify-start items-center gap-4">
-                    <vcell_compact_icon class="w-18 h-18" />
+                    <vcell_compact_icon />
                     <div class="flex flex-col">
                       <div class="w-full text-lg font-semibold">Kompakt</div>
                       <div class="w-full">- 9.900 €</div>
@@ -248,7 +251,7 @@
                 </label>
               </li>
             </ul>
-          </div>
+          </div> -->
 
 
 
@@ -709,7 +712,7 @@
               rounded-md 
               text-white 
               h-16 hover:bg-volkert-dark-blue hover:border-transparent 
-              text-xl" @click="$store.commit('sendEmail')">
+              text-xl" @click="$store.commit('sendEmail_checkboxes')">
               Angebot anfordern
             </button>
             <button class="
@@ -749,12 +752,13 @@ import { red } from 'tailwindcss/colors'
 import InfoModal from './InfoModal.vue'
 import Gripping_icon from '../assets/icons/gripping_icon.vue'
 import Selection from './Selection.vue'
+import CookieFreeZone from './CookieFreeZone.vue'
 
 export default {
 
   data() {
     return {
-      elementVisible: true,
+      // elementVisible: true,
     }
   },
   components: {
@@ -764,11 +768,12 @@ export default {
     "ínfoModal": require("@/components/InfoModal.vue").default,
     InfoModal,
     Gripping_icon,
-    Selection
-  },
-  created() {
-    setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 3000)
-  }
+    Selection,
+    CookieFreeZone
+},
+  // created() {
+  //   setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 3000)
+  // }
 }
 </script>
 
