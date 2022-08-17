@@ -12,6 +12,8 @@
 
     <CookieFreeZone />
 
+    <Inquiry />
+
     <!-- Cookie-Free Zone -->
     <!-- <div v-show="elementVisible" id="cookie-free-zone" class="hideElement animate-fade transition duration-700 transition-opacity ease-in opacity-100 mx-auto max-w-xs fixed inset-x-0 bottom-0 mb-2 z-50 bg-white shadow-xl p-2 text-slate-500 flex justify-center dark:bg-slate-800
     dark:text-slate-400 rounded-lg ">
@@ -753,6 +755,7 @@ import InfoModal from './InfoModal.vue'
 import Gripping_icon from '../assets/icons/gripping_icon.vue'
 import Selection from './Selection.vue'
 import CookieFreeZone from './CookieFreeZone.vue'
+import Inquiry from './Inquiry.vue'
 
 export default {
 
@@ -769,7 +772,8 @@ export default {
     InfoModal,
     Gripping_icon,
     Selection,
-    CookieFreeZone
+    CookieFreeZone,
+    Inquiry
 },
   // created() {
   //   setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 3000)

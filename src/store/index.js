@@ -723,10 +723,76 @@ export default createStore({
       if (state.modalVisible == true) {
         modal.style.display = "none";
         state.modalVisible = false;
+        console.log(modal.style.visibility)
+
       } else {
         modal.style.display = "block";
         state.modalVisible = true;
+        console.log(modal.style.visibility)
       }
+    },
+
+    handle_inquiry_modal(state) {
+      console.log("in handle_inquiry_modal")
+      let modal = document.getElementById("inquiry-modal");
+      // console.log(modal)
+
+      if (modal.style.display == 'block') {
+        modal.style.display = "none";
+      } else {
+        modal.style.display = "block";
+      }
+    },
+
+    create_inquiry_message(state) {
+      console.log("in create_inquiry_message");
+
+      let el = document.getElementById("inquiry-message");
+
+      console.log(el)
+
+      let newLine = "\n";
+      let body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Parametern:" + newLine + newLine
+
+      if (state.weldingApplicationSelected == true) {
+        body = body + 'Anwendung: Schweißanwendung' + newLine
+      }
+      if (state.grippingApplicationSelected == true) {
+        body = body + newLine + 'Anwendung: Handlinganwendung' + newLine
+      }
+
+      // take name out of array with all attribute names
+      for (const elementName of state.allAlltributes) {
+        // search selection element by name
+        var selection = document.getElementsByName(elementName.name);
+
+        // search for checked ones and make them false
+        for (var i = 0; i < selection.length; i++) {
+          if (selection[i].checked == true) {
+            try {
+              var name = selection[i].nextElementSibling.firstElementChild.firstElementChild.firstElementChild.textContent;
+              // console.log(selection[i].nextElementSibling.firstElementChild.firstElementChild.firstElementChild.textContent);
+              body = body + elementName.name + ": " + name + newLine
+            } catch (e) {
+            }
+
+            // body = body + name + newLine
+          }
+        }
+
+      }
+
+      body = body + newLine + 'Projekttitel: '
+      body = body + newLine + 'Kurzschreibung der Anwendung:'
+      body = body + newLine + 'Bilder befinden sich im Anhang.'
+
+      // var mail = "mailto:info@volkert.net?subject=Anfrage&body=" + body;
+      // // console.log(body)
+      // window.location = mail;
+
+      // body = "This is some text.\nIt is read only and doesn't look like an input.\nIt is read only and doesn't look like an input."
+
+      el.textContent = body
     },
 
     handle_modal_byID(state, payload) {
