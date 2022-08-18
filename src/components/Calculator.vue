@@ -5,17 +5,11 @@
     <!--  -->
     <!-- TODO: Info Boxen mit Text befüllen (Zug) -->
     <!-- TODO: Text Kommentieren (Zug) -->
-    <!-- TODO: index.js vom store säubern. Unnötige Methoden und Variablen weg. Kommentieren. (Zug) -->
-    <!-- TODO: Method sendEmail_with_clientsDefaultProgram fertig machen -->
-    <!-- TODO: Attachments for Inquiry -->
-    <!-- TODO: Logo ins Inqquiry -->
-
+    <!-- TODO: index.js säubern -fehlen nur noch die alten Funktionen -->
     <!--  -->
     <!--  -->
 
     <CookieFreeZone />
-
-
 
     <!-- Cookie-Free Zone -->
     <!-- <div v-show="elementVisible" id="cookie-free-zone" class="hideElement animate-fade transition duration-700 transition-opacity ease-in opacity-100 mx-auto max-w-xs fixed inset-x-0 bottom-0 mb-2 z-50 bg-white shadow-xl p-2 text-slate-500 flex justify-center dark:bg-slate-800

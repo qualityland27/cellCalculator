@@ -355,44 +355,44 @@ export default createStore({
     //
     // Change Selection Code
     //
-    handle_welding_type_none(state) {
-      console.log("handle_welding_type_none");
+    // handle_welding_type_none(state) {
+    //   console.log("handle_welding_type_none");
 
-      const green = colors.green[600]; // #16a34a
-      const gray = colors.gray[300];
-      const volkert_blue = '#0E3083';
-      const white = '#ffffff'
-      const black = '#000000'
+    //   const green = colors.green[600]; // #16a34a
+    //   const gray = colors.gray[300];
+    //   const volkert_blue = '#0E3083';
+    //   const white = '#ffffff'
+    //   const black = '#000000'
 
-      var welding_type_none_btn = document.getElementById('welding_type_none_btn');
-      var welding_type_wig_btn = document.getElementById('welding_type_wig_btn');
-      var welding_type_migmag_btn = document.getElementById('welding_type_migmag_btn');
-
-
-      state.weldingTypeList_none = true;
-      state.weldingTypeList_wig = false;
-      state.weldingTypeList_mig_mag = false;
+    //   var welding_type_none_btn = document.getElementById('welding_type_none_btn');
+    //   var welding_type_wig_btn = document.getElementById('welding_type_wig_btn');
+    //   var welding_type_migmag_btn = document.getElementById('welding_type_migmag_btn');
 
 
-    },
-
-    handle_welding_type_wig(state) {
-      console.log("handle_welding_type_wig");
-
-      state.weldingTypeList_none = false;
-      state.weldingTypeList_wig = true;
-      state.weldingTypeList_mig_mag = false;
+    //   state.weldingTypeList_none = true;
+    //   state.weldingTypeList_wig = false;
+    //   state.weldingTypeList_mig_mag = false;
 
 
-    },
+    // },
 
-    handle_welding_type_migmag(state) {
-      console.log("handle_welding_type_wig");
+    // handle_welding_type_wig(state) {
+    //   console.log("handle_welding_type_wig");
 
-      state.weldingTypeList_none = false;
-      state.weldingTypeList_wig = false;
-      state.weldingTypeList_mig_mag = true;
-    },
+    //   state.weldingTypeList_none = false;
+    //   state.weldingTypeList_wig = true;
+    //   state.weldingTypeList_mig_mag = false;
+
+
+    // },
+
+    // handle_welding_type_migmag(state) {
+    //   console.log("handle_welding_type_wig");
+
+    //   state.weldingTypeList_none = false;
+    //   state.weldingTypeList_wig = false;
+    //   state.weldingTypeList_mig_mag = true;
+    // },
 
     read_selected_attributes(state) {
       console.log('In read_selected_attributes')
@@ -745,14 +745,6 @@ export default createStore({
       // }
 
 
-
-
-
-
-
-
-
-
       charges.push(state.startPrice)
 
 
@@ -767,32 +759,32 @@ export default createStore({
       state.calculatedPrice = price2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
 
-    handle_modal(state) {
-      console.log("in handle_modal")
-      let modal = document.getElementById("small-modal");
-      if (state.modalVisible == true) {
-        modal.style.display = "none";
-        state.modalVisible = false;
-        // console.log(modal.style.visibility)
+    // handle_modal(state) {
+    //   console.log("in handle_modal")
+    //   let modal = document.getElementById("small-modal");
+    //   if (state.modalVisible == true) {
+    //     modal.style.display = "none";
+    //     state.modalVisible = false;
+    //     // console.log(modal.style.visibility)
 
-      } else {
-        modal.style.display = "block";
-        state.modalVisible = true;
-        // console.log(modal.style.visibility)
-      }
-    },
+    //   } else {
+    //     modal.style.display = "block";
+    //     state.modalVisible = true;
+    //     // console.log(modal.style.visibility)
+    //   }
+    // },
 
-    handle_inquiry_modal(state) {
-      console.log("in handle_inquiry_modal")
-      let modal = document.getElementById("inquiry-modal");
-      // console.log(modal)
+    // handle_inquiry_modal(state) {
+    //   console.log("in handle_inquiry_modal")
+    //   let modal = document.getElementById("inquiry-modal");
+    //   // console.log(modal)
 
-      if (modal.style.display == 'block') {
-        modal.style.display = "none";
-      } else {
-        modal.style.display = "block";
-      }
-    },
+    //   if (modal.style.display == 'block') {
+    //     modal.style.display = "none";
+    //   } else {
+    //     modal.style.display = "block";
+    //   }
+    // },
 
     create_inquiry_message(state) {
       console.log("in create_inquiry_message");

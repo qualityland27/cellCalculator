@@ -3,7 +3,7 @@
     <!-- Modal toggle -->
     <button class="flex-auto font-bold bg-volkert-blue rounded-md text-white h-16 hover:bg-volkert-dark-blue
         hover:border-transparent text-xl" type="button" data-modal-toggle="inquiry-modal"
-        @click="$store.commit('handle_inquiry_modal'), $store.commit('create_inquiry_message')">
+        @click="$store.commit('handle_modal_byID', 'inquiry-modal'), $store.commit('create_inquiry_message')">
         Unverbindliche Anfrage
     </button>
 
@@ -17,7 +17,7 @@
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <button type="button"
                     class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                    data-modal-toggle="inquiry-modal" @click="$store.commit('handle_inquiry_modal')">
+                    data-modal-toggle="inquiry-modal" @click="$store.commit('handle_modal_byID', 'inquiry-modal')">
                     <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
