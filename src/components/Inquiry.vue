@@ -1,12 +1,12 @@
 <template>
 
     <!-- Modal toggle -->
-    <button
-        class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button" data-modal-toggle="inquiry-modal"
+    <button class="flex-auto font-bold bg-volkert-blue rounded-md text-white h-16 hover:bg-volkert-dark-blue
+        hover:border-transparent text-xl" type="button" data-modal-toggle="inquiry-modal"
         @click="$store.commit('handle_inquiry_modal'), $store.commit('create_inquiry_message')">
-        Toggle modal
+        Unverbindliche Anfrage
     </button>
+
 
     <!-- Main modal -->
     <div id="inquiry-modal" tabindex="-1" aria-hidden="true"
@@ -28,7 +28,7 @@
                 </button>
                 <div class="py-6 px-6 lg:px-8">
                     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Ihre unverbindliche Anfrage</h3>
-                    <form class="space-y-6" action="#">
+                    <form class="space-y-6" action="#" @submit.prevent="$store.commit('sendmail_wiht_mailjs')">
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                 <label for="firstName"
@@ -76,12 +76,11 @@
                         <div class="flex justify-between">
                             <div class="flex items-start">
                                 <div class="flex items-center h-5">
-                                    <input id="remember" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                                        required="">
+                                    <input id="copy" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
                                 </div>
-                                <label for="remember"
-                                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ich möchte eine
+                                <label for="copy" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ich
+                                    möchte eine
                                     Kopie der Nachricht</label>
                             </div>
                             <!-- <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost
@@ -89,10 +88,17 @@
                         </div>
                         <button type="submit"
                             class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Versenden</button>
-                        <!-- <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                            Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create
-                                account</a>
-                        </div> -->
+                        <div class="flex justify-between">
+                            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                Problems?
+                                <a href="#" @click="$store.commit('sendEmail_with_clientsDefaultProgram')"
+                                    class="text-blue-700 hover:underline dark:text-blue-500">Send via
+                                    Mail-Program like Outlook</a>
+                            </div>
+                            <img src="../assets/logo_volkert_weiss.png" class="flex-shrink h-3" />
+                        </div>
+
+
                     </form>
                 </div>
             </div>

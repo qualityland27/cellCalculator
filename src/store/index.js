@@ -3,23 +3,26 @@ import axios from 'axios'
 import router from '../router'
 import usb from '../assets/icons/usb.svg'
 import colors from 'tailwindcss/colors'
+import emailjs from 'emailjs-com';
 
 export default createStore({
   state: {
     counter: 0,
 
+    userMessage: '',
+
     allAlltributes: [
-      { name: 'size' },
-      { name: 'weldingType' },
-      { name: 'searchSystem' },
-      { name: 'exhaustSystem' },
-      { name: 'gripper' },
-      { name: 'measuring' },
-      { name: 'singualizer' },
-      { name: 'dataLogging' },
-      { name: 'assemblyService' },
-      { name: 'productionSupport' },
-      { name: 'scooling' },
+      { name: 'size', name_de:'Größe und Traglast' , checked: false, selectedElement: null},
+      { name: 'weldingType', name_de: 'Schweißpaket', checked: false, selectedElement: null },
+      { name: 'searchSystem', name_de: 'Schweißnahtsuchsystem', checked: false, selectedElement: null },
+      { name: 'exhaustSystem', name_de: 'Absaugung', checked: false, selectedElement: null },
+      { name: 'gripper', name_de: 'Greifer', checked: false, selectedElement: null },
+      { name: 'measuring', name_de: 'Messstation', checked: false, selectedElement: null },
+      { name: 'singualizer', name_de: 'Vereinzler', checked: false, selectedElement: null },
+      { name: 'dataLogging', name_de: 'Datenlogging', checked: false, selectedElement: null },
+      { name: 'assemblyService', name_de: 'Montage und Inbetriebnahme', checked: false, selectedElement: null },
+      { name: 'productionSupport', name_de: 'Produktionsbegleitung', checked: false, selectedElement: null },
+      { name: 'scooling', name_de: 'Schulung', checked: false, selectedElement: null },
     ],
 
     chargeSize: 0,
@@ -261,7 +264,6 @@ export default createStore({
     },
 
     sendEmail(state) {
-      console.log("HI");
       var newLine = "%0D%0A";
       var body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Paramtern:" + newLine + newLine +
         "Schweißart: " + state.schweißArt.value + newLine +
@@ -384,7 +386,6 @@ export default createStore({
 
     },
 
-
     handle_welding_type_migmag(state) {
       console.log("handle_welding_type_wig");
 
@@ -393,57 +394,106 @@ export default createStore({
       state.weldingTypeList_mig_mag = true;
     },
 
-    sendEmail_checkboxes(state) {
-      console.log("in sendEmail_checkboxes");
-
-      let newLine = "%0D%0A";
-      // var x = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Paramtern:" + newLine + newLine +
-      //   "Schweißart: " + state.schweißArt.value + newLine +
-      //   "Such System: " + state.nahtSuchSystem.value + newLine +
-      //   "Absaugung: " + state.absaugung.value + newLine +
-      //   "Daten Logging: " + state.logging.value + newLine +
-      //   "Montage und Inbetriebnahme: " + state.montage.value + newLine +
-      //   "Produktionsbegleitung: " + state.produktionsbegleitung.value + newLine +
-      //   "Schulung: " + state.schulung.value + newLine;
-
-      //   console.log(typeof(x))
-
-      var body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Paramtern:" + newLine 
-
-      if (state.weldingApplicationSelected == true) {
-        body = body + 'Anwendung: Schweißanwendung' + newLine
-      }
-      if (state.grippingApplicationSelected == true) {
-        body = body + newLine + 'Anwendung: Handlinganwendung' + newLine
-      }
-
+    read_selected_attributes(state) {
+      console.log('In read_selected_attributes')
       // take name out of array with all attribute names
-      for (const elementName of state.allAlltributes) {
+      for (const attribute of state.allAlltributes) {
         // search selection element by name
-        var selection = document.getElementsByName(elementName.name);
+        var selection = document.getElementsByName(attribute.name);
 
         // search for checked ones and make them false
         for (var i = 0; i < selection.length; i++) {
           if (selection[i].checked == true) {
             try {
-              var name = selection[i].nextElementSibling.firstElementChild.firstElementChild.firstElementChild.textContent;
-              // console.log(selection[i].nextElementSibling.firstElementChild.firstElementChild.firstElementChild.textContent);
-              body = body + elementName.name + ": " + name + newLine
+              var selectedElement = selection[i].nextElementSibling.firstElementChild.firstElementChild.firstElementChild.textContent;
+              attribute.selectedElement = selectedElement;
+              attribute.checked = true;
             } catch (e) {
             }
-
-            // body = body + name + newLine
           }
         }
+      }
+    },
 
+    get_message_body(state, newLine){
+      console.log('in get_message_body klappt')
+
+      let body = 
+        "Hallo liebes Team von Volkert, " + newLine + newLine + 
+        "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Parametern: " + 
+        newLine + newLine
+
+      if (state.weldingApplicationSelected == true) {
+        body = body + 'Anwendung: Schweißanwendung' + newLine;
+      }
+      if (state.grippingApplicationSelected == true) {
+        body = body + newLine + 'Anwendung: Handlinganwendung' + newLine;
+      }
+
+      // this.read_selected_attributes(state);
+
+      this.commit('read_selected_attributes', state);
+
+      // search for checked ones and make them false
+      for (const attribute of state.allAlltributes) {
+        if (attribute.checked == true) {
+          try {
+            body = body + attribute.name_de + ": " + attribute.selectedElement + newLine
+          } catch (e) {
+            console.log(e)
+          }
+        }
       }
 
       body = body + newLine + 'Projekttitel: '
       body = body + newLine + 'Kurzschreibung der Anwendung:'
-      body = body + newLine + 'Bilder befinden sich im Anhang.'
 
-      var mail = "mailto:info@volkert.net?subject=Anfrage&body=" + body;
-      // console.log(body)
+      state.userMessage = body;
+    },
+
+    sendmail_wiht_mailjs(state) {
+      console.log("in sendmail_mailjs");
+
+      // Get value from Elements
+      let firstName = document.getElementById("firstName").value;
+      let userEmail;
+      if (document.getElementById("copy").checked == true) {
+        userEmail = document.getElementById("email").value;
+      } else {
+        userEmail = '';
+      }
+      let userMessage = document.getElementById("inquiry-message").value;
+
+      // create message; message is stored in state.userMessage
+      let newwLine = "";
+      this.commit('get_message_body', newwLine);
+
+      var contactParams = {
+        from_name: firstName,
+        from_mail: userEmail,
+        message: state.userMessage
+      }
+
+      let service_id = 'service_0rvlx6p';
+      let template_id = 'template_3mdygx9';
+      let user_id = 'NXyeeKI9WXn5r3uy6';
+
+      emailjs.init(user_id);
+      emailjs.send(service_id, template_id, contactParams).then(() => {
+        alert('Message sent!')
+      }, (error) => {
+        alert('Message not sent', error);
+      }); 
+    },
+
+    sendEmail_with_clientsDefaultProgram(state) {
+      console.log("in sendEmail_checkboxes");
+
+      // create message; message is stored in state.userMessage
+      let newwLine = "%0D%0A";
+      this.commit('get_message_body', newwLine);
+
+      var mail = "mailto:info@volkert.net?subject=Anfrage&body=" + state.userMessage;
       window.location = mail;
     },
 
@@ -484,7 +534,7 @@ export default createStore({
           for (var i = 0; i < selection.length; i++) {
             if (selection[i].checked == true) {
               const str = selection[i].nextElementSibling.firstChild.lastChild.lastChild.textContent;
-              console.log(str)
+              // console.log(str)
               const onlyNumbers = str.replace(/[^\d-]/g, '');
               charges.push(parseInt(onlyNumbers))
             }
@@ -723,12 +773,12 @@ export default createStore({
       if (state.modalVisible == true) {
         modal.style.display = "none";
         state.modalVisible = false;
-        console.log(modal.style.visibility)
+        // console.log(modal.style.visibility)
 
       } else {
         modal.style.display = "block";
         state.modalVisible = true;
-        console.log(modal.style.visibility)
+        // console.log(modal.style.visibility)
       }
     },
 
@@ -748,61 +798,20 @@ export default createStore({
       console.log("in create_inquiry_message");
 
       let el = document.getElementById("inquiry-message");
+      // console.log(el)
 
-      console.log(el)
+      // create message; message is stored in state.userMessage
+      let newwLine = "\n";
+      this.commit('get_message_body', newwLine);
 
-      let newLine = "\n";
-      let body = "Hallo liebes Team von Volkert, " + newLine + newLine + "bitte senden Sie mir ein Angebot und einen Beratungsterminvorschlag für das Automatisierungsmodul vCell mit den folgenden Parametern:" + newLine + newLine
-
-      if (state.weldingApplicationSelected == true) {
-        body = body + 'Anwendung: Schweißanwendung' + newLine
-      }
-      if (state.grippingApplicationSelected == true) {
-        body = body + newLine + 'Anwendung: Handlinganwendung' + newLine
-      }
-
-      // take name out of array with all attribute names
-      for (const elementName of state.allAlltributes) {
-        // search selection element by name
-        var selection = document.getElementsByName(elementName.name);
-
-        // search for checked ones and make them false
-        for (var i = 0; i < selection.length; i++) {
-          if (selection[i].checked == true) {
-            try {
-              var name = selection[i].nextElementSibling.firstElementChild.firstElementChild.firstElementChild.textContent;
-              // console.log(selection[i].nextElementSibling.firstElementChild.firstElementChild.firstElementChild.textContent);
-              body = body + elementName.name + ": " + name + newLine
-            } catch (e) {
-            }
-
-            // body = body + name + newLine
-          }
-        }
-
-      }
-
-      body = body + newLine + 'Projekttitel: '
-      body = body + newLine + 'Kurzschreibung der Anwendung:'
-      body = body + newLine + 'Bilder befinden sich im Anhang.'
-
-      // var mail = "mailto:info@volkert.net?subject=Anfrage&body=" + body;
-      // // console.log(body)
-      // window.location = mail;
-
-      // body = "This is some text.\nIt is read only and doesn't look like an input.\nIt is read only and doesn't look like an input."
-
-      el.textContent = body
+      el.textContent = state.userMessage
     },
 
     handle_modal_byID(state, payload) {
       console.log("in handle_modal_byID")
-      console.log(payload)
-
+      // console.log(payload)
 
       try {
-        console.log('try block')
-
         let modal = document.getElementById(payload.id);
         if (state.modalVisible == true) {
           modal.style.display = "none";
@@ -812,8 +821,6 @@ export default createStore({
           state.modalVisible = true;
         }
       } catch (error) {
-        console.log('catch block')
-
         let modal = document.getElementById(payload);
         if (state.modalVisible == true) {
           modal.style.display = "none";
@@ -870,10 +877,10 @@ export default createStore({
 
     },
     show_initial_info(state) {
+      console.log("in show_initial_info");
       let initialInfoModal = document.getElementById("initialInfo-modal");
 
       if (state.notClickedYet == true) {
-        console.log("show initial Info Modal");
         initialInfoModal.style.display = "block";
         state.notClickedYet = false;
       } else {
@@ -919,15 +926,11 @@ export default createStore({
     },
 
     isMobile() {
-      console.log("i am here")
       console.log(screen.width)
 
       if (screen.width < 600) {
-        console.log("true block")
         return true
-
       } else {
-        console.log("false block")
         return false
       }
     }

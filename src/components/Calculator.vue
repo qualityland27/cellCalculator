@@ -6,13 +6,16 @@
     <!-- TODO: Info Boxen mit Text befüllen (Zug) -->
     <!-- TODO: Text Kommentieren (Zug) -->
     <!-- TODO: index.js vom store säubern. Unnötige Methoden und Variablen weg. Kommentieren. (Zug) -->
-    <!-- TODO: Method sendEmail_checkboxes fertig machen -->
+    <!-- TODO: Method sendEmail_with_clientsDefaultProgram fertig machen -->
+    <!-- TODO: Attachments for Inquiry -->
+    <!-- TODO: Logo ins Inqquiry -->
+
     <!--  -->
     <!--  -->
 
     <CookieFreeZone />
 
-    <Inquiry />
+
 
     <!-- Cookie-Free Zone -->
     <!-- <div v-show="elementVisible" id="cookie-free-zone" class="hideElement animate-fade transition duration-700 transition-opacity ease-in opacity-100 mx-auto max-w-xs fixed inset-x-0 bottom-0 mb-2 z-50 bg-white shadow-xl p-2 text-slate-500 flex justify-center dark:bg-slate-800
@@ -63,7 +66,7 @@
         </svg>
       </a>
       <a href="mailto:info@volkert.net"
-        class="bg-volkert-blue hover:bg-volkert-dark-blue active:bg-volkert-darkest-blue w-16 h-16 p-4 rounded-full flex items-center justify-center">
+        class="bg-volkert-dark-blue hover:bg-volkert-darker-blue active:bg-volkert-darkest-blue w-16 h-16 p-4 rounded-full flex items-center justify-center">
         <svg class="text-white " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
           stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -707,20 +710,23 @@
           </div>
 
           <div class="mt-2 mr-2 ml-2 flex flex-row">
-            <button class="
+            <!-- <button class="
               flex-auto 
               font-bold 
               bg-volkert-blue 
               rounded-md 
               text-white 
               h-16 hover:bg-volkert-dark-blue hover:border-transparent 
-              text-xl" @click="$store.commit('sendEmail_checkboxes')">
+              text-xl" @click="$store.commit('sendEmail_with_clientsDefaultProgram')">
               Angebot anfordern
-            </button>
+            </button> -->
+
+            <Inquiry />
+
             <button class="
               flex-auto 
               bg-gray-400 
-              rounded-md 
+              rounded-md s
               h-16
               ml-2 
               text-white
@@ -774,12 +780,15 @@ export default {
     Selection,
     CookieFreeZone,
     Inquiry
-},
+  },
   // created() {
   //   setTimeout(() => document.getElementById('cookie-free-zone').style.opacity = 0, 3000)
   // }
 }
 </script>
+
+
+
 
 <style>
 </style>

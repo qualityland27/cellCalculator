@@ -13,7 +13,8 @@ module.exports = {
         colors: {
           'volkert-blue':'#0E3083',
           'volkert-dark-blue':'#091F57',
-          'volkert-darkest-blue':'#06153C',
+          'volkert-darker-blue': '#06153C',
+          'volkert-darkest-blue':'#040F2A',
           'test-color':'#3E599C',
           'cement-color':'#806d59',
           'render-gray':'#343435'
