@@ -37,8 +37,8 @@
                         <div class="flex flex-row justify-start items-center gap-4">
                             <component class="w-18 h-18" :is="icon2"></component>
                             <div class="flex flex-col">
-                                <div class="w-full text-lg font-semibold">{{ text2 }}</div>
-                                <div title="price" class="w-full">{{ price2 }}</div>
+                                <div class="w-max text-lg font-semibold">{{ text2 }}</div>
+                                <div title="price" class="w-max">{{ price2 }}</div>
                             </div>
                         </div>
                     </label>

@@ -170,17 +170,20 @@
             <button type="button" class="text-white rounded-lg text-sm p-1.5" data-modal-toggle="small-modal" @click="$store.commit('handle_weldingIconBlk_visible'), $store.commit('reset_checkboxes'),
             $store.commit('calculate_price_checkbox')">
               <!-- Welding Icon gray -->
-              <welding_icon v-if="!$store.getters.weldingApplicationSelected" fillAll="fill-gray-500" />
+              <welding_icon v-if="!$store.getters.weldingApplicationSelected" class="h-20 w-20"
+                fillAll="fill-gray-500" />
               <!-- Welding Icon color -->
-              <welding_icon v-else fillAll="fill-gray-700" line1="fill-volkert-blue" />
+              <welding_icon v-else class="h-20 w-20" fillAll="fill-gray-700" line1="fill-volkert-blue" />
             </button>
             <!-- Gripping Button with Icon -->
             <button type="button" class="text-white rounded-lg text-sm p-1.5" data-modal-toggle="small-modal" @click="$store.commit('handle_grippingIconBlk_visible'), $store.commit('reset_checkboxes'),
             $store.commit('calculate_price_checkbox')">
               <!-- Gripping Icon Gray  -->
-              <Gripping_icon v-if="!$store.getters.grippingApplicationSelected" fillAll="fill-gray-500" />
+              <Gripping_icon v-if="!$store.getters.grippingApplicationSelected" class="h-20 w-20"
+                fillAll="fill-gray-500" />
               <!-- Gripping Icon Color -->
-              <Gripping_icon v-else fillAll="fill-gray-700" line1="fill-volkert-blue" line3="fill-volkert-blue" />
+              <Gripping_icon v-else class="h-20 w-20" fillAll="fill-gray-700" line1="fill-volkert-blue"
+                line3="fill-volkert-blue" />
             </button>
           </div>
 
@@ -215,7 +218,7 @@
           <!-- Size and WorkLoad Radio Buttons (selection) -->
           <!-- Name of Selection is used to calculate price -->
           <Selection name="size" id1="size-standard" text1="Standard" price1="+ 0 €" permanentVisible1="true"
-            icon1="vcell_standard_icon" id2="size-compact" text2="Kompakt" price2="- 9.900 €" unvisibleOnWelding2="true"
+            icon1="vcell_standard_icon" id2="size-mini" text2="Mini" price2="- 9.900 €" unvisibleOnWelding2="true"
             icon2="vcell_compact_icon" />
 
 

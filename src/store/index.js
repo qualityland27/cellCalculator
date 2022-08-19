@@ -149,10 +149,10 @@ export default createStore({
 
     // weldingTypeList: { name, price, selected}
 
-    modalVisible: false,
+    // modalVisible: false,
 
-    weldingIconBlk_visible: false,
-    grippingIconBlk_visible: true,
+    // weldingIconBlk_visible: false,
+    // grippingIconBlk_visible: true,
 
     weldingApplicationSelected: true,
     grippingApplicationSelected: false,
@@ -801,7 +801,6 @@ export default createStore({
 
     handle_modal_byID(state, payload) {
       console.log("in handle_modal_byID")
-      // console.log(payload)
 
       try {
         let modal = document.getElementById(payload.id);
@@ -822,16 +821,6 @@ export default createStore({
           state.modalVisible = true;
         }                 // Step 3.5: It never reaches here because the code above threw an error
       }
-
-      // let modal = document.getElementById(payload.id);
-      // if (state.modalVisible == true) {
-      //   modal.style.display = "none";
-      //   state.modalVisible = false;
-      // } else {
-      //   modal.style.display = "block";
-      //   state.modalVisible = true;
-      // }
-
     },
 
 

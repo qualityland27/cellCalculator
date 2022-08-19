@@ -1,6 +1,7 @@
 <template>
     <!-- Cookie-Free Zone -->
-    <div v-show="elementVisible" id="cookie-free-zone" class="hideElement animate-fade transition duration-700 transition-opacity ease-in opacity-100 mx-auto max-w-xs fixed inset-x-0 bottom-0 mb-2 z-50 bg-white shadow-xl p-2 text-slate-500 flex justify-center dark:bg-slate-800
+    <div v-show="elementVisible" id="cookie-free-zone" class="hideElement animate-fade transition duration-700 transition-opacity ease-in opacity-100 
+    mx-auto max-w-xs fixed inset-x-0 bottom-0 mb-2 z-50 bg-green-700 shadow-xl p-2 text-slate-300 flex justify-center dark:bg-slate-800
     dark:text-slate-400 rounded-lg ">
         <div class="flex items-center gap-4">
             <svg class="h-10 w-10" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"

@@ -15,10 +15,11 @@
 
 
     <!-- Text -->
-    <div class="text-lg sm:text-2xl w-5/6 mx-auto flex text-justify text-center mb-40 mt-8">
-      Die V-Cell ist ein kompaktes Automatisierungsmodul. Die Robotereinheit
-      kann für verschiedene Zwecke eingesetzt werden. So zählen Schweißen,
-      Handling und Maschinenbestückung zu den häufigsten Anwendungsbereichen.
+    <div class="text-lg sm:text-2xl w-5/6 mx-auto mb-40 mt-8 text-justify">
+      Die V-Cell ist ein <span class="text-slate-900 font-medium"> kompaktes Automatisierungsmodul</span>.
+      Die Robotereinheit kann für verschiedene Zwecke eingesetzt werden. So zählen
+      <span class="text-slate-900 font-medium">Schweißen, Handling und Maschinenbestückung</span>
+      zu den häufigsten Anwendungsbereichen.
       Die V-Cell wird in der kompakten Bauform als Standardmodul angeboten.
       Diese zeichnet sich durch platzsparende Bauweise und einfachste
       Transportmöglichkeiten mit Stapler oder Hubwagen aus. Durch die hohe
@@ -28,212 +29,145 @@
     </div>
 
 
+
+
+
+
+
+    <div class="antialiased w-full h-full bg-black text-gray-400 font-inter p-10">
+      <div class="container px-4 mx-auto">
+        <div>
+          <div id="title" class="text-center my-10">
+            <h1 class="text-5xl sm:text-6xl font-bold text-white">Some Facts</h1>
+            <p class="text-light text-gray-500 text-xl">
+              Fakten der vCell auf einen Blick
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-evenly gap-10 pt-10">
+            <div id="plan"
+              class="rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in">
+              <div id="title" class="w-full py-5 border-b border-gray-800">
+                <h2 class="font-bold text-3xl text-white">Verschiedene</h2>
+                <h2 class="font-bold text-3xl text-white mb-6">Anwendungen</h2>
+                <!-- <h3 class="font-normal text-indigo-500 text-xl mt-2">
+                  Verschiedene
+                </h3> -->
+              </div>
+              <div id="content" class="mt-12">
+                <div id="icon" class="my-5">
+                  <div class="flex flex-row items-center justify-center">
+                    <welding_icon class="mx-2 h-12 w-12" fillAll="fill-volkert-blue" />
+                    <gripping_icon class="mx-2 h-12 w-12" fillAll="fill-volkert-blue" />
+                  </div>
+                  <p class="text-gray-500 text-sm pt-2">
+                    Von hohen bis kleinen Stückzahlen
+                  </p>
+                </div>
+                <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                  <ul>
+                    <li>Schweißen</li>
+                    <li>Handling</li>
+                    <li>(Maschinenbestückung)</li>
+                    <!-- <li>Subdomain included</li> -->
+                  </ul>
+                  <!-- <div id="choose" class="w-full mt-10 px-6">
+                    <a href="#"
+                      class="w-full block bg-gray-900 font-medium text-xl py-4 rounded-xl hover:shadow-lg transition duration-200 ease-in-out hover:bg-indigo-600 hover:text-white">Choose</a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div id="plan"
+              class="rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in">
+              <div id="title" class="w-full py-5 border-b border-gray-800">
+                <h2 class="font-bold text-3xl text-white">Kompakte</h2>
+                <h2 class="font-bold text-3xl text-white mb-6">Bauform</h2>
+                <!-- <h3 class="font-normal text-indigo-500 text-xl mt-2">
+                  Verschiedene
+                </h3> -->
+              </div>
+              <div id="content" class="mt-12">
+                <div id="icon" class="my-5">
+                  <div class="flex flex-row items-center justify-center">
+                    <welding_icon class="mx-2 h-12 w-12" fillAll="fill-volkert-blue" />
+                    <!-- <gripping_icon class="mx-2 h-12 w-12" fillAll="fill-volkert-blue" /> -->
+                  </div>
+                  <p class="text-gray-500 text-sm pt-2">
+                    Von hohen bis kleinen Stückzahlen
+                  </p>
+                </div>
+                <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                  <ul>
+                    <li>Schweißen</li>
+                    <li>Handling</li>
+                    <li>(Maschinenbestückung)</li>
+                    <!-- <li>Subdomain included</li> -->
+                  </ul>
+                  <!-- <div id="choose" class="w-full mt-10 px-6">
+                    <a href="#"
+                      class="w-full block bg-gray-900 font-medium text-xl py-4 rounded-xl hover:shadow-lg transition duration-200 ease-in-out hover:bg-indigo-600 hover:text-white">Choose</a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div id="plan"
+              class="rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in">
+              <div id="title" class="w-full py-5 border-b border-gray-800">
+                <h2 class="font-bold text-3xl text-white">Viele</h2>
+                <h2 class="font-bold text-3xl text-white mb-6">Roboterhersteller</h2>
+                <!-- <h3 class="font-normal text-indigo-500 text-xl mt-2">
+                  Verschiedene
+                </h3> -->
+              </div>
+              <div id="content" class="mt-12">
+                <div id="icon" class="my-5">
+                  <div class="flex flex-row items-center justify-center">
+                    <!-- <welding_icon class="mx-2 h-12 w-12" fillAll="fill-volkert-blue" /> -->
+                    <gripping_icon class="mx-2 h-12 w-12" fillAll="fill-volkert-blue" />
+                  </div>
+                  <p class="text-gray-500 text-sm pt-2">
+                    Von hohen bis kleinen Stückzahlen
+                  </p>
+                </div>
+                <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                  <ul>
+                    <li>Schweißen</li>
+                    <li>Handling</li>
+                    <li>(Maschinenbestückung)</li>
+                    <!-- <li>Subdomain included</li> -->
+                  </ul>
+                  <!-- <div id="choose" class="w-full mt-10 px-6">
+                    <a href="#"
+                      class="w-full block bg-gray-900 font-medium text-xl py-4 rounded-xl hover:shadow-lg transition duration-200 ease-in-out hover:bg-indigo-600 hover:text-white">Choose</a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mt-40 text-5xl sm:text-6xl font-bold w-5/6 mx-auto flex justify-center mb-20">
+      Jetzt konfigurieren.
+    </div>
+
+    <div
+      class=" mb-40 mx-auto animate-bounce bg-volkert-blue p-2 w-20 h-20 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center">
+      <svg class="w-12 h-12 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+
+
+
+
     <calculator />
 
 
 
-    <!--          Grid with 2 cols            -->
-    <!--                   |                  -->
-    <!--         Image     |     Selection    -->
-    <!--                   |                  -->
-
-    <div class="grid grid-cols-1 sm:grid-cols-2">
-      <!-- 1. Col: Image -->
-      <div class="sm:sticky top-20 content-center">
-        <!-- Image CVell  -->
-        <img alt="Vue" class="logo bg-white" src="../assets/vCell3.png" />
-
-        <div class="">
-          <!--    Gesamtpreis   -->
-          <div class="price m-0 text-center mr-12">ab {{ $store.getters.price }} €</div>
-          <div class="kleingedrucktes text-center mr-12">zzgl. MwSt.</div>
-        </div>
-      </div>
-
-      <!-- 2. Col: Selection -->
-      <div class="flex flex-col ">
-
-        <!--    ------------------------------    -->
-        <!--  Schweißpaket: Header and Drop Down  -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Schweißpaket:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownSchweißArt">
-          <option value="withoutSchweißart">Ohne (+0 Euro)</option>
-          <option value="wig">WIG (+{{ $store.getters.wigAufpreis }} Euro)</option>
-          <option value="mig_mag"> MIG/MAG (+{{ $store.getters.mig_magAufpreis }} Euro) </option>
-        </select>
-
-
-        <!--    ------------------------------    -->
-        <!--   Suchsystem: Header and Drop Down   -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Schweißnahtsuchsystem:</div>
-
-        <!-- <div class="schweißNahtSuchSystem"> 
-            {{ $store.state.schweißNaht }}
-        </div> -->
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownSchweißNahtSuchSystem">
-          <option value="without">Ohne (+0 Euro)</option>
-          <option value="gas">Gasdüse (+{{ $store.getters.gasAufpreis }} Euro)</option>
-          <option value="camera"> Kamera (+{{ $store.getters.cameraAufpreis }} Euro) </option>
-        </select>
-
-
-        <!--    ------------------------------    -->
-        <!--    Absaugung: Header and Drop Down    -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Absaugung:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownAbsaugung">
-
-          <option value="withoutAbsaugung">Ohne (+0 Euro)</option>
-          <option value="einmalFilter"> Mit Einmalfilter (+{{ $store.getters.einmalFilterAufpreis }} Euro)
-          </option>
-          <option value="selbstreinigenderFilter">Mit selbstreinigendem Filter (+{{
-            $store.getters.selbstreinigenderFilterAufpreis }} Euro)</option>
-        </select>
-
-
-        <!--    ------------------------------    -->
-        <!--    DatenLogging: Header and Drop Down    -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Daten Logging:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownDatenLogging">
-
-          <option value="withoutDatenLogging">Ohne (+0 Euro)</option>
-          <option value="withDatenLogging"> Mit Datenlogging (+{{ $store.getters.loggingAufpreis }} Euro)
-          </option>
-        </select>
-
-
-        <!--    ---------------------------------------    -->
-        <!--    Montage/Inbetrieb: Header and Drop Down    -->
-        <!--    ---------------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Montage und Inbetriebnahme:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownMontage">
-
-          <option value="withoutMontage">Ohne (+0 Euro)</option>
-          <option value="withMontage">Mit Montage und Inbetriebnahme (+{{ $store.getters.montageAufpreis }}
-            Euro)
-          </option>
-        </select>
-
-
-        <!--    -----------------------------------------    -->
-        <!--    Produktionsbegleit.: Header and Drop Down    -->
-        <!--    -----------------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Produktionsbegleitung:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownProduktionsbegleitung">
-
-          <option value="withoutProduktionsbegleitung">Ohne (+0 Euro)</option>
-          <option value="withProduktionsbegleitung">Ein Tag Produktionsbegleitung (+{{
-            $store.getters.produktionsbegleitungAufpreis }} Euro)</option>
-        </select>
-
-
-        <!--    ------------------------------    -->
-        <!--    Schulung: Header and Drop Down    -->
-        <!--    ------------------------------    -->
-        <div class="font-bold bottom-4 mt-4 ml-2">Schulung:</div>
-
-        <select class="bg-gray-100 rounded-md w-80 h-10 ml-2" @change="$store.commit('calculatePrice')"
-          id="dropDownSchulung">
-
-          <option value="withoutSchulung">Ohne (+0 Euro)</option>
-          <option value="withSchulung">
-            Mit Schulung (+{{ $store.getters.schulungAufpreis }} Euro)
-          </option>
-        </select>
-
-
-        <!--    Buttons    -->
-        <div class="mt-12 mr-2 ml-2">
-          <button class="
-            w-full
-            rounded-md
-            border-solid border-2 border-light-blue-500
-            text-black
-            h-16 hover:bg-gray-100 hover:border-transparent 
-            text-xl" @click="$store.dispatch('reset')">
-            Auswahl zurücksetzen
-          </button>
-        </div>
-
-        <div class="mt-2 mr-2 ml-2 flex flex-row">
-          <button class="
-            flex-auto 
-            font-bold 
-            bg-volkert-blue 
-            rounded-md 
-            text-white 
-            h-16 hover:bg-volkert-dark-blue hover:border-transparent 
-            text-xl" @click="$store.commit('sendEmail')">
-            Angebot anfordern
-          </button>
-          <button class="
-            flex-auto 
-            bg-gray-400 
-            rounded-md 
-            h-16
-            ml-2 
-            hover:bg-gray-500 hover:border-transparent" @click="$store.commit('printPage')">
-            Drucken
-          </button>
-        </div>
-
-      </div>
-
-
-
-
-      <!--    ------------------------------    -->
-      <!--    Those are place holders, needed    -->
-      <!--    that the image scrolles further    -->
-      <!--    ------------------------------    -->
-
-      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
-        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
-        </div>
-      </div>
-      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
-        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
-        </div>
-      </div>
-      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
-        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
-        </div>
-      </div>
-      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
-        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
-        </div>
-      </div>
-      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
-        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
-        </div>
-      </div>
-      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
-        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
-        </div>
-      </div>
-      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
-        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
-        </div>
-      </div>
-      <div class="w-5/6 mx-auto justify-center content-center sm:mt-40 grid-cols-2">
-        <div class="sticky top-0 w-1/2 items-center justify-center mx-4">
-        </div>
-      </div>
-    </div>
 
 
 
@@ -387,7 +321,6 @@
 import Counter from "../components/Counter.vue";
 import CounterSquared from "../components/CounterSquared.vue";
 import Calculator from "../components/Calculator.vue";
-
 import VueNumeric from "vue-numeric";
 
 
@@ -417,6 +350,10 @@ export default {
     counter: require("@/components/Counter.vue").default,
     "counter-squared": require("@/components/CounterSquared.vue").default,
     "calculator": require("@/components/Calculator.vue").default,
+    "welding_icon": require("@/assets/icons/welding_icon.vue").default,
+    "gripping_icon": require("@/assets/icons/gripping_icon.vue").default,
+
+
   }
   // methods: {
   //   sendEmail()
@@ -440,69 +377,82 @@ export default {
   margin-top: 60px;
   margin-bottom: 16px;
 }
+
 .title_sm {
   font-weight: light;
   font-size: 28px;
   margin-top: 30px;
   margin-bottom: 8px;
 }
+
 .sub-title {
   font-weight: normal;
   font-size: 24px;
   margin-top: 40px;
   margin-bottom: 80px;
 }
+
 .text {
   font-weight: lighter;
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .text_normal {
   font-weight: normal;
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .text_sm {
   font-weight: lighter;
   font-size: 12px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 .bigText {
   font-weight: light;
   font-size: 52px;
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
 .bigText_sm {
   font-weight: light;
   font-size: 36px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .kleingedrucktes {
   font-size: 12px;
   margin-bottom: 24px;
 }
+
 .counter {
   font-size: 80px;
 }
+
 .price {
   font-size: 40px;
   font-weight: light;
 }
+
 .buttons button {
   font-size: 40px;
   width: 100px;
   margin: 0 10px;
 }
+
 .angebotButton button {
   font-size: 20px;
   width: 100px;
   margin-top: 24px;
 }
+
 .resetButton button {
   font-size: 20px;
   width: 100px;

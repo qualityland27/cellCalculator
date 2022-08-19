@@ -1,7 +1,7 @@
 <template>
         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
         <!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.1.0.18-->
-        <svg class="mb-2 w-20 h-20"
+        <svg class="mb-2" :class="class"
                 version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1134.000000 1134.000000"
                 preserveAspectRatio="xMidYMid meet">
                 <title id="">Handling</title>
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  props: ['fillAll', 'line1', 'line2', 'line3']
+  props: ['fillAll', 'line1', 'line2', 'line3', 'class']
 }
 </script>
 
