@@ -34,10 +34,10 @@
     <div class="mx-auto  sm:py-4">
       <div class="text-xs sm:text-lg font-semibold mb-2">Kontakt</div>
       <div class="mx-1 text-xs sm:text-lg font-light">Telefon: +49 9944 4190632</div>
-      <a class="mx-1 text-xs sm:text-lg font-light underline" href="mailto: info@volkert.net">E-Mail:
+      <a class="mx-1 text-xs sm:text-lg font-light underline" href="mailto:info@volkert.net">E-Mail:
         info@volkert.net</a>
       <div class="mx-1 text-xs sm:text-lg font-light p-2"></div>
-      <a class=" text-xs sm:text-lg font-semibold" href="https://www.volkert.net/Kontakt/Impressum/">Impressum</a>
+      <a class="text-xs sm:text-lg font-semibold" href="https://www.volkert.net/Kontakt/Impressum/">Impressumm</a>
     </div>
     <!-- <a class="mx-auto sm:py-4 text-xs sm:text-lg font-semibold mb-2"
       href="https://www.volkert.net/Kontakt/Impressum/">Impressum</a> -->

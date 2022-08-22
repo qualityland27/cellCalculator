@@ -270,7 +270,7 @@
 
     <!--    Informationszellen    -->
     <!--    Sonderwünsche    -->
-    
+
     <figure
       class="flex bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-11/12 sm:w-1/2 mt-40"
       onclick="window.location.href = 'https://www.volkert.net/Kontakt/'">
@@ -290,7 +290,7 @@
     <!--    Warum VCell    -->
     <div class="sm:w-4/5 mx-auto flex flex-col sm:flex-row justify-center content-center">
       <figure
-        class="flex bg-gray-800 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-11/12 sm:w-1/2 sm:mr-5 mt-10">
+        class="flex bg-gray-800 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 w-11/12 sm:w-1/2 sm:mr-5 mt-10">
         <div class="p-8 text-left ">
           <div class="text-4xl sm:text-5xl font-semibold mt-8 mb-12 mx-auto flex justify-center text-center ">Warum
             V-Cell?</div>
@@ -306,12 +306,12 @@
 
       <!--    Warum Volkert    -->
       <figure
-        class="flex bg-gray-800 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-11/12 sm:w-1/2 sm:ml-5 mt-10">
+        class="flex bg-gray-800 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 w-11/12 sm:w-1/2 sm:ml-5 mt-10">
         <div class="p-8 text-left ">
           <div class="text-4xl sm:text-5xl font-semibold mt-8 mb-12 mx-auto flex justify-center text-center">Warum
             Volkert?</div>
-          <ul class="list-disc text-md sm:text-xl font-light list-insides ">
-            <li class="text_normal">100% Flexibilität – wir passen uns ihren Bedürfnissen an</li>
+          <ul class="list-disc text-md sm:text-xl font-light list-insides">
+            <li>100% Flexibilität – wir passen uns ihren Bedürfnissen an</li>
             <li>360° Made in Germany – von Entwicklung bis Fertigung</li>
             <li>Höchste Qualität – durch Leidenschaft</li>
             <li>Experten im Schweißbereich</li>
@@ -375,14 +375,14 @@
       Wissen Sie schon, was wir neben der VCELL anbieten? Oder wissen Sie, wie wir unsere Qualität garantieren?
     </div>
 
-    <div class="text-md sm:text-xl w-4/6 sm:w-2/6 mx-auto flex flex-row mt-10 mb-40">
+    <div class="text-md sm:text-xl w-4/6 sm:w-2/6 mx-auto flex flex-row mt-10 mb-40 p-4 gap-6">
       <button
-        class="w-1/2 flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-24 lg:h-16"
+        class="w-1/2 flex-auto bg-transparent hover:bg-gray-400 hover:text-white border border-gray-400 hover:border-transparent rounded-md"
         onclick="window.location.href = 'https://www.volkert.net/Leistungen/'">
         Leistungen
       </button>
       <button
-        class="w-1/2 flex-auto bg-transparent hover:bg-gray-200 border border-gray-400 hover:border-transparent rounded-md h-24 lg:h-16 mx-2"
+        class="w-1/2 flex-auto bg-transparent hover:bg-gray-400 hover:text-white border border-gray-400 hover:border-transparent rounded-md p-4"
         onclick="window.location.href = 'https://www.volkert.net/Leistungen/360-Grad-Made-in-Germany/'">
         360 Grad - Made in Germany
       </button>

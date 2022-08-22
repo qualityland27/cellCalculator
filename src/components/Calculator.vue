@@ -50,7 +50,7 @@
 
 
     <!-- Conact via Mail and WhatsApp -->
-    <div class="fixed bottom-0 left-0 right-0 z-50 flex flex-col pl-1 pb-2">
+    <div class="fixed bottom-0 left-0 right-0 z-10 flex flex-col pl-1 pb-2 w-max">
       <a href="https://wa.me/49168711573"
         class="bg-green-700 hover:bg-green-800 active:bg-green-900 w-16 h-16 p-4 mb-1 rounded-full flex items-center justify-center ">
         <svg class="text-white fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -115,16 +115,17 @@
                   <span class="sr-only">Close modal</span>
                 </button>
                 <div class="p-6 text-center">
-                  <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z" />
                   </svg>
                   <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-                    Es sind nicht alle technischen Möglichkeiten gelistet.</h3>
-                  <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-                    Bei Bedarf, bitten wir
+                    Im Kalkulator sind nicht alle technischen Möglichkeiten gelistet. Bei Bedarf, bitten wir
                     Sie uns direkt zu Kontaktieren.</h3>
+                  <!-- <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+                    Bei Bedarf, bitten wir
+                    Sie uns direkt zu Kontaktieren.</h3> -->
                   <button data-modal-toggle="popup-modal" type="button"
                     class="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
                     Got it!
@@ -495,7 +496,7 @@
             <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Messstation:</div>
               <!-- Icon and PopUp (Modal) -->
-              <InfoModal id="info-measuring" header="Greifer" text1="Text Nummer 1 bissle was"
+              <InfoModal id="info-measuring" header="Messtation" text1="Text Nummer 1 bissle was"
                 text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" />
               <!-- <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
@@ -525,7 +526,7 @@
             <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Vereinzler:</div>
               <!-- Icon and PopUp (Modal) -->
-              <InfoModal id="info-singualizer" header="Greifer" text1="Text Nummer 1 bissle was"
+              <InfoModal id="info-singualizer" header="Vereinzler" text1="Text Nummer 1 bissle was"
                 text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" />
               <!-- <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
