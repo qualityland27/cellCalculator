@@ -16,11 +16,11 @@
 
     <!-- Text -->
     <div class="text-lg sm:text-2xl w-5/6 mx-auto mb-40 mt-8 text-justify">
-      Die V-Cell ist ein <span class="text-slate-900 font-medium"> kompaktes Automatisierungsmodul</span>.
+      Die vCell ist ein <span class="text-slate-900 font-medium"> kompaktes Automatisierungsmodul</span>.
       Die Robotereinheit kann für verschiedene Zwecke eingesetzt werden. So zählen
       <span class="text-slate-900 font-medium">Schweißen, Handling und Maschinenbestückung</span>
       zu den häufigsten Anwendungsbereichen.
-      Die V-Cell wird in der kompakten Bauform als Standardmodul angeboten.
+      Die vCell wird in der kompakten Bauform als Standardmodul angeboten.
       Diese zeichnet sich durch platzsparende Bauweise und einfachste
       Transportmöglichkeiten mit Stapler oder Hubwagen aus. Durch die hohe
       Flexibilität unserer Anlagen und Mitarbeiter können wir das Standardmodul
@@ -66,7 +66,11 @@
       <div class="container px-4 mx-auto">
         <div>
           <div id="title" class="text-center my-10">
-            <h1 class="text-5xl sm:text-6xl font-bold text-white">Some Facts</h1>
+            <div
+              class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-gray-100 text-5xl sm:text-6xl font-bold ">
+              Some Facts
+            </div>
+            <!-- <h1 class="text-5xl sm:text-6xl font-bold text-blue-600">Some Facts</h1> -->
             <p class="text-light text-gray-500 text-xl">
               Fakten der vCell auf einen Blick
             </p>
@@ -251,7 +255,7 @@
 
     <!-- Text -->
     <div class="text-lg sm:text-2xl w-5/6 mx-auto flex text-justify text-center mt-40">
-      Die V-Cell wird in ihrer Basisausführung mit dem Cobot Panda vom Hersteller Franka Emika geliefert. Der
+      Die vCell wird in ihrer Basisausführung mit dem Cobot Panda vom Hersteller Franka Emika geliefert. Der
       Cobot
       zeichnet sich durch eine einfache grafische
       Bedienoberfläche aus und lässt sich somit auch ohne Programmierkenntnisse programmieren. Der
@@ -272,7 +276,7 @@
     <!--    Sonderwünsche    -->
 
     <figure
-      class="flex bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 pb-16 w-11/12 sm:w-1/2 mt-40"
+      class="flex bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white mx-auto justify-center rounded-xl p-8 pb-16 w-11/12 sm:w-1/2 mt-40"
       onclick="window.location.href = 'https://www.volkert.net/Kontakt/'">
       <div class="p-8 text-center">
         <div class="text-4xl sm:text-5xl font-semibold mx-auto flex justify-center mt-8 mb-12">Sonderwünsche - kein
@@ -293,7 +297,7 @@
         class="flex bg-gray-800 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 pb-16 w-11/12 sm:w-1/2 sm:mr-5 mt-10">
         <div class="p-8 text-left ">
           <div class="text-4xl sm:text-5xl font-semibold mt-8 mb-12 mx-auto flex justify-center text-center ">Warum
-            V-Cell?</div>
+            vCell?</div>
           <ul class="list-disc text-md sm:text-xl font-light list-insides ">
             <li>Zeitsparend – Schnell / einfach umrüstbar </li>
             <li>Robust – Einfache und effiziente Konstruktion</li>
