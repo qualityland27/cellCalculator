@@ -272,7 +272,7 @@
     <!--    Sonderwünsche    -->
 
     <figure
-      class="flex bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 md:p-0 w-11/12 sm:w-1/2 mt-40"
+      class="flex bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 pb-16 w-11/12 sm:w-1/2 mt-40"
       onclick="window.location.href = 'https://www.volkert.net/Kontakt/'">
       <div class="p-8 text-center">
         <div class="text-4xl sm:text-5xl font-semibold mx-auto flex justify-center mt-8 mb-12">Sonderwünsche - kein
@@ -290,7 +290,7 @@
     <!--    Warum VCell    -->
     <div class="sm:w-4/5 mx-auto flex flex-col sm:flex-row justify-center content-center">
       <figure
-        class="flex bg-gray-800 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 w-11/12 sm:w-1/2 sm:mr-5 mt-10">
+        class="flex bg-gray-800 cursor-pointer text-white mx-auto justify-center rounded-xl p-8 pb-16 w-11/12 sm:w-1/2 sm:mr-5 mt-10">
         <div class="p-8 text-left ">
           <div class="text-4xl sm:text-5xl font-semibold mt-8 mb-12 mx-auto flex justify-center text-center ">Warum
             V-Cell?</div>
@@ -340,7 +340,7 @@
 
         <!--    Downloadbutton (nur Klick auf den Text funktioniert)   -->
         <button
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded items-center mt-8 mb-8 mx-auto flex justify-center text-center"
+          class="bg-gray-300 hover:bg-gray-400 hover:text-white text-gray-800 font-bold py-2 px-4 rounded items-center mt-8 mb-8 mx-auto flex justify-center text-center"
           @click="$store.dispatch('downloadItem')">
           <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
             <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
