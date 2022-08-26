@@ -24,7 +24,7 @@
                         <g :class="fillAll" id="Document" font-family="Times New Roman" font-size="16"
                                 transform="scale(1 -1)">
                                 <g id="Spread" transform="translate(0 -850.396)">
-                                        <g id="Page background">
+                                        <g :class="background" id="Page background">
                                                 <use transform="translate(-2.181 852.069) scale(861.75 -861.75)"
                                                         xlink:href="#Bitmap" stroke-width="0" fill="none" stroke="none"
                                                         stroke-miterlimit="79.8403193612775" />
@@ -61,7 +61,7 @@
 
 <script>
 export default {
-  props: ['fillAll', 'fillSquare', 'stroke', 'line1', 'line2', 'line3', 'class']
+  props: ['fillAll', 'fillSquare', 'stroke', 'background', 'line1', 'line2', 'line3', 'class']
 }
 </script>
 

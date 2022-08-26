@@ -323,6 +323,8 @@ export default createStore({
         document.getElementById('intelligentConstructionHeader').scrollIntoView({ behavior: 'smooth' })
       } else if (payload == "technicalDetails") {
         document.getElementById('technicalDetailsHeader').scrollIntoView({ behavior: 'smooth' })
+      } else {
+        document.getElementById(payload).scrollIntoView({ behavior: 'smooth' })
       }
     },
 
@@ -962,25 +964,28 @@ if (!state.notClickedYet) {
       return state.calculatedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
     isMobile(state) {
-      return state.isMobile
+      return state.isMobile;
     },
     show_mobile_nav_bar(state) {
-      return state.show_mobile_nav_bar
+      return state.show_mobile_nav_bar;
     },
     weldingIconBlk_visible(state) {
-      return state.weldingIconBlk_visible
+      return state.weldingIconBlk_visible;
     },
     grippingIconBlk_visible(state) {
-      return state.grippingIconBlk_visible
+      return state.grippingIconBlk_visible;
     },
     weldingApplicationSelected(state) {
-      return state.weldingApplicationSelected
+      return state.weldingApplicationSelected;
     },
     grippingApplicationSelected(state) {
-      return state.grippingApplicationSelected
+      return state.grippingApplicationSelected;
     },
     notClickedYet(state) {
       return state.notClickedYet;
+    },
+    startPrice(state) {
+      return state.startPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
     // hier könne Daten nochmal bearbeitete werden bevor sie überall zur Verfügung getellt werden
   },

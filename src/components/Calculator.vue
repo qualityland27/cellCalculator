@@ -1,5 +1,5 @@
 <template>
-  <div class="calculator">
+  <div id="calculator" class="calculator">
 
     <!--  -->
     <!--  -->
@@ -142,7 +142,7 @@
           <!--  -->
           <!-- Application -->
           <!--  -->
-          <div class="flex flex-row justify-between mt-12">
+          <div id="configuratorHeader" class="flex flex-row justify-between mt-12">
             <div class="text-xl md:text-2xl font-semibold ">Anwendung:</div>
             <!-- Icon and PopUp (Modal) -->
             <InfoModal id="info-application" header="Anwendung" text1="Text Nummer 1 bissle was"
@@ -695,7 +695,7 @@
 
 
           <!--    Buttons    -->
-          <div class="mt-12 mr-2 ml-2">
+          <!-- <div class="mt-12 mr-2 ml-2">
             <button class="
               w-full
               rounded-md
@@ -708,17 +708,6 @@
           </div>
 
           <div class="mt-2 mr-2 ml-2 flex flex-row">
-            <!-- <button class="
-              flex-auto 
-              font-bold 
-              bg-volkert-blue 
-              rounded-md 
-              text-white 
-              h-16 hover:bg-volkert-dark-blue hover:border-transparent 
-              text-xl" @click="$store.commit('sendEmail_with_clientsDefaultProgram')">
-              Angebot anfordern
-            </button> -->
-
             <Inquiry />
 
             <button class="
@@ -731,7 +720,34 @@
               hover:bg-gray-500 hover:border-transparent" @click="$store.commit('printPage')">
               Drucken
             </button>
+          </div> -->
+
+
+          <div class="grid grid-cols-2 mt-12 mr-2 mb-2">
+            <button class="
+              w-full
+              rounded-md
+              border-solid border-2 border-light-blue-500
+              text-black
+              h-16 hover:bg-gray-100 hover:border-transparent 
+              text-xl" @click="$store.commit('reset_checkboxes'), $store.commit('calculate_price_checkbox')">
+              Auswahl zurücksetzen
+            </button>
+            <button class="
+              w-full
+              ml-2 
+              rounded-md
+              border-solid border-2 border-light-blue-500
+              text-black
+              h-16 hover:bg-gray-100 hover:border-transparent 
+              text-xl" @click="$store.commit('printPage')">
+              Drucken
+            </button>
           </div>
+
+          <Inquiry />
+
+
         </div>
       </div>
 
