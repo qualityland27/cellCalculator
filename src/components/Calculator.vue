@@ -3,9 +3,9 @@
 
     <!--  -->
     <!--  -->
-    <!-- TODO: Info Boxen mit Text befüllen (Zug) -->
-    <!-- TODO: Text Kommentieren (Zug) -->
-    <!-- TODO: index.js säubern -fehlen nur noch die alten Funktionen -->
+    <!-- TODO: Info Boxen mit Text befüllen - wenn Matthias korrigiert hat -->
+    <!-- TODO: Kommentare weg -->
+    <!-- TODO: Blender render -->
     <!--  -->
     <!--  -->
 
@@ -145,8 +145,11 @@
           <div id="configuratorHeader" class="flex flex-row justify-between mt-12">
             <div class="text-xl md:text-2xl font-semibold ">Anwendung:</div>
             <!-- Icon and PopUp (Modal) -->
-            <InfoModal id="info-application" header="Anwendung" text1="Text Nummer 1 bissle was"
-              text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+            <InfoModal id="info-application" header="Anwendung" 
+              header1="Allgemein"
+              text1="Die Robotereinheit kann für verschiedene Zwecke eingesetzt werden. So zählen Schweißen und Handling zu den häufigsten Anwendungsbereichen. Der Grundaufbau der Zelle bleibt bei beiden Anwendungen gleich, es bieten sich je nach Auswahl unterschiedliche Konfigurationsmöglichkeiten."
+              text2="" 
+              text3="" />
             <!-- <div class="flex justify-between mb-4">
               <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
@@ -195,8 +198,13 @@
           <div class="flex flex-row justify-between mt-12 mb-4">
             <div class="text-xl md:text-2xl font-semibold ">Größe und Traglast:</div>
             <!-- Icon and PopUp (Modal) -->
-            <InfoModal id="info-size-workload" header="Größe und Traglast" text1="Text Nummer 1 bissle was"
-              text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+            <InfoModal id="info-size-workload" header="Größe und Traglast"
+                header1="Standrd"
+                text1="Die vCell wird in kompakter Bauform als Standardmodul angeboten. Diese zeichnet sich durch platzsparende Bauweise und einfachste Transportmöglichkeiten mit Stapler oder Hubwagen aus. Maße vCell Standard: 2600 x 1500 x 2200 mm. In der Standardausführung wird die Zelle mit einem Yaskawa   GP12 / AR1440 mit 12kg Traglast angeboten."
+                header2="Mini"
+                text2="Zusätzlich ist die vCell Mini in kompakterer Bauform erhältlich. Sie ist Ideal für beengte Platzverhältnisse oder für das Handling kleiner Teile. Maße vCell Standard: 1200 x 800 x 2200 mm. Die vCell Mini wird standardmäßig mit dem Panda von Franka   Emika mit 3kg Traglast angeboten." 
+                header3="Allgemein"
+                text3="Bei Ihrer Anfrage werden wir Ihr Projekt analysieren und ggf. Alternativen zu den oben gelisteten Robotern vorschlagen." />
             <!-- <div class="flex justify-between mb-4">
               <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
@@ -277,8 +285,11 @@
             <div class="mt-2 flex justify-between">
               <div class="text-lg font-medium">Schweißpaket:</div>
               <!-- Icon and PopUp (Modal) -->
-              <InfoModal id="info-welding-package" header="Schweißpaket" text1="Text Nummer 1 bissle was"
-                text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+              <InfoModal id="info-welding-package" header="Schweißpaket" 
+                header1="Allgemein"
+                text1="Welches der gängigen Schweißverfahren zum Einsatz kommt, hängt von den Anforderungen an das Bauteil, den Werkstoff und an den Fertigungsprozess ab. Mit der vCell werden üblicherweise Metall-Inertgas- beziehungsweise Metall-Aktivgas-Schweißprozesse (MIG/MAG) oder Wolfram-Inertgas-Prozesse (WIG) automatisiert. Gerne beraten Sie unsere Schweißfachingenieure bei der Auswahl des geeigneten Schweißverfahrens für Ihr Projekt."
+                text2="Standardmäßig verbauen wir Stromquellen der Firma Fronius. Sollten Sie eine Stromquelle einer anderen Firma wünschen stellt das kein Problem dar. " 
+                text3="" />
               <!-- <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                 data-modal-toggle="info-welding-package"
@@ -300,7 +311,7 @@
 
             <!-- Welding Package Radio Buttons (selection) -->
             <!-- Name of Selection is used to calculate price -->
-            <Selection name="weldingType" id1="weldingType-none" text1="Eigenes" price1="+ 0 €" permanentVisible1="true"
+            <Selection name="weldingType" id1="weldingType-none" text1="Eigen" price1="+ 0 €" permanentVisible1="true"
               id2="weldingType-wig" text2="WIG" price2="+ 8.900 €" permanentVisible2="true" id3="wedingType-migmag"
               text3="MIG/MAG" price3="+ 18.500 €" permanentVisible3="true" />
 
@@ -350,9 +361,13 @@
             <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Schweißnahtsuchsystem:</div>
               <!-- Icon and PopUp -->
-              <InfoModal id="info-searchSystem" header="Schweißnahtsuchsystem" text1="Text Nummer 1 bissle was"
-                text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
-
+              <InfoModal id="info-searchSystem" header="Schweißnahtsuchsystem"
+                header1="Allgmein"
+                text1="Für automatisiertes Schweißen werden oftmals Systeme zum Suchen der Naht benötigt. Dabei fährt der Roboter in einer Suchfahrt am Werkstück entlang, während dieser auf das Feedback des entsprechenden Suchsystems wartet."
+                header2="Gasdüse"
+                text2="Bei der Nahtsuche über die Gasdüse fährt der Roboter langsam an das Werkstück, bis die Gasdüse am Schweißbrenner das Werkstück berührt und ein Stromfluss gemessen werden kann." 
+                header3="Kamera"
+                text3="Bei der Nahtsuche über eine 2D oder 3D Kamera fährt der Roboter kontaktfrei über das Werkstück und Sucht im Regelfall nach einer zuvor festgelegten Kontur." />
               <!-- <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                 data-modal-toggle="info-searchSystem" @click="$store.commit('handle_modal_byID', 'info-searchSystem')">
@@ -383,8 +398,15 @@
             <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Absaugung:</div>
               <!-- Icon and PopUp (Modal) -->
-              <InfoModal id="info-exhaustSystem" header="Absaugung" text1="Text Nummer 1 bissle was"
-                text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+              <InfoModal id="info-exhaustSystem" header="Absaugung"
+                header1="Allgemein"
+                text1="Beim Schweißen entstehen in der Regel gesundheitsgefährdende Dämpfe. Durch eine Schweißrauchabsaugung können die Dämpfe abgesaugt und gefiltert werden. Welches Filtersystem am wirtschaftlichsten ist hängt vom Schweißprozess, den inkludierten Nebenprozessen (bspl. Schleifen) und den dabei entstehenden Dämpfen und Partikeln ab. Gerne beraten wir sie!"
+                header2="Einmalfilter"
+                text2="Bei Einmalfilteranlagen werden die Verunreinigungen in einem Wechselfilter gebunden. Geeignet für Rauchabsaugung (feine Partikel) bei Schweißarbeiten.  Der Filter muss als Verschleißteil regelmäßig erneuert werden, sobald die Poren des Filters zugesetzt sind." 
+                header3="Selbstreinigend"
+                text3="Selbstreinige Anlagen verfügen über eine Mechanik zum Reinigen der Filter. Diese Filter eignen für lang andauernde Rauchabsaugung (feine Partikel) sowie Schleifstaubabsaugung bei Schweiß- und Schleifarbeiten (gröbere Partikel)."
+                header4=""
+                text4="" />
               <!-- <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                 data-modal-toggle="info-exhaustSystem"
@@ -429,8 +451,15 @@
             <div class="mt-2 flex justify-between">
               <div class="text-lg font-medium">Greifer:</div>
               <!-- Icon and PopUp (Modal) -->
-              <InfoModal id="info-gripper" header="Greifer" text1="Text Nummer 1 bissle was"
-                text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" />
+              <InfoModal id="info-gripper" header="Greifer" 
+                header1="Allgemein"
+                text1="Das wohl wichtigste Bauteil für automatisiertes Handling ist neben dem Roboter ein passender Greifer. Es gibt eine große Vielfalt an Greifern."
+                header2="Parallelgreifer"
+                text2="Die Universallösung – das parallele Greifen. Beim parallelen Greifen wird das Werkstück von zwei Fingern gefasst. Die meisten Bauteile können mit den Standardgreifern gegriffen werden. Wenn nicht, passen wir die Ausgestaltung der Finger direkt auf Ihre Bauteile an. Wir drucken diese dann auf unseren 3D-Druckern oder Fräsen diese auf unserem 5-Achs Fräszentrum. Das parallele Greifen wird am häufigsten verbaut und eignet sich für nahezu jede Bauteilform. Standard: Schunk JGP-P 50-1; Schunk JGP-P 100-1." 
+                header3="Vakuumgreifer"
+                text3="Beim Greifen mit Unterdruck können die Bauteile schnell angesaugt und wieder losgelassen werden. Es ermöglicht ein besonders schnelles Handling. Die Bauteile sollten eine glatte oder leicht raue Oberfläche haben." 
+                header4="Magnetgreifer"
+                text4="Das magnetisierte Greifen kann nur für magnetische Bauteile eingesetzt werden. Der Vorteil liegt darin, dass die Position der Teile nicht entscheidend ist. Außerdem können bei geringem Eigengewicht des Greifers verhältnismäßig schwere Bauteile gegriffen werden. Geeignete Bauteilformen für das magnetische Greifen: Bauform nicht entscheidend. Standard: Schunk EMH-DP 036, Schunk EMH-DP 080." />
               <!-- <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                 data-modal-toggle="info-gripper" @click="$store.commit('handle_modal_byID', 'info-gripper')">
@@ -448,10 +477,10 @@
               text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" /> -->
 
             <!-- Gripper Radio Buttons (selection) -->
-            <Selection name="gripper" id1="without-gripper" text1="Eigener" price1="+ 0 €" permanentVisible1="true"
-              id2="parallel-gripper" text2="Parallelgreifer" price2="+ 3.900 €" permanentVisible2="true"
-              id3="vacuum-gripper" text3="Vakuumgreifer" price3="+ 6.900 €" permanentVisible3="true"
-              id4="magnetic-gripper" text4="Magnetgreifer" price4="+ 8.900 €" permanentVisible4="true" />
+            <Selection name="gripper" id1="without-gripper" text1="Eigen" price1="+ 0 €" permanentVisible1="true"
+              id2="parallel-gripper" text2="Parallelgreifer" price2="+ 2.000 €" permanentVisible2="true"
+              id3="vacuum-gripper" text3="Vakuumgreifer" price3="+ 2.500 €" permanentVisible3="true"
+              id4="magnetic-gripper" text4="Magnetgreifer" price4="+ 2.830 €" permanentVisible4="true" />
 
             <!-- <div class="mr-4">
             <ul class="grid gap-6 w-full grid-flow-col mr-4">
@@ -496,8 +525,15 @@
             <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Messstation:</div>
               <!-- Icon and PopUp (Modal) -->
-              <InfoModal id="info-measuring" header="Messtation" text1="Text Nummer 1 bissle was"
-                text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" />
+              <InfoModal id="info-measuring" header="Messtation" 
+                header1="Allgemein"
+                text1="Beim Handling von Bauteilen kann die Anwendung um eine Qualitätsprüfung durch eine Messtation erweitert werden. Diese kann sehr unterschiedliche Merkmale erfassen und prüfen und Ausschuss direkt erkennen. "
+                header2="Längenmessung"
+                text2="Zum Vermessen von Abständen mit einer Genauigkeit von 0,1mm bieten wir einen kostengünstigen Abstandssensor an. Abweichungen lassen sich mit unserer Software erfassen und verarbeiten. Der Fertigungsprozess lassen sich dann automatisch anpassen. Gemessen wird die Bauteillänge, -höhe oder -durchmesser." 
+                header3="Optische Prüfung"
+                text3="Die optische Prüfung ermittelt die Güte der Oberfläche von Bauteilen mit einer Größe bis zu xx mm erfassen. Gemessen wird eine Kontur: 2/3-D Versatz der Werkstückoberfläche wie Schweißperlen, Risse, Dellen, etc." 
+                header4=""
+                text4="" />
               <!-- <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                 data-modal-toggle="info-measuring" @click="$store.commit('handle_modal_byID', 'info-measuring')">
@@ -526,8 +562,15 @@
             <div class="mt-8 flex justify-between">
               <div class="text-lg font-medium">Vereinzler:</div>
               <!-- Icon and PopUp (Modal) -->
-              <InfoModal id="info-singualizer" header="Vereinzler" text1="Text Nummer 1 bissle was"
-                text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt kk" />
+              <InfoModal id="info-singualizer" header="Vereinzler"
+                header1="Wendelförderer"
+                text1="Schüttgut unterschiedlichster Größe lässt sich mit einem Wendelförderer vereinzeln. Der Roboter kann die vereinzelten Teile im Anschluss Greifen und zum nächsten Bearbeitungsschritt (in der Zelle) befördern. Der Wendelförderer ist eine kostengünstige und bewährte Methode zum Vereinzeln. Die Flexibilität des Systems ist eingeschränkt."
+                header2="Kameragestützt"
+                text2="Schüttgut lässt sich ebenfalls über ein Kameragestütztes System vereinzeln. Mit einer 3D-Kamera können die Bauteile erkannt und die Koordinaten für den Roboter berechnet werden. Der Vorteil liegt in der Flexibilität des Systems. Die Kamera kann unterschiedliche Teile erkennen und Koordinaten berechnen." 
+                header3=""
+                text3="" 
+                header4=""
+                text4="" />
               <!-- <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                 data-modal-toggle="info-singualizer" @click="$store.commit('handle_modal_byID', 'info-singualizer')">
@@ -546,7 +589,8 @@
 
             <!-- Singualizer Radio Buttons (selection) -->
             <Selection name="singualizer" id1="without-singualizer" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
-              id2="shake-singualizer" text2="Rüttler mit 3D-Kamera" price2="+ 13.450 €" permanentVisible2="true" />
+              id2="spiral-conveyor" text2="Wendelförderer" price2="+ 5.450 €" permanentVisible2="true" 
+              id3="camera-conveyor" text3="Kameragestützt" price3="+ 14.950 €" permanentVisible3="true" />
           </div>
 
 
@@ -566,8 +610,11 @@
           <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Datenlogging:</div>
             <!-- Icon and PopUp (Modal) -->
-            <InfoModal id="info-dataLogging" header="Datenlogging" text1="Text Nummer 1 bissle was"
-              text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+            <InfoModal id="info-dataLogging" header="Datenlogging" 
+              header1="Allgemein"
+              text1="Je nach Ausführung der Zelle und verbauten Sensoren wird Ihre vCell eine sehr große Menge an Daten erzeugen. Diese Daten können im Zuge der Industrie 4.0 gewinnbringend eingesetzt werden. Wir sorgen mit unserer Schnittstelle, dass ein standardisierter Zugriff auf diese Daten möglich ist. "
+              header2="Beispiele"
+              text2="Bauteilmesswerte, die Produktionsmenge, Produktionszeiten usw." />
             <!-- <button type="button"
               class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
               data-modal-toggle="info-dataLogging" @click="$store.commit('handle_modal_byID', 'info-dataLogging')">
@@ -606,8 +653,9 @@
           <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Montage und Inbetriebnahme:</div>
             <!-- Icon and PopUp (Modal) -->
-            <InfoModal id="info-assemblyService" header="Montage und Inbetriebnahme" text1="Text Nummer 1 bissle was"
-              text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+            <InfoModal id="info-assemblyService" header="Montage und Inbetriebnahme" 
+              header1="Allgemein"
+              text1="Eins unserer Teams übernimmt die Montage und Inbetriebnahme Ihrer vCell und sorgt für eine gelungene Einbindung in Ihrer Fertigung. Der Preis der Montage und Inbetriebnahme bezieht sich auf den Raum Deutschland." />
             <!-- <button type="button"
               class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
               data-modal-toggle="info-assemblyService"
@@ -637,8 +685,9 @@
           <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Produktionsbegleitung:</div>
             <!-- Icon and PopUp (Modal) -->
-            <InfoModal id="info-productionSupport" header="Montage und Inbetriebnahme" text1="Text Nummer 1 bissle was"
-              text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+            <InfoModal id="info-productionSupport" header="Produktionsbegleitung" 
+              header1="Allgemein" 
+              text1="Unser Team begleitet Sie gern die ersten Tage nach der Inbetriebnahme durch uns bei der Produktion und steht mit Rat und Tat zur Seite. Der Preis der Produktionsbegleitung bezieht sich auf den Raum Deutschland. " />
             <!-- <button type="button"
               class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
               data-modal-toggle="info-productionSupport"
@@ -669,8 +718,9 @@
           <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Schulung:</div>
             <!-- Icon and PopUp (Modal) -->
-            <InfoModal id="info-scooling" header="Montage und Inbetriebnahme" text1="Text Nummer 1 bissle was"
-              text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" />
+            <InfoModal id="info-scooling" header="Montage und Inbetriebnahme"               
+              header1="Allgemein"
+              text1="Wir schulen Ihre Mitarbeiter auf Ihrer vCell und sorgen dafür, dass Sie die Anlage selbstständig bedienen können. Der Gesamtpreis der Schulung bezieht sich auf bis zu 5 Teilnehmer und nach Absprache in unserem Anwendungszentrum oder bei Ihnen vor Ort." />
             <!-- <button type="button"
               class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
               data-modal-toggle="info-scooling" @click="$store.commit('handle_modal_byID', 'info-scooling')">

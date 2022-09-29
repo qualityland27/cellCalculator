@@ -38,15 +38,30 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-6 space-y-6">
-                    <p class="text-base leading-relaxed text-white">
+                    <p class="font-bold text-white">
+                        {{ header1 }}
+                    </p>
+                    <a class="text-base leading-relaxed text-white">
                         {{ text1 }}
+                    </a>
+                    <p class="font-bold text-white">
+                        {{ header2 }}
                     </p>
-                    <p class="text-base leading-relaxed text-white">
+                    <a class="text-base leading-relaxed text-white">
                         {{ text2 }}
+                    </a>
+                    <p class="font-bold text-white">
+                        {{ header3 }}
                     </p>
-                    <p class="text-base leading-relaxed text-white">
+                    <a class="text-base leading-relaxed text-white">
                         {{ text3 }}
+                    </a>
+                    <p class="font-bold text-white">
+                        {{ header4 }}
                     </p>
+                    <a class="text-base leading-relaxed text-white">
+                        {{ text4 }}
+                    </a>
                 </div>
                 <!-- Modal footer -->
                 <!-- <div class="flex items-center p-6 space-x-2 rounded-b border-t">
@@ -62,7 +77,7 @@
 
 <script>
 export default {
-    props: ['id', 'header',  'text1', 'text2', 'text3']
+    props: ['id', 'header', 'header1', 'text1', 'header2', 'text2', 'header3', 'text3', 'header4', 'text4']
 }
 
 </script>
