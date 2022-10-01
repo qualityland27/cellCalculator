@@ -287,7 +287,7 @@
           <div
             className="absolute inset-0 w-full h-full flex flex-col justify-center items-center bg-zinc-800 transition-all duration-100 delay-200 z-20 hover:opacity-0 ">
             <div class="text-6xl font-bold text-center break-words text-slate-400">
-              Industrieroboter
+              Robot
             </div>
             <div class="text-2xl font-light text-center mt-4 break-words text-slate-400">
               Spezialisierte Kraftpakete
@@ -685,46 +685,46 @@ export default {
 
           // element.style.visibility = "hidden";
         }
-}
-
-
-
-
-
-      const element2 = document.getElementById("testElement-2");
-      const rect2 = element2.getBoundingClientRect();
-
-      if ((rect2.bottom <= document.documentElement.clientHeight - 300 &&
-        rect2.left >= 0 &&
-        rect2.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect2.right <= (window.innerWidth || document.documentElement.clientWidth)) == true) {
-        console.log("visible")
-        const element = document.getElementById("testElement-2");
-        element.style.visibility = "visible";
-      } else {
-        console.log("unvisible")
-
-        const element = document.getElementById("testElement-2");
-        element.style.visibility = "hidden";
       }
 
 
-      const element3 = document.getElementById("testElement-3");
-      const rect3 = element3.getBoundingClientRect();
 
-      if ((rect3.bottom <= document.documentElement.clientHeight - 300 &&
-        rect3.left >= 0 &&
-        rect3.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect3.right <= (window.innerWidth || document.documentElement.clientWidth)) == true) {
-        console.log("visible")
-        const element = document.getElementById("testElement-3");
-        element.style.visibility = "visible";
-      } else {
-        console.log("unvisible")
 
-        const element = document.getElementById("testElement-3");
-        element.style.visibility = "hidden";
-      }
+
+      // const element2 = document.getElementById("testElement-2");
+      // const rect2 = element2.getBoundingClientRect();
+
+      // if ((rect2.bottom <= document.documentElement.clientHeight - 300 &&
+      //   rect2.left >= 0 &&
+      //   rect2.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      //   rect2.right <= (window.innerWidth || document.documentElement.clientWidth)) == true) {
+      //   console.log("visible")
+      //   const element = document.getElementById("testElement-2");
+      //   element.style.visibility = "visible";
+      // } else {
+      //   console.log("unvisible")
+
+      //   const element = document.getElementById("testElement-2");
+      //   element.style.visibility = "hidden";
+      // }
+
+
+      // const element3 = document.getElementById("testElement-3");
+      // const rect3 = element3.getBoundingClientRect();
+
+      // if ((rect3.bottom <= document.documentElement.clientHeight - 300 &&
+      //   rect3.left >= 0 &&
+      //   rect3.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      //   rect3.right <= (window.innerWidth || document.documentElement.clientWidth)) == true) {
+      //   console.log("visible")
+      //   const element = document.getElementById("testElement-3");
+      //   element.style.visibility = "visible";
+      // } else {
+      //   console.log("unvisible")
+
+      //   const element = document.getElementById("testElement-3");
+      //   element.style.visibility = "hidden";
+      // }
 
 
 

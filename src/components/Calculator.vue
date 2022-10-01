@@ -202,7 +202,7 @@
                 header1="Standrd"
                 text1="Die vCell wird in kompakter Bauform als Standardmodul angeboten. Diese zeichnet sich durch platzsparende Bauweise und einfachste Transportmöglichkeiten mit Stapler oder Hubwagen aus. Maße vCell Standard: 2600 x 1500 x 2200 mm. In der Standardausführung wird die Zelle mit einem Yaskawa   GP12 / AR1440 mit 12kg Traglast angeboten."
                 header2="Mini"
-                text2="Zusätzlich ist die vCell Mini in kompakterer Bauform erhältlich. Sie ist Ideal für beengte Platzverhältnisse oder für das Handling kleiner Teile. Maße vCell Standard: 1200 x 800 x 2200 mm. Die vCell Mini wird standardmäßig mit dem Panda von Franka   Emika mit 3kg Traglast angeboten." 
+                text2="Zusätzlich ist die vCell Mini in kompakterer Bauform erhältlich. Sie ist ideal für beengte Platzverhältnisse oder für das Handling kleiner Teile. Maße vCell Standard: 1200 x 800 x 2200 mm. Die vCell Mini wird standardmäßig mit dem Panda von ABB IRB 1100 mit 4kg Traglast angeboten." 
                 header3="Allgemein"
                 text3="Bei Ihrer Anfrage werden wir Ihr Projekt analysieren und ggf. Alternativen zu den oben gelisteten Robotern vorschlagen." />
             <!-- <div class="flex justify-between mb-4">
@@ -227,7 +227,7 @@
           <!-- Size and WorkLoad Radio Buttons (selection) -->
           <!-- Name of Selection is used to calculate price -->
           <Selection name="size" id1="size-standard" text1="Standard" price1="+ 0 €" permanentVisible1="true"
-            icon1="vcell_standard_icon" id2="size-mini" text2="Mini" price2="- 9.900 €" unvisibleOnWelding2="true"
+            icon1="vcell_standard_icon" id2="size-mini" text2="Mini" price2="- 10.500 €" unvisibleOnWelding2="true"
             icon2="vcell_compact_icon" />
 
 
@@ -367,7 +367,7 @@
                 header2="Gasdüse"
                 text2="Bei der Nahtsuche über die Gasdüse fährt der Roboter langsam an das Werkstück, bis die Gasdüse am Schweißbrenner das Werkstück berührt und ein Stromfluss gemessen werden kann." 
                 header3="Kamera"
-                text3="Bei der Nahtsuche über eine 2D oder 3D Kamera fährt der Roboter kontaktfrei über das Werkstück und Sucht im Regelfall nach einer zuvor festgelegten Kontur." />
+                text3="Bei der Nahtsuche über eine 2D oder 3D Kamera fährt der Roboter kontaktfrei über das Werkstück und Sucht im Regelfall nach einer zuvor festgelegten Kontur. Standard: Wenglor MLWL 131" />
               <!-- <button type="button"
                 class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                 data-modal-toggle="info-searchSystem" @click="$store.commit('handle_modal_byID', 'info-searchSystem')">
@@ -426,8 +426,8 @@
 
             <!-- Size and WorkLoad Radio Buttons (selection) -->
             <Selection name="exhaustSystem" id1="without-exhausting" text1="Ohne" price1="+ 0 €"
-              permanentVisible1="true" id2="oneTime-filter" text2="Einmalfilter" price2="+ 3.900 €"
-              permanentVisible2="true" id3="selfCleaning-filter" text3="Selbstreinigend" price3="+ 6.900 €"
+              permanentVisible1="true" id2="oneTime-filter" text2="Mit Einmalfilter" price2="+ 3.800 €"
+              permanentVisible2="true" id3="selfCleaning-filter" text3="Selbstreinigend" price3="+ 6.800 €"
               permanentVisible3="true" />
           </div>
 
@@ -457,7 +457,7 @@
                 header2="Parallelgreifer"
                 text2="Die Universallösung – das parallele Greifen. Beim parallelen Greifen wird das Werkstück von zwei Fingern gefasst. Die meisten Bauteile können mit den Standardgreifern gegriffen werden. Wenn nicht, passen wir die Ausgestaltung der Finger direkt auf Ihre Bauteile an. Wir drucken diese dann auf unseren 3D-Druckern oder Fräsen diese auf unserem 5-Achs Fräszentrum. Das parallele Greifen wird am häufigsten verbaut und eignet sich für nahezu jede Bauteilform. Standard: Schunk JGP-P 50-1; Schunk JGP-P 100-1." 
                 header3="Vakuumgreifer"
-                text3="Beim Greifen mit Unterdruck können die Bauteile schnell angesaugt und wieder losgelassen werden. Es ermöglicht ein besonders schnelles Handling. Die Bauteile sollten eine glatte oder leicht raue Oberfläche haben." 
+                text3="Beim Greifen mit Unterdruck können die Bauteile schnell angesaugt und wieder losgelassen werden. Es ermöglicht ein besonders schnelles Handling. Die Bauteile sollten eine glatte oder leicht raue Oberfläche haben. Standard: Schmalz FQE-RXc-120x60" 
                 header4="Magnetgreifer"
                 text4="Das magnetisierte Greifen kann nur für magnetische Bauteile eingesetzt werden. Der Vorteil liegt darin, dass die Position der Teile nicht entscheidend ist. Außerdem können bei geringem Eigengewicht des Greifers verhältnismäßig schwere Bauteile gegriffen werden. Geeignete Bauteilformen für das magnetische Greifen: Bauform nicht entscheidend. Standard: Schunk EMH-DP 036, Schunk EMH-DP 080." />
               <!-- <button type="button"
@@ -478,9 +478,31 @@
 
             <!-- Gripper Radio Buttons (selection) -->
             <Selection name="gripper" id1="without-gripper" text1="Eigen" price1="+ 0 €" permanentVisible1="true"
-              id2="parallel-gripper" text2="Parallelgreifer" price2="+ 2.000 €" permanentVisible2="true"
-              id3="vacuum-gripper" text3="Vakuumgreifer" price3="+ 2.500 €" permanentVisible3="true"
-              id4="magnetic-gripper" text4="Magnetgreifer" price4="+ 2.830 €" permanentVisible4="true" />
+              id2="parallel-gripper" text2="Parallelgreifer" price2="+ 1.450 €" permanentVisible2="true"
+              id3="vacuum-gripper" text3="Vakuumgreifer" price3="+ 2.100 €" permanentVisible3="true"
+              id4="magnetic-gripper" text4="Magnetgreifer" price4="+ 2.450 €" permanentVisible4="true" />
+
+
+            <!-- Checkboxes of single or multiple handling pieces -->
+            <fieldset name="multipleGrippers" class="mt-4 ml-8">           
+              <div class="flex items-center mb-4">
+                <input id="oneGripper" type="radio" name="countries" value="USA"
+                  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-bslue-300" aria-labelledby="country-option-1"
+                  aria-describedby="country-option-1" checked @click="$store.commit('change_gripping', ['gripper', '+ 0 €', '+ 1.450 €', '+ 2.100 €','+ 2.450 €'])">
+                <label for="country-option-1" class="text-sm font-medium text-gray-900 ml-2 block">
+                  1 Werkstück ((De)Palettieren)
+                </label>
+              </div>
+            
+              <div class="flex items-center mb-4">
+                <input id="twoGrippers" type="radio" name="countries" value="Germany"
+                  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2"
+                  aria-describedby="country-option-2" @click="$store.commit('change_gripping', ['gripper', '+ 0 €', '+ 2.900 €', '+ 4.200 €','+ 4.900 €'])">
+                <label for="country-option-2" class="text-sm font-medium text-gray-900 ml-2 block">
+                  2 Werkstücke (Be- und Entladen)
+                </label>
+              </div>
+            </fieldset>
 
             <!-- <div class="mr-4">
             <ul class="grid gap-6 w-full grid-flow-col mr-4">
@@ -531,7 +553,7 @@
                 header2="Längenmessung"
                 text2="Zum Vermessen von Abständen mit einer Genauigkeit von 0,1mm bieten wir einen kostengünstigen Abstandssensor an. Abweichungen lassen sich mit unserer Software erfassen und verarbeiten. Der Fertigungsprozess lassen sich dann automatisch anpassen. Gemessen wird die Bauteillänge, -höhe oder -durchmesser." 
                 header3="Optische Prüfung"
-                text3="Die optische Prüfung ermittelt die Güte der Oberfläche von Bauteilen mit einer Größe bis zu xx mm erfassen. Gemessen wird eine Kontur: 2/3-D Versatz der Werkstückoberfläche wie Schweißperlen, Risse, Dellen, etc." 
+                text3="Die optische Prüfung ermittelt die Güte der Oberfläche der Werkstücke. Gemessen wird eine Kontur: 2/3-D Versatz der Werkstückoberfläche wie Schweißperlen, Risse, Dellen, etc." 
                 header4=""
                 text4="" />
               <!-- <button type="button"
@@ -552,8 +574,8 @@
 
             <!-- Measuring Radio Buttons (selection) -->
             <Selection name="measuring" id1="without-measuring" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
-              id2="length-measuring" text2="Längenmessung" price2="+ 4.450 €" permanentVisible2="true"
-              id3="optical-measuring" text3="Optische Prüfung" price3="+ 16.750 €" permanentVisible3="true" />
+              id2="length-measuring" text2="Längenmessung" price2="+ 2.350 €" permanentVisible2="true"
+              id3="optical-measuring" text3="Optische Prüfung" price3="+ 12.750 €" permanentVisible3="true" />
 
 
             <!--                                                                              -->
@@ -633,7 +655,7 @@
 
           <!-- Data Logginge Radio Buttons (selection) -->
           <Selection name="dataLogging" id1="without-logging" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
-            id2="with-data-logging" text2="Logging" price2="+ 4.450 €" permanentVisible2="true" />
+            id2="with-data-logging" text2="Logging" price2="+ 3.900 €" permanentVisible2="true" />
 
 
 
@@ -676,7 +698,7 @@
           <!--  Assembly Service Radio Buttons (selection) -->
           <Selection name="assemblyService" id1="without-assemblyService" text1="Ohne" price1="+ 0 €"
             permanentVisible1="true" id2="with-assemblyService" text2="Mit Montage und Inbetriebnahme"
-            price2="+ 3.900 €" permanentVisible2="true" />
+            price2="+ 2.450 €" permanentVisible2="true" />
 
 
           <!--                                                                              -->
@@ -707,9 +729,9 @@
 
           <!-- Production Support Radio Buttons (selection) -->
           <Selection name="productionSupport" id1="without-productionSupport" text1="Ohne" price1="+ 0 €"
-            permanentVisible1="true" id2="with-1day-productionSupport" text2="1 Tag Produktionsbegleitung"
-            price2="+ 680 €" permanentVisible2="true" id3="with-2day-productionSupport"
-            text3="2 Tage Produktionsbegleitung" price3="+ 1.360 €" permanentVisible3="true" />
+            permanentVisible1="true" id2="with-1day-productionSupport" text2="1 Tag"
+            price2="+ 800 €" permanentVisible2="true" id3="with-2day-productionSupport"
+            text3="2 Tage" price3="+ 1.600 €" permanentVisible3="true" />
 
 
           <!--                                                                              -->
@@ -718,9 +740,9 @@
           <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Schulung:</div>
             <!-- Icon and PopUp (Modal) -->
-            <InfoModal id="info-scooling" header="Montage und Inbetriebnahme"               
+            <InfoModal id="info-scooling" header="Schulung"               
               header1="Allgemein"
-              text1="Wir schulen Ihre Mitarbeiter auf Ihrer vCell und sorgen dafür, dass Sie die Anlage selbstständig bedienen können. Der Gesamtpreis der Schulung bezieht sich auf bis zu 5 Teilnehmer und nach Absprache in unserem Anwendungszentrum oder bei Ihnen vor Ort." />
+              text1="Wir schulen Ihre Mitarbeiter auf Ihrer vCell und sorgen dafür, dass Sie die Anlage selbstständig bedienen können. Der Gesamtpreis der Schulung bezieht sich auf bis zu 5 Teilnehmer und bei Ihnen vor Ort." />
             <!-- <button type="button"
               class="mr-4 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
               data-modal-toggle="info-scooling" @click="$store.commit('handle_modal_byID', 'info-scooling')">
@@ -739,7 +761,7 @@
 
           <!-- v Radio Buttons (selection) -->
           <Selection name="scooling" id1="without-scooling" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
-            id2="with-scooling" text2="Mit Schulung" price2="+ 4.890 €" permanentVisible2="true" />
+            id2="with-scooling" text2="Mit Schulung" price2="+ 2.990 €" permanentVisible2="true" />
 
 
 

@@ -4,6 +4,7 @@ import router from '../router'
 import usb from '../assets/icons/usb.svg'
 import colors from 'tailwindcss/colors'
 import emailjs from 'emailjs-com';
+import { event } from 'jquery'
 
 export default createStore({
   state: {
@@ -134,8 +135,8 @@ export default createStore({
     withSchulung: 4890,
     aufpreisSchulung: 0,
 
-    startPrice: 39990,
-    calculatedPrice: 39990,
+    startPrice: 40490,
+    calculatedPrice: 40490,
 
     elementVisible: true,
 
@@ -873,8 +874,51 @@ if (!state.notClickedYet) {
       } else {
         initialInfoModal.style.display = "none";
       }
+    },
+    change_gripping(state, payload) {
+      console.log("in change_gripping");
+
+      console.log(payload)
+
+      var elementsOfSelection = document.getElementsByName(payload[0]);
+
+      for (var i = 0; i < elementsOfSelection.length; i++) { 
+        var str = elementsOfSelection[i].nextElementSibling.firstChild.lastChild.lastChild.textContent
+        console.log(str)
+
+        var onlyNumbers = str.replace(/[^\d-]/g, '');
+
+        onlyNumbers = onlyNumbers * 2
+
+        console.log(onlyNumbers)
+
+        var newStr = payload[i + 1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+
+        elementsOfSelection[i].nextElementSibling.firstChild.lastChild.lastChild.textContent = newStr
+      }
+
+      console.log(this)
+
+      this.commit('calculate_price_checkbox')
+
+      // console.log(document.getElementById("magnetic-gripper").nextElementSibling.firstChild.lastChild.lastChild.textContent);
+
+      // var str = document.getElementById("magnetic-gripper").nextElementSibling.firstChild.lastChild.lastChild.textContent
+      // // console.log(str)
+      // var onlyNumbers = str.replace(/[^\d-]/g, '');
+
+      // onlyNumbers = onlyNumbers * 2
+
+      // console.log(onlyNumbers)
+
+      // var newStr = "+ " + onlyNumbers + " €"
+
+      // elements[i].nextElementSibling.firstChild.lastChild.lastChild.textContent = newStr
     }
+
+
   },
+
 
 
 
