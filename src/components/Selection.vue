@@ -13,8 +13,8 @@
                     <label :for="id1"
                         class="inline-flex flex justify-start p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 stroke-gray-500 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue peer-checked:stroke-volkert-blue">
                         <div class="flex flex-row justify-start items-center gap-4">
-                            <component class="w-18 h-18" :is="icon1"></component>
-                            <div class="flex flex-col">
+                            <component class="w-1/3" :is="icon1"></component>
+                            <div class="flex flex-col w-max break-all">
                                 <div class="w-full text-lg font-semibold">{{ text1 }}</div>
                                 <div title="price" class="w-full">{{ price1 }}</div>
                             </div>
@@ -35,10 +35,10 @@
                     <label :for="id2"
                         class="inline-flex flex justify-start p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 stroke-gray-500 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue peer-checked:stroke-volkert-blue">
                         <div class="flex flex-row justify-start items-center gap-4">
-                            <component class="w-18 h-18" :is="icon2"></component>
-                            <div class="flex flex-col">
+                            <component class="w-4/12" :is="icon2"></component>
+                            <div class="flex flex-col break-all">
                                 <div class="w-full text-lg font-semibold">{{ text2 }}</div>
-                                <div title="price" class="w-max">{{ price2 }}</div>
+                                <div title="price" class="w-full">{{ price2 }}</div>
                             </div>
                         </div>
                     </label>
@@ -54,7 +54,7 @@
                         class="inline-flex flex justify-start p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 stroke-gray-500 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue peer-checked:stroke-volkert-blue">
                         <div class="flex flex-row justify-start items-center gap-4">
                             <!-- <div class="w-18 h-18" is="vcell_standard_icon" /> -->
-                            <div class="flex flex-col">
+                            <div class="flex flex-col break-all">
                                 <div class="w-full text-lg font-semibold">{{ text3 }}</div>
                                 <div title="price" class="w-full">{{ price3 }}</div>
                             </div>
@@ -72,7 +72,7 @@
                         class="inline-flex flex justify-start p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 stroke-gray-500 cursor-pointer peer-checked:border-volkert-blue peer-checked:text-volkert-blue peer-checked:stroke-volkert-blue">
                         <div class="flex flex-row justify-start items-center gap-4">
                             <!-- <div class="w-18 h-18" is="vcell_standard_icon" /> -->
-                            <div class="flex flex-col">
+                            <div class="flex flex-col break-all">
                                 <div class="w-full text-lg font-semibold">{{ text4 }}</div>
                                 <div title="price" class="w-full">{{ price4 }}</div>
                             </div>

@@ -687,10 +687,6 @@ export default {
         }
       }
 
-
-
-
-
       // const element2 = document.getElementById("testElement-2");
       // const rect2 = element2.getBoundingClientRect();
 
