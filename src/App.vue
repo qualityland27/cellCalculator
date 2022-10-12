@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <div class="flex">
-      <img v-show="$route.name == 'Home'" src="./assets/background_vcell.jpg">
+      <img v-show="$route.name == 'Home'" src="./assets/background_vcell.jpg" v-if="!$store.getters.isMobile">
       <img v-show="$route.name == 'VCell'" src="./assets/background_vcell.jpg">
       <img v-show="$route.name == 'VPrint'" src="./assets/background_vprint.jpg" v-if="!$store.getters.isMobile">
       <div class="h-10" v-if="$store.getters.isMobile"></div>

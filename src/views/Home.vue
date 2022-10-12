@@ -12,17 +12,18 @@
           <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'technicalDetailsHeader')">
             Technsiche Daten</div>
           <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'whyVcellHeader')">
-            Warum
-            vCell</div>
+            Warum vCell</div>
+          <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'robotInfoHeader')">
+            Robot vs. Cobot</div>
           <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'configuratorHeader')">
             Konfigurator</div>
-          <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'vCellFactsHeader')">
+          <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'overvieHeader')">
             Überblick</div>
         </div>
       </div>
 
       <!-- Only Displayed if Mobile  -->
-      <div class="grid grid-cols-2 items-center mt-8 mb-1" v-if="$store.getters.isMobile">
+      <div class="grid grid-cols-2 items-center mt-10 mb-1" v-if="$store.getters.isMobile">
         <div class="text-2xl text-left font-medium">vCell</div>
         <div class="flex flex-row-reverse items-center text-xs mr-2">
           <!-- Request Button -->
@@ -52,6 +53,27 @@
     </div>
 
 
+    <!-- Only Displayed if Mobile  -->
+    <div class="flex flex-col-reverse mt-4 justify-start text-xs"
+      v-if="$store.getters.isMobile & $store.getters.show_mobile_nav_bar">
+    
+      <div class="text-xs ml-6 p-4 " @click="$store.commit('scrollToElement', 'technicalDetailsHeader')">
+            Technsiche Daten</div>
+      <div class="flex-grow border-t border-gray-300 mx-10"></div>
+      <div class="text-xs ml-6 p-4 cursor-pointer" @click="$store.commit('scrollToElement', 'whyVcellHeader')">
+            Warum vCell</div>
+      <div class="flex-grow border-t border-gray-300 mx-10"></div>
+      <div class="text-xs ml-6 p-4 cursor-pointer" @click="$store.commit('scrollToElement', 'robotInfoHeader')">
+            Robot vs. Cobot</div>
+      <div class="flex-grow border-t border-gray-300 mx-10"></div>
+      <div class="text-xs ml-6 p-4 cursor-pointer" @click="$store.commit('scrollToElement', 'configuratorHeader')">
+            Konfigurator</div>
+      <div class="flex-grow border-t border-gray-300 mx-10"></div>
+      <div class="text-xs ml-6 p-4 cursor-pointer" @click="$store.commit('scrollToElement', 'overvieHeader')">
+            Überblick</div>
+    </div>
+
+
 
 
     <!-- ------------------------------------------------------------
@@ -60,7 +82,7 @@
         From the beginning of printing until printing is finished
         ------------------------------------------------------------ -->
 
-    <div class="flex flex-col justify-center items-center w-11/12 sm:w-1/2 mx-auto mt-8 sm:mt-20 sm:h-screen">
+    <div id="overvieHeader" class="flex flex-col justify-center items-center w-11/12 sm:w-1/2 mx-auto mt-8 sm:mt-20 sm:h-screen">
       <!-- Motto des Druckers: Precision. Never Ending. -->
       <div id="vCellHeader" class="text-5xl sm:text-6xl font-bold text-center mb-8">
         Ein Produkt. Deine Anforderungen.
@@ -74,10 +96,9 @@
 
       <!-- Preisangabe -->
       <div class="">
-        <div class="text-xl sm:text-base font-semibold">Ab {{ $store.getters.startPrice }} Euro</div>
+        <div class="text-xl sm:text-base font-semibold">Ab 29.990 Euro</div>
       </div>
     </div>
-
 
 
 
@@ -238,7 +259,7 @@
 
 
 
-    <div class="mt-40 text-5xl sm:text-6xl font-bold w-5/6 mx-auto flex justify-center mb-20">
+    <div id="configuratorHeader" class="mt-40 text-5xl sm:text-6xl font-bold w-5/6 mx-auto flex justify-center mb-20">
       Jetzt konfigurieren.
     </div>
     <div type="button" @click="$store.commit('scrollToElement', 'calculator')" class="cursor-pointer mb-40 mx-auto animate-bounce bg-volkert-blue p-2 w-20 h-20 ring-1 ring-slate-900/5 dark:ring-slate-200/20
@@ -259,14 +280,10 @@
 
     <!-- Text -->
     <div class="text-lg sm:text-2xl w-5/6 mx-auto flex text-justify text-center mt-40">
-      Die vCell wird in ihrer Basisausführung mit dem Cobot Panda vom Hersteller Franka Emika geliefert. Der
-      Cobot
-      zeichnet sich durch eine einfache grafische
-      Bedienoberfläche aus und lässt sich somit auch ohne Programmierkenntnisse programmieren. Der
-      Standard-Greifer
-      des
-      Pandas ist ein Zwei-Backen-Greifer.
-      Darüber hinaus sind im Lieferumfang ein Schubladenfach zum Verstauen unterschiedlicher Werkzeuge sowie ein
+      Die vCell wird für Schweißanwendungen mit einem Yaskawa Roboter ausgestattet. Alle Handling-Anwendungen werden mit 
+      einem Cobot der Firma ABB ausgestattet. Der Cobot zeichnet sich durch eine einfache grafische
+      Bedienoberfläche aus und lässt sich somit auch ohne Programmierkenntnisse programmieren. 
+      Im Lieferumfang sind ebenfalls ein Schubladenfach zum Verstauen unterschiedlicher Werkzeuge sowie ein
       Montagetisch zum Spannen von Werkstücken enthalten.
     </div>
 
@@ -274,22 +291,22 @@
 
 
     <!-- Robot Info -->
-    <div class="antialiased w-5/6 mx-auto mt-40  bg-zinc-900 text-gray-400 p-10 flex flex-col rounded-3xl">
+    <div id="robotInfoHeader" class="antialiased w-5/6 mx-auto mt-40  bg-zinc-900 text-gray-400 p-10 flex flex-col rounded-3xl">
 
-      <div class="text-xl font-semibold mb-20">Roboter</div>
+      <div class="text-xl font-semibold mb-20 ">Roboter</div>
 
       <!-- Turning Cards -->
-      <div class="flex flex-row justify-center items-center gap-6">
+      <div class="flex flex-row justify-center items-center w-full h-full gap-6">
         <!-- Robot -->
         <div
-          className="relative w-1/2 h-80 rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 card">
+          className="relative w-1/2 h-96 rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 card">
           <!-- front -->
           <div
             className="absolute inset-0 w-full h-full flex flex-col justify-center items-center bg-zinc-800 transition-all duration-100 delay-200 z-20 hover:opacity-0 ">
-            <div class="text-6xl font-bold text-center break-words text-slate-400">
+            <div class="text-6xl font-bold text-center break-words text-slate-400 select-none">
               Robot
             </div>
-            <div class="text-2xl font-light text-center mt-4 break-words text-slate-400">
+            <div class="text-2xl font-light text-center mt-4 break-words text-slate-400 select-none">
               Spezialisierte Kraftpakete
             </div>
           </div>
@@ -297,7 +314,7 @@
           <!-- back  -->
           <div className="absolute inset-0 w-10/11 p-6 flex items-center bg-volkert-blue transition-all z-10 card-back">
             <div>
-              <span class="font-bold text-xl text-slate-500 dark:text-slate-400">Eigenschaften </span>
+              <span class="font-bold text-xl text-slate-500 dark:text-slate-400 select-none">Eigenschaften </span>
               <ul class="list-none list-inside text-slate-900 dark:text-slate-200 select-text text-slate-400 p-2">
                 <li>
                   <div
@@ -309,7 +326,7 @@
                           d="M131.226 356.311 131.226 338.4 133.358 340.532C133.636 340.81 134.087 340.81 134.365 340.532 134.643 340.255 134.643 339.804 134.365 339.526L131.011 336.174C130.746 335.896 130.306 335.885 130.028 336.15 130.02 336.158 130.012 336.166 130.004 336.174L126.653 339.526C126.375 339.79 126.364 340.23 126.629 340.508 126.636 340.516 126.644 340.524 126.653 340.532 126.917 340.81 127.357 340.821 127.635 340.556 127.643 340.548 127.651 340.54 127.659 340.532L129.79 338.401 129.79 356.311C129.79 356.708 130.112 357.03 130.509 357.03 130.906 357.03 131.227 356.708 131.227 356.311Z" />
                       </g>
                     </svg>
-                    <span class="text-slate-400 ml-4">Spezialisiert auf eine bestimmte Tätigkeit</span>
+                    <span class="w-fit text-slate-400 ml-4 select-none">Spezialisiert auf eine bestimmte Tätigkeit</span>
                   </div>
                 </li>
                 <li>
@@ -331,12 +348,12 @@
                           d="M138.146 376.5 137.438 376.5C136.658 376.5 136.021 377.138 136.021 377.917L136.021 382.875 123.979 382.875 123.979 377.917C123.979 377.138 123.342 376.5 122.562 376.5L121.854 376.5C121.075 376.5 120.438 377.138 120.438 377.917L120.438 392.083C120.438 392.862 121.075 393.5 121.854 393.5L122.562 393.5C123.342 393.5 123.979 392.862 123.979 392.083L123.979 387.125 136.021 387.125 136.021 392.083C136.021 392.862 136.658 393.5 137.438 393.5L138.146 393.5C138.925 393.5 139.562 392.862 139.562 392.083L139.562 377.917C139.562 377.138 138.925 376.5 138.146 376.5Z" />
                       </g>
                     </svg>
-                    <span class="text-slate-400 ml-5">Extrem hohe Traglasten</span>
+                    <span class="w-fit text-slate-400 ml-5 select-none">Extrem hohe Traglasten</span>
                   </div>
                 </li>
                 <li>
                   <div
-                    class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
                     <svg class="w-8 h-8 text-gray-500 transition duration-75 fill-slate-400"
                       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
                       overflow="hidden">
@@ -345,14 +362,14 @@
                           d="M143.962 424.275 142.156 421.194C141.519 420.131 140.492 419.423 139.323 419.175 139.429 418.077 139.252 416.767 138.827 415.421 137.8 412.481 134.329 410.958 134.329 410.958 134.329 410.958 133.94 411.667 133.585 412.729 134.683 413.331 135.852 414.217 136.631 415.527 137.34 416.767 137.8 418.006 137.942 419.104L137.198 419.104C137.021 418.112 136.631 416.979 135.994 415.881 134.435 413.154 130.717 412.375 130.717 412.375 130.717 412.375 129.548 415.987 131.106 418.715 131.283 419.033 131.496 419.352 131.708 419.671 130.752 419.317 129.76 419.14 128.698 419.14 125.333 419.14 122.429 421.052 121.012 423.815 120.8 423.744 120.588 423.708 120.375 423.708 118.817 423.708 117.542 424.983 117.542 426.542 117.542 428.029 118.71 429.269 120.162 429.375 120.588 431.748 122.004 433.767 123.952 435.042L131.354 435.042C131.956 435.042 132.417 434.581 132.417 433.979 132.417 433.377 131.956 432.917 131.354 432.917L128.131 432.917C129.902 432.385 131.177 430.756 131.177 428.844 131.177 426.506 129.265 424.594 126.927 424.594 126.537 424.594 126.183 424.629 125.829 424.735 125.546 424.806 125.262 424.629 125.192 424.346 125.121 424.062 125.298 423.779 125.581 423.708 126.042 423.602 126.502 423.531 126.963 423.531 129.902 423.531 132.275 425.904 132.275 428.844 132.275 430.119 131.815 431.288 131.071 432.208 131.744 432.208 132.488 431.819 133.267 431.288L133.904 434.192C133.975 434.688 134.4 435.042 134.896 435.042 134.967 435.042 135.038 435.042 135.108 435.006 135.569 434.9 135.887 434.51 135.923 434.05L135.958 434.192C136.1 434.688 136.525 435.042 137.021 435.042 137.092 435.042 137.163 435.042 137.233 435.006 137.8 434.865 138.154 434.298 138.048 433.731L136.95 428.631C137.694 428.242 138.402 427.958 139.146 427.958 140.315 427.958 141.483 427.817 142.617 427.533 143.325 427.356 143.892 426.825 144.104 426.152L144.14 426.046C144.352 425.444 144.281 424.806 143.962 424.275Z" />
                       </g>
                     </svg>
-                    <span class="text-slate-400 ml-5">Hohe Präzision und hohe Geschwindigkeit</span>
+                    <span class="w-fit text-slate-400 ml-5 select-none">Hohe Präzision und hohe Geschwindigkeit</span>
                   </div>
                 </li>
               </ul>
 
               <!-- Arbeitsbereiche -->
-              <div class="font-bold text-xl text-slate-400 mt-4">Arbeitsbereiche </div>
-              <div class="text-slate-400 ml-4 mt-2">Schweißen, Lackieren, Handhabung, Montage, ...</div>
+              <div class="font-bold text-xl text-slate-400 mt-4 select-none">Arbeitsbereiche </div>
+              <div class="text-slate-400 ml-4 mt-2 select-none">Schweißen, Lackieren, Handhabung, Montage, ...</div>
             </div>
           </div>
         </div>
@@ -361,15 +378,15 @@
         <!-- <div class="text-8xl font-light">&</div> -->
 
         <!-- Cobot -->
-        <div
-          className="relative w-1/2 h-80 rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 card">
+        <div 
+          className="relative w-1/2 h-96 rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 card">
           <!-- front -->
           <div
             className="absolute inset-0 w-full h-full flex flex-col justify-center items-center bg-zinc-800 transition-all duration-100 delay-200 z-20 hover:opacity-0 ">
-            <div class="text-6xl font-bold text-center break-words text-slate-400">
+            <div class="text-6xl font-bold text-center break-words text-slate-400 select-none">
               Cobot
             </div>
-            <div class="text-2xl font-light text-center mt-4 break-words text-slate-400">
+            <div class="text-2xl font-light text-center mt-4 break-words text-slate-400 select-none">
               Flexible Allrounder
             </div>
           </div>
@@ -377,7 +394,7 @@
           <!-- back  -->
           <div className="absolute inset-0 w-10/11 p-6 flex items-center bg-volkert-blue transition-all z-10 card-back">
             <div>
-              <span class="font-bold text-xl text-slate-500 dark:text-slate-400">Eigenschaften </span>
+              <span class="font-bold text-xl text-slate-500 dark:text-slate-400 select-none">Eigenschaften </span>
               <ul class="list-none list-inside text-slate-900 dark:text-slate-200 select-text text-slate-400 p-2">
                 <li>
                   <div
@@ -390,7 +407,7 @@
                           d="M709.562 339.99C709.562 339.751 709.444 339.529 709.247 339.395L705.974 336.127C705.695 335.844 705.24 335.841 704.957 336.119 704.675 336.398 704.671 336.853 704.95 337.136 704.953 337.139 704.955 337.141 704.958 337.144L707.089 339.271 705.729 339.271C703.085 339.273 700.671 340.775 699.5 343.146 698.329 340.775 695.915 339.273 693.271 339.271L691.912 339.271 694.043 337.144C694.326 336.866 694.331 336.411 694.052 336.128 693.774 335.844 693.319 335.84 693.036 336.119 693.033 336.121 693.03 336.124 693.028 336.127L689.754 339.395C689.556 339.528 689.437 339.751 689.438 339.99 689.438 339.993 689.438 339.995 689.438 339.998 689.438 340.002 689.438 340.004 689.438 340.007 689.437 340.198 689.513 340.382 689.649 340.517L692.994 343.861C693.277 344.139 693.732 344.136 694.01 343.853 694.286 343.573 694.286 343.124 694.01 342.845L691.874 340.708 693.271 340.708C696.313 340.712 698.778 343.177 698.781 346.219L698.781 354.365C698.781 354.762 699.103 355.083 699.5 355.083L699.5 355.083C699.897 355.083 700.219 354.762 700.219 354.365L700.219 346.219C700.222 343.177 702.687 340.712 705.729 340.708L707.126 340.708 704.991 342.845C704.708 343.123 704.705 343.578 704.983 343.861 705.262 344.144 705.717 344.148 706 343.869 706.002 343.867 706.005 343.864 706.008 343.861L709.353 340.517C709.488 340.381 709.563 340.198 709.562 340.007 709.562 340.004 709.562 340.001 709.562 339.998 709.562 339.996 709.562 339.993 709.562 339.99Z" />
                       </g>
                     </svg>
-                    <span class="text-slate-400 ml-4">Breitgefächerte Anwendungsmöglichkeiten</span>
+                    <span class="w-fit text-slate-400 ml-4 select-none">Breitgefächerte Anwendungsmöglichkeiten</span>
                   </div>
                 </li>
                 <li>
@@ -406,8 +423,8 @@
                           d="M699.013 382.008C696.554 384.159 693.56 385.606 690.347 386.196L690.347 387.863C690.347 393.327 693.579 398.865 699.013 402.742 704.446 398.866 707.679 393.327 707.679 387.863L707.679 386.196C704.466 385.606 701.472 384.159 699.013 382.008ZM698.103 395.837 694.522 392.255 695.739 391.038 698.103 393.402 702.945 388.56 704.162 389.778Z" />
                       </g>
                     </svg>
-                    <span class="text-slate-400 ml-5">Arbeiten Hand in Hand mit dem Mensch – Ohne Schutzzaun
-                    </span>
+                    <div class="w-fit text-slate-400 ml-5 select-none">Arbeiten dem Mensch – Ohne Schutzzaun
+                    </div>
                   </div>
                 </li>
                 <li>
@@ -421,14 +438,14 @@
                           d="M143.962 424.275 142.156 421.194C141.519 420.131 140.492 419.423 139.323 419.175 139.429 418.077 139.252 416.767 138.827 415.421 137.8 412.481 134.329 410.958 134.329 410.958 134.329 410.958 133.94 411.667 133.585 412.729 134.683 413.331 135.852 414.217 136.631 415.527 137.34 416.767 137.8 418.006 137.942 419.104L137.198 419.104C137.021 418.112 136.631 416.979 135.994 415.881 134.435 413.154 130.717 412.375 130.717 412.375 130.717 412.375 129.548 415.987 131.106 418.715 131.283 419.033 131.496 419.352 131.708 419.671 130.752 419.317 129.76 419.14 128.698 419.14 125.333 419.14 122.429 421.052 121.012 423.815 120.8 423.744 120.588 423.708 120.375 423.708 118.817 423.708 117.542 424.983 117.542 426.542 117.542 428.029 118.71 429.269 120.162 429.375 120.588 431.748 122.004 433.767 123.952 435.042L131.354 435.042C131.956 435.042 132.417 434.581 132.417 433.979 132.417 433.377 131.956 432.917 131.354 432.917L128.131 432.917C129.902 432.385 131.177 430.756 131.177 428.844 131.177 426.506 129.265 424.594 126.927 424.594 126.537 424.594 126.183 424.629 125.829 424.735 125.546 424.806 125.262 424.629 125.192 424.346 125.121 424.062 125.298 423.779 125.581 423.708 126.042 423.602 126.502 423.531 126.963 423.531 129.902 423.531 132.275 425.904 132.275 428.844 132.275 430.119 131.815 431.288 131.071 432.208 131.744 432.208 132.488 431.819 133.267 431.288L133.904 434.192C133.975 434.688 134.4 435.042 134.896 435.042 134.967 435.042 135.038 435.042 135.108 435.006 135.569 434.9 135.887 434.51 135.923 434.05L135.958 434.192C136.1 434.688 136.525 435.042 137.021 435.042 137.092 435.042 137.163 435.042 137.233 435.006 137.8 434.865 138.154 434.298 138.048 433.731L136.95 428.631C137.694 428.242 138.402 427.958 139.146 427.958 140.315 427.958 141.483 427.817 142.617 427.533 143.325 427.356 143.892 426.825 144.104 426.152L144.14 426.046C144.352 425.444 144.281 424.806 143.962 424.275Z" />
                       </g>
                     </svg>
-                    <span class="text-transparent">Hohe Präzision und hohe Geschwindigkeit</span>
+                    <span class="w-fit text-transparent select-none">Hohe Präzision und hohe Geschwindigkeit</span>
                   </div>
                 </li>
               </ul>
 
               <!-- Arbeitsbereiche -->
-              <div class="font-bold text-xl text-slate-400 mt-4">Arbeitsbereiche </div>
-              <div class="text-slate-400 ml-4 mt-2">Pick & Place, Montage, Maschinenbestückung, Palettieren, ...</div>
+              <div class="font-bold text-xl text-slate-400 mt-4 select-none">Arbeitsbereiche </div>
+              <div class="text-slate-400 ml-4 mt-2 select-none">Pick & Place, Montage, Maschinenbestückung, Palettieren, ...</div>
             </div>
           </div>
         </div>
@@ -438,7 +455,7 @@
 
 
       <div class="flex flex-col justify-center items-center gap-6 mt-16">
-        <div id="testElement" class="testElement w-4/5 text-center font-semibold text-slate-400">
+        <div id="testElement" class="testElement w-4/5 text-center font-semibold text-slate-400 select-none">
           Wir definieren mit Ihnen gemeinsam den passenden Robotertyp für Ihr Projekt.
         </div>
         <!-- <div id="testElement-2" class="bg-volkert-blue h-full w-full">2</div>

@@ -135,8 +135,8 @@ export default createStore({
     withSchulung: 4890,
     aufpreisSchulung: 0,
 
-    startPrice: 40490,
-    calculatedPrice: 40490,
+    startPrice: 38990,
+    calculatedPrice: 38990,
 
     elementVisible: true,
 
@@ -339,7 +339,7 @@ export default createStore({
     },
 
     isMobile(state) {
-      if (screen.width < 600) {
+      if (screen.width < 1025) {
         state.isMobile = true;
 
       } else {
@@ -348,8 +348,10 @@ export default createStore({
     },
 
     change_show_mobile_nav_bar(state) {
-      if (state.shows_mobile_nav_bar == false) {
+      console.log("within change_show_mobile_nav_bar")
+      if (state.show_mobile_nav_bar == false) {
         state.show_mobile_nav_bar = true;
+        console.log("changed to true")
       } else {
         state.show_mobile_nav_bar = false;
       }
