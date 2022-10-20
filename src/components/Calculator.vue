@@ -630,6 +630,28 @@
           <!-- Data Logging Header -->
           <!--                                                                              -->
           <div class="mt-2 flex justify-between">
+            <div class="text-lg font-medium">Programmierung:</div>
+            <!-- Icon and PopUp (Modal) -->
+            <InfoModal id="info-robotProgramming" header="Programmierung" header1="Allgemein"
+              text1="Gerne programmieren unsere Softwareentwickler ihre vCell. "
+              header2="Roboter" text2="Mit dieser Option können Sie die Programmierung des Roboters Ihrer vCell hinzufügen." />
+          </div>
+          
+
+
+          <!-- Data Logging Info PupUp (Modal) -->
+          <!-- <InfoModal id="info-dataLogging" header="Datenlogging" text1="Text Nummer 1 bissle was"
+                      text2="Das ist der zweite Abschnitt" text3="Extra für Hanna nen dritten Abschnitt hinzufügen" /> -->
+          
+          <!-- Data Logginge Radio Buttons (selection) -->
+          <Selection name="robotProgramming" id1="without-programming" text1="Ohne" price1="+ 0 €" permanentVisible1="true"
+            id2="with-robot-programming" text2="Roboter" price2="+ 3.600 €" permanentVisible2="true" />
+
+
+          <!--                                                                              -->
+          <!-- Data Logging Header -->
+          <!--                                                                              -->
+          <div class="mt-2 flex justify-between">
             <div class="text-lg font-medium">Datenlogging:</div>
             <!-- Icon and PopUp (Modal) -->
             <InfoModal id="info-dataLogging" header="Datenlogging" 
