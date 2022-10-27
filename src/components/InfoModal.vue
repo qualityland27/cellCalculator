@@ -38,27 +38,45 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-6 space-y-6">
-                    <p class="font-bold text-white">
-                        {{ header1 }}
-                    </p>
+                    <div class="flex justify-between">
+                        <p class="font-bold text-white">
+                            {{ header1 }}
+                        </p>
+                        <img class="h-4" v-if="image1" :src=image1 alt="vue" />
+                    </div>
                     <a class="text-base leading-relaxed text-white">
                         {{ text1 }}
                     </a>
-                    <p class="font-bold text-white">
-                        {{ header2 }}
-                    </p>
+
+
+                    <div class="flex justify-between">
+                        <p class="font-bold text-white">
+                            {{ header2 }}
+                        </p>
+                        <img class="h-4" v-if="image2" :src=image2 alt="vue" />
+                    </div>
                     <a class="text-base leading-relaxed text-white">
                         {{ text2 }}
                     </a>
-                    <p class="font-bold text-white">
-                        {{ header3 }}
-                    </p>
+
+
+                    <div class="flex justify-between">
+                        <p class="font-bold text-white">
+                            {{ header3 }}
+                        </p>
+                        <img class="h-4" v-if="image3" :src=image3 alt="vue" />
+                    </div>
                     <a class="text-base leading-relaxed text-white">
                         {{ text3 }}
                     </a>
-                    <p class="font-bold text-white">
-                        {{ header4 }}
-                    </p>
+
+
+                    <div class="flex justify-between">
+                        <p class="font-bold text-white">
+                            {{ header4 }}
+                        </p>
+                        <img class="h-4" v-if="image4" :src=image4 alt="vue" />
+                    </div>
                     <a class="text-base leading-relaxed text-white">
                         {{ text4 }}
                     </a>
@@ -77,8 +95,10 @@
 
 <script>
 export default {
-    props: ['id', 'header', 'header1', 'text1', 'header2', 'text2', 'header3', 'text3', 'header4', 'text4']
+    props: ['id', 'header', 'header1', 'text1', 'image1', 'header2', 'text2', 'image2', 'header3', 'text3', 'image3', 'header4', 'text4', 'image4']
 }
+
+
 
 </script>
 
