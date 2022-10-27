@@ -28,8 +28,8 @@
       <a href="mailto:info@volkert.net"
         class="bg-volkert-dark-blue hover:bg-volkert-darker-blue active:bg-volkert-darkest-blue w-16 h-16 p-4 rounded-full flex items-center justify-center">
         <svg class="fill-white w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
+          stroke="white" stroke-width="1.5">
+          <path class="fill-transparent" stroke-linecap="round" stroke-linejoin="round"
             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       </a>
@@ -281,7 +281,7 @@
             <fieldset name="multipleGrippers" class="mt-4 ml-8">
               <div class="flex items-center mb-4">
                 <input id="oneGripper" type="radio" name="countries" value="USA"
-                  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-bslue-300" aria-labelledby="country-option-1"
+                  class="h-4 w-4 border-gray-300 accent-volkert-blue" aria-labelledby="country-option-1"
                   aria-describedby="country-option-1" checked
                   @click="$store.commit('change_gripping', ['gripper', '+ 0 €', '+ 1.450 €', '+ 2.100 €','+ 2.450 €'])">
                 <label for="country-option-1" class="text-sm font-medium text-gray-900 ml-2 block">
@@ -291,7 +291,7 @@
 
               <div class="flex items-center mb-4">
                 <input id="twoGrippers" type="radio" name="countries" value="Germany"
-                  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2"
+                  class="h-4 w-4 border-gray-300 accent-volkert-blue" aria-labelledby="country-option-2"
                   aria-describedby="country-option-2"
                   @click="$store.commit('change_gripping', ['gripper', '+ 0 €', '+ 2.900 €', '+ 4.200 €','+ 4.900 €'])">
                 <label for="country-option-2" class="text-sm font-medium text-gray-900 ml-2 block">
