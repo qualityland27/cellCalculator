@@ -8,7 +8,8 @@
         <div class="flex flex-row-reverse mt-4 items-center text-xs sm:text-base col-span-5">
           <button
             class="text_big ml-8 p-1 px-2 bg-volkert-blue rounded-md text-white hover:bg-volkert-dark-blue hover:border-transparent transition ease-in-out delay-300 hover:scale-110"
-            @click="$store.commit('sendPrinterEmail')">Anfrage</button>
+            @click="$store.commit('sendEmail_with_clientsDefaultProgram')">Anfrage</button>
+   
           <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'technicalDetailsHeader')">
             Technsiche Daten</div>
           <div class="text_big ml-8 cursor-pointer" @click="$store.commit('scrollToElement', 'whyVcellHeader')">
@@ -290,8 +291,9 @@
 
 
 
-    <robotInformation />
     
+    <robotInformation />
+
 
 
 
@@ -456,6 +458,7 @@ export default {
     "welding_icon": require("@/assets/icons/welding_icon.vue").default,
     "gripping_icon": require("@/assets/icons/gripping_icon.vue").default,
     "compact_icon": require("@/assets/icons/compact_icon.vue").default,
+    
 
 
     "heavy-workload_icon": require("@/assets/icons/heavy-workload_icon").default,

@@ -807,27 +807,27 @@ export default createStore({
     handle_modal_byID(state, payload) {
       console.log("in handle_modal_byID")
 
-if (!state.notClickedYet) {
-  try {
-    let modal = document.getElementById(payload.id);
-    if (state.modalVisible == true) {
-      modal.style.display = "none";
-      state.modalVisible = false;
-    } else {
-      modal.style.display = "block";
-      state.modalVisible = true;
-    }
-  } catch (error) {
-    let modal = document.getElementById(payload);
-    if (state.modalVisible == true) {
-      modal.style.display = "none";
-      state.modalVisible = false;
-    } else {
-      modal.style.display = "block";
-      state.modalVisible = true;
-    }                 // Step 3.5: It never reaches here because the code above threw an error
-  }
-}
+      if (!state.notClickedYet) {
+        try {
+          let modal = document.getElementById(payload.id);
+          if (state.modalVisible == true) {
+            modal.style.display = "none";
+            state.modalVisible = false;
+          } else {
+            modal.style.display = "block";
+            state.modalVisible = true;
+          }
+        } catch (error) {
+          let modal = document.getElementById(payload);
+          if (state.modalVisible == true) {
+            modal.style.display = "none";
+            state.modalVisible = false;
+          } else {
+            modal.style.display = "block";
+            state.modalVisible = true;
+          }                 // Step 3.5: It never reaches here because the code above threw an error
+        }
+      }
 
 
     },

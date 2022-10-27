@@ -475,7 +475,7 @@
             </button>
           </div>
 
-          <Inquiry />
+          <Inquiry  />
 
 
         </div>
